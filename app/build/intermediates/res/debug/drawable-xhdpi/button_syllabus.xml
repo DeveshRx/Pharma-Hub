@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/syllabus_mat_p"
+          android:state_pressed="true" />
+    <item android:drawable="@drawable/syllabus_mat"
+          android:state_focused="true" />
+    <item android:drawable="@drawable/syllabus_mat" />
+</selector>
+<!-- From: file:/E:/Devesh_inc/Android_Development/Project/B-PharmGuide-mu/app/src/main/res/drawable-xhdpi/button_syllabus.xml -->

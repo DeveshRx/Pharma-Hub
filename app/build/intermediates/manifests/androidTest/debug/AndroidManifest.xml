@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="devesh.b.pharm.guide.mu.test">
+
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="21" />
+
+    <application>
+        <uses-library android:name="android.test.runner" />
+    </application>
+
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+                     android:targetPackage="devesh.b.pharm.guide.mu"
+                     android:handleProfiling="false"
+                     android:functionalTest="false"
+                     android:label="Tests for devesh.b.pharm.guide.mu"/>
+</manifest>

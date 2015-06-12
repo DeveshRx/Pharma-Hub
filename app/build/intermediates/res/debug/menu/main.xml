@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="devesh.b.pharm.guide.mu.MainActivity" >
+<item
+        android:id="@+id/gplus"
+        android:orderInCategory="200"
+        android:showAsAction="always"
+        android:title="follow me on google plus"
+        android:icon="@drawable/gplus"
+        />
+    
+    <item
+        android:id="@+id/fb"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Follow me on Facebook"
+        android:icon="@drawable/fb"
+        />
+    
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="300"
+        android:showAsAction="always"
+        android:title="About"
+        android:icon="@drawable/about"
+        />
+    <item
+        android:id="@+id/exit"
+        android:orderInCategory="400"
+        android:showAsAction="always"
+        android:title="About"
+        android:icon="@drawable/close"
+        />
+    
+
+</menu>
+<!-- From: file:/E:/Devesh_inc/Android_Development/Project/B-PharmGuide-mu/app/src/main/res/menu/main.xml -->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="NewApi">
+        <ignore path="src/devesh/b/pharm/guide/mu/About.java" />
+        <ignore path="src/devesh/b/pharm/guide/mu/MainActivity.java" />
+        <ignore path="src/devesh/b/pharm/guide/mu/Scheme.java" />
+        <ignore path="src/devesh/b/pharm/guide/mu/Splash.java" />
+        <ignore path="src/devesh/b/pharm/guide/mu/home.java" />
+    </issue>
+</lint>
