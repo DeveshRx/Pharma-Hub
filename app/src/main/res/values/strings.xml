@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">B.Pharm Guide(Mumbai Univesity)</string>
+    <string name="app_name">B.Pharm Hub(Mumbai Univesity)</string>
+    <string name="name">B.Pharm Hub</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="banner_ad_unit_id"></string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-6702661245453687/1937964650</string>
+    <string name="title_activity_papers">papers</string>
 
 </resources>

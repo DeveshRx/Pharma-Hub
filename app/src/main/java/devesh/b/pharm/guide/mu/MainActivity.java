@@ -5,10 +5,13 @@ package devesh.b.pharm.guide.mu;
  */
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,12 +20,14 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 //import com.google.ads.AdRequest;
 //import com.google.android.gms.ads.AdListener;
@@ -38,8 +43,11 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		getActionBar().setDisplayShowHomeEnabled(false);
-		getActionBar().setDisplayShowTitleEnabled(false);
+//		getActionBar().setDisplayShowHomeEnabled(false);
+//		getActionBar().setDisplayShowTitleEnabled(false);
+
+
+
 
 		AdView mAdView = (AdView) findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
@@ -47,13 +55,22 @@ public class MainActivity extends Activity {
 
 
 
-		
-		mInterstitialAd = new InterstitialAd(this); // interstitial ad
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-6702661245453687~6086706651");
 
-		mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); // Sample
+        mInterstitialAd = new InterstitialAd(this); // interstitial ad
+
+		//mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712"); // Sample
 																				// test
 																				// ID
 
+		 mInterstitialAd.setAdUnitId("ca-app-pub-6702661245453687/7563439851");
+		// // WARNING
+		// !!!!!->
+		// My
+		// OWN
+		// f**kin
+		// AD
+		// id
 
 		requestNewInterstitial();
 
@@ -82,10 +99,18 @@ public class MainActivity extends Activity {
 
 	}
 
+	private boolean isPackageInstalled(String packagename, PackageManager packageManager) {
+		try {
+			packageManager.getPackageInfo(packagename, PackageManager.GET_ACTIVITIES);
+			return true;
+		} catch (PackageManager.NameNotFoundException e) {
+			return false;
+		}
+	}
 	public void download_pdf_cbgs(View v) {
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setData(Uri
-				.parse("http://www.mu.ac.in/syllabus/B.Pharm%20Final%20Year.pdf"));
+				.parse("https://sites.google.com/site/bpharmapp/Final_year_B_Pharm.pdf"));
 		startActivity(intent);
 
 	}
@@ -385,6 +410,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
             pg4sub="sem1_poc_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_poc.png");
+			myWebView.getSettings().setBuiltInZoomControls(true);
 
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
@@ -416,7 +442,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub="sem2_pchem_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_pchem.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -442,7 +468,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem3_oc_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_oc.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -469,7 +495,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem4_oc_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_oc.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -494,7 +520,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem5_oc_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_oc.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -518,7 +544,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem6_pchem_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pchem.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -547,7 +573,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem1_pp_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_pp.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -574,7 +600,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem2_bc_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_bc.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -601,7 +627,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem3_bc_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_bc.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -627,7 +653,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem4_pa_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_pa.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -659,7 +685,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem5_cl_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_cl.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -685,7 +711,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem6_pa_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pa.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -720,7 +746,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem1_app_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_app.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -746,7 +772,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem2_pceutics_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_pceutics.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -773,7 +799,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem3_dp_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_dp.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -800,7 +826,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem4_pceutics_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_pceutics.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -827,7 +853,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem5_pb_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_pb.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -852,7 +878,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem6_pceutics_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pceutics.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -881,7 +907,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem1_evs_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_evs.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -906,7 +932,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem2_pp_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_pp.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -932,7 +958,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem3_pe_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_pe.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -956,7 +982,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem4_microbio_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_microbio.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -982,7 +1008,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem5_pcology_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_pcology.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1007,7 +1033,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem6_pp_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pp.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1040,7 +1066,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem1_cs_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_cs.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1061,7 +1087,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem2_app_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_app.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1086,7 +1112,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem3_app_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_app.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1111,7 +1137,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem4_cs_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_pcology.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1135,7 +1161,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem5_pm_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_pm.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1160,7 +1186,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem6_hp_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_hp.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1190,7 +1216,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem1_pp_lab_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_pp_lab.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1212,7 +1238,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem2_pchem_lab_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_pchem_lab.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1235,7 +1261,7 @@ public class MainActivity extends Activity {
 			WebView myWebView = (WebView) findViewById(R.id.webView2);
 			pg4sub = "sem3_maths_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_maths.png");
-
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
@@ -1260,6 +1286,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_maths.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1281,6 +1308,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_oc_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 		myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1303,6 +1331,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pchem_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1329,6 +1358,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_app_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1353,6 +1383,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_pceutics_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1375,6 +1406,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_oc_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1395,6 +1427,7 @@ public class MainActivity extends Activity {
 			pg4sub = "sem4_pa_lab_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_pa_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
@@ -1418,6 +1451,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_pb_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1440,6 +1474,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pceutics_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1467,6 +1502,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem1_comp.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1488,6 +1524,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem2_pp_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1510,6 +1547,7 @@ public class MainActivity extends Activity {
 			pg4sub = "sem3_bc_lab_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_bc_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
@@ -1532,6 +1570,7 @@ public class MainActivity extends Activity {
 			pg4sub = "sem4_pceutics_lab_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_pceutics_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
@@ -1556,6 +1595,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem5_cl_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1576,6 +1616,7 @@ public class MainActivity extends Activity {
 			pg4sub = "sem6_pa_pg1";
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pa_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
@@ -1604,6 +1645,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem3_dp_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1625,6 +1667,7 @@ public class MainActivity extends Activity {
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
 			myWebView.setWebViewClient(new WebViewClient());
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new MyWebViewClient());
 
 			//	ImageView img = (ImageView) findViewById(R.id.imageView1);
@@ -1645,6 +1688,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem6_pp_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 
@@ -1671,6 +1715,7 @@ public class MainActivity extends Activity {
 			myWebView.loadUrl("https://sites.google.com/site/bpharmapp/sem4_mb_lab.png");
 			WebSettings webSettings = myWebView.getSettings();
 			webSettings.setJavaScriptEnabled(true);
+			myWebView.getSettings().setBuiltInZoomControls(true);
 			myWebView.setWebViewClient(new WebViewClient());
 			myWebView.setWebViewClient(new MyWebViewClient());
 

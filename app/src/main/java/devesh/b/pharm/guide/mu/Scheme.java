@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -18,6 +19,7 @@ import android.widget.ProgressBar;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 
 public class Scheme extends Activity {
@@ -26,14 +28,15 @@ public class Scheme extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
-		getActionBar().hide();
+	//	getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+	//	getActionBar().hide();
 
 		setContentView(R.layout.scheme);
 
-		getActionBar().setDisplayShowHomeEnabled(false);
-		getActionBar().setDisplayShowTitleEnabled(false);
+	//	getActionBar().setDisplayShowHomeEnabled(false);
+	//	getActionBar().setDisplayShowTitleEnabled(false);
 
+		MobileAds.initialize(getApplicationContext(), "ca-app-pub-6702661245453687~6086706651");
 
 		AdView mAdView = (AdView) findViewById(R.id.adView);
 		AdRequest adRequest = new AdRequest.Builder().build();
@@ -43,6 +46,8 @@ public class Scheme extends Activity {
 		WebView myWebView = (WebView) findViewById(R.id.webView);
 		myWebView.loadUrl("https://sites.google.com/site/bpharmapp/home/scheme");
 		WebSettings webSettings = myWebView.getSettings();
+		myWebView.getSettings().setBuiltInZoomControls(true);
+
 		webSettings.setJavaScriptEnabled(true);
 		myWebView.setWebViewClient(new WebViewClient());
         myWebView.setWebViewClient(new MyWebViewClient());

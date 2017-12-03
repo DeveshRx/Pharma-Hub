@@ -37,6 +37,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
+        android:visibility="gone"
+
         android:src="@android:drawable/ic_menu_save"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/progressBar"
@@ -48,6 +50,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Save for Offline use"
+        android:visibility="gone"
         android:id="@+id/textView9"
         android:layout_alignBottom="@+id/imageView"
         android:layout_toRightOf="@+id/imageView"
