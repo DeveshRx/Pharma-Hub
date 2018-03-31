@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">B.Pharm Hub</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="FYSyllabus_URL">http://archive.mu.ac.in/syllabus/4.103%20F.Y.B.%20Pharm.pdf</string>
+<string name="FYSyllabus1">http://mu.ac.in/portal/wp-content/uploads/2016/06/4.15-B.-Pharm1.pdf</string>
+    <string name="Google_Doc_Viewer">https://docs.google.com/a/document/viewer?url=</string>
+</resources>

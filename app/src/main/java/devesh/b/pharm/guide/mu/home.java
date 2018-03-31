@@ -161,4 +161,10 @@ public class home extends Activity {
 
 	}
 
+	public void NoteBook(View v){
+		Intent intent = new Intent(this, BookActivity.class);
+		startActivity(intent);
+
+	}
+
 }

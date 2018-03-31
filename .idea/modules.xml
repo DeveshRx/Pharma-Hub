@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/B.PharmGuide(MumbaiUnivesity).iml" filepath="$PROJECT_DIR$/B.PharmGuide(MumbaiUnivesity).iml" />
+      <module fileurl="file://$PROJECT_DIR$/B-PharmGuide-mu.iml" filepath="$PROJECT_DIR$/B-PharmGuide-mu.iml" />
       <module fileurl="file://$PROJECT_DIR$/Beta/Beta.iml" filepath="$PROJECT_DIR$/Beta/Beta.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app1/app1.iml" filepath="$PROJECT_DIR$/app1/app1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/instantapp/instantapp.iml" filepath="$PROJECT_DIR$/instantapp/instantapp.iml" />
     </modules>
   </component>
 </project>
