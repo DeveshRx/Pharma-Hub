@@ -1,0 +1,259 @@
+<resources>
+    <string name="app_name">B.Pharm Hub (Premium)</string>
+
+    <string name="app_version">Version 2.0.0</string>
+    <string name="app_version_code">8</string>
+
+    <string name="App_desc">All in One App for pharmacy students, to stay up-to-date with latest syllabus of b.pharmacy course of Mumbai University. This is must have app for every students and teachers for quick reference on study portion.</string>
+    <string name="feedback_form_URL">https://goo.gl/forms/IZXaxu2xzhb2R2on2</string>
+    <string name="Submit_notes_URL">https://goo.gl/forms/5wjD2o9J4slG3UrQ2</string>
+    <string name="AdFreeVersion">https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.premium</string>
+    <string name="Contact_Form_URL">https://goo.gl/forms/FzKvhnmI1EOJAOlc2</string>
+
+    <string name="Share_message">B.Pharm Study Notes, Syllabus &amp; Previous year Question Papers and much more available in B.Pharm Hub App. \n \n
+        Free Download @ https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu</string>
+
+    <string name="Auth_id">0000</string>
+    <string name="Auth_password">0000</string>
+
+    <!--Syllabus URL -->
+    <string name="FYSyllabus_2016_New">https://drive.google.com/file/d/1SMRAKwdIf1Z5k3VwxoZc_q8XlNr3-fv_/view?usp=sharing</string>
+    <string name="FYSyllabus_OLD">https://drive.google.com/file/d/1wFTAZd2gpaQA8p0bb_P3CHbZu5hR7dyT/view?usp=sharing</string>
+
+    <string name="SYSyllabus_OLD">https://drive.google.com/file/d/1H3TwOqKLvOD9f6U5ahjOD1qk06ZTMdO6/view?usp=sharing</string>
+    <string name="SYSyllabus_New">https://drive.google.com/file/d/10q2MKhwk4316aoEW19UTYXcnRg0HLQL_/view?usp=sharing</string>
+
+    <string name="TYSyllabus_OLD">https://drive.google.com/file/d/1Npd786vNAQx7gyTZr3GxGs6mTBBvDcfG/view?usp=sharing</string>
+    <string name="TYSyllabus_New">0</string>
+
+    <string name="FinalSyllabus_OLD">https://drive.google.com/file/d/1f9gnkTO3esrE05PO4KSq7cGyD0uf5G5s/view?usp=sharing</string>
+
+    <!-- Hall Ticket URL -->
+
+    <string name="Sem8HallTicket">http://muexam.mu.ac.in/hallticket/pharmacy/pharmacy_sem8/</string>
+    <string name="Sem7HallTicket">http://muexam.mu.ac.in/hallticket/pharmacy/pharmacy_sem7/</string>
+    <string name="AltHallTicket">http://muexam.mu.ac.in/hallticket</string>
+
+    <!-- Question Paper URL -->
+    <string name="qp201517SemviiiCBGS">https://docs.google.com/document/d/1gQPlioviB7xwMikjW0YekaPLsP1Guu-VQaNCyfrG1v8/edit?usp=sharing</string>
+    <string name="qp201517SemviiCBGS">https://docs.google.com/document/d/1DCYpXXtLXMbG6nCXCqJCSjC2Zvb4HAIjhnL1juoZNnI/edit?usp=sharing</string>
+    <string name="QP20178sem8cbgs">https://drive.google.com/file/d/1OFZFCVh9DSvjB4VdlX67jyiOxRv5D5b7/view?usp=sharing</string>
+    <string name="QP201718sem7cbgs">https://drive.google.com/file/d/1wL04Fy-rSg-rrilds84hC-IZMVeTN84X/view?usp=sharing</string>
+    <string name="QP201718sem7cbgsBacklog">https://drive.google.com/file/d/1E0WPiKXMqDDP-j0YgLtPq6a2hfQLTh99/view?usp=sharing</string>
+    <string name="qpCologySem5">https://drive.google.com/file/d/1VrxMOj-ARFlG7doXANzCV2f9MKE9itFW/view?usp=sharing</string>
+
+
+    <!-- Notes URL -->
+    <!-- Sem 7-->
+    <!-- Cognocy -->
+    <string name="sem7cognoNutraceuticals1">https://docs.google.com/presentation/d/1DedBY43jyl_5uVmvMZjX8nvF2z7ctIYFh-gJf3_2sGo/edit?usp=sharing</string>
+    <string name="sem7cognonEUTRACEUTICALS1">https://docs.google.com/presentation/d/1uOVMqfQK_3PjandhPhcp2viUr7jyr0bYRaSFyu2ixu0/edit?usp=sharing</string>
+    <string name="sem7cognonaturalpesticide">https://docs.google.com/presentation/d/1rnymx-uMjhbap6GIy-yNRWhQWKaGfJa8AefWy6xhyt0/edit?usp=sharing</string>
+    <string name="sem7cognocardiacglycosides">https://docs.google.com/presentation/d/1gqyWRjKgsnaiT7dxdJQCulB-AGsKDA8isOMA-rGOxuo/edit?usp=sharing</string>
+    <string name="sem7cognoCardiacGlycosides1">https://docs.google.com/presentation/d/1IYyWUKGOc_Iqteo4Xh9sOfSmFNlyM_5bdDKLRmPQcCQ/edit?usp=sharing</string>
+    <string name="sem7cognoglycosides">https://docs.google.com/presentation/d/1VSnGyklDAfKufgpAhvNmObmer2Fb0y53mt8ckOfhU2Q/edit?usp=sharing</string>
+
+    <!-- Ceutics -->
+    <string name="sem7ceuticsSTABILITYSTUDIESupdated">https://docs.google.com/presentation/d/1wnnha-rDt2Yi628mcC1aHSdsKarAVm8ucbjumtlWT_M/edit?usp=sharing</string>
+    <string name="sem7ceuticsPARENTRALSCONTAINERS">https://docs.google.com/presentation/d/11ibX5KzGPhIcnZSFSKbaovuRGSt1-4iNytjLmJeVBT0/edit?usp=sharing</string>
+    <string name="sem7ceuticsParenteralsTypesofproducts">https://drive.google.com/file/d/1G43Len2K6vuOReZIbY-sgXBxjGTepqaT/view?usp=sharing</string>
+    <string name="sem7ceuticsOphthalmicPreparations2_1479488103494_1479565618611">https://docs.google.com/presentation/d/1BRM_-M43rrvDGkDmPWMKb3ziVew4S70vDCwzb9-K3YE/edit?usp=sharing</string>
+    <string name="sem7ceuticsOCRD_1479531207097">https://docs.google.com/presentation/d/1CTI41qGBEMdM7F-tk-LIJHW4TNQCLd1omVT4-U94Naw/edit?usp=sharing</string>
+    <string name="sem7ceuticsLVP">https://docs.google.com/presentation/d/1vQRMK-slb4TjENoIn5ejKfScEjdw2Kt-1XpePwhPG_g/edit?usp=sharing</string>
+    <string name="sem7ceuticsimpPPTtabletexcipients1">https://docs.google.com/presentation/d/1xoKDFJYmGelAtVvSMzHULBGQbDXLj_vVH3qGv8L4aW8/edit?usp=sharing</string>
+    <string name="sem7ceuticsEvaluationofSRformulations">https://docs.google.com/presentation/d/1TomPDSGwm7Ciawd-4qoNyJIc0Z4K53eAIFmI0_puxG4/edit?usp=sharing</string>
+    <string name="sem7ceuticsacceleratedstabilitystudes_1479487312088_1479565618596">https://docs.google.com/presentation/d/1ZlVwP03C8d0VX3vF_LQq9fZfjOQ5dOwsPhsEi1bmgyY/edit?usp=sharing</string>
+    <string name="sem7ceuticsTOXICITYSTUDIES">https://docs.google.com/presentation/d/1PM-WGrrgFqZtWQxKpLK4DkJDqZDgJ0ZWxzQEqbOxueo/edit?usp=sharing</string>
+    <string name="sem7ceuticsTabletTechnology">https://drive.google.com/file/d/1ynOdcWezcegKolv8Ci2uvf9PuO9vTstC/view?usp=sharing</string>
+    <string name="sem7ceuticsstabilitystudies">https://docs.google.com/presentation/d/1MXD-_RgVNpxt7m8v5qa-EyYHyDT5y9rVlXfPlnAi9BE/edit?usp=sharing</string>
+    <string name="sem7ceuticsstabilitystudies1">https://docs.google.com/presentation/d/1UyZJlHNUL-Ow6K6_Y2g9WYWF6HifGPx0PuV8owTJtFc/edit?usp=sharing</string>
+    <string name="sem7ceuticsSRDDSEVALUATION">https://docs.google.com/document/d/10cqvGTcsAHRtzlugUKrEfbDXsjARj7JeNCCwjZrvFrI/edit?usp=sharing</string>
+    <string name="sem7ceuticsContainersandclosures">https://docs.google.com/presentation/d/1r28lD_2Z-uOXwhcLYaA7rhMC6wgjP30vckWrZM0twwg/edit?usp=sharing</string>
+    <string name="sem7ceuticsICHguideline1478588402168">https://drive.google.com/file/d/1FTUHV8-1x_pnrgQsL0mY8lo7E3jaRa2E/view?usp=sharing</string>
+
+    <!-- Pharma Chemistry-->
+    <string name="sem7pchemLocal_ana1">https://docs.google.com/presentation/d/1RHtxsl1GZ8JKqRPL2fs2xc9u8mHxdeADE6xP388kQ9M/edit?usp=sharing</string>
+    <string name="sem7pchemAntiviral">https://docs.google.com/presentation/d/1hqkJJr4za4dEF1mqrYicUGXL3XVK3sF9UgCKPbk7Bjk/edit?usp=sharing</string>
+    <string name="sem7pchemAntineoplastics">https://docs.google.com/presentation/d/1zvyb3Dmdt3x8a9Ud9GgZ2eNIRIDIgjW5p2gtDIblYAU/edit?usp=sharing</string>
+    <string name="sem7pchemanticancer">https://docs.google.com/presentation/d/16aszYBXQMD9ZodKQ7AZqT3gix77Na4gSo_zecceMaDo/edit?usp=sharing</string>
+    <string name="sem7pchemDiuretics">https://docs.google.com/presentation/d/1LIb3zqld1mP4f7AZlfTF-maB0QKrL0ZKAetqZN3BHYE/edit?usp=sharing</string>
+    <string name="sem7pchemsynthesisall">https://drive.google.com/file/d/1Kr0_zK9SEBsry1-70tnepgJrLMwP6hXU/view?usp=sharing</string>
+
+    <!-- Pharma Analysis-->
+    <string name="sem7pamanjuHPTLC">https://docs.google.com/presentation/d/1D5rvnfg_zK7H3bhefCbrfyfS6OZ01f_OOg9tuukm9bY/edit?usp=sharing</string>
+    <string name="sem7paSLmassspect1478597249577">https://drive.google.com/file/d/1idLdVgalhLNAT0Cuby0pemxpCBJLgGnl/view?usp=sharing</string>
+    <string name="sem7paAnalysischapterwiseQuestionBank">https://drive.google.com/file/d/1qsXURqiglbho2tB3K3Sdsye41Ny5L4OI/view?usp=sharing</string>
+    <string name="sem7paMASSSPECTROSCOPY">https://docs.google.com/document/d/1XC-o5aFRPFJNNHxo-4PqxfaMn3qyWGbQILvCh9-LAT0/edit?usp=sharing</string>
+    <string name="sem7paanalyticalmethodvalidation">https://docs.google.com/presentation/d/1CXuQsrRSXMT8iHVL93D6K7ETw40IjttH2cp-y9r9Zxo/edit?usp=sharing</string>
+
+    <!-- Pharma Juris-->
+
+    <string name="sem7pjTheFactoriesAct">https://docs.google.com/presentation/d/1Z1gKhbiMV72dQHYXtps9FhMVKEXxHUFUN4zk5FAyvbI/edit?usp=sharing</string>
+    <string name="sem7pjTheBombayshopsandestablishmentsact1948">https://docs.google.com/presentation/d/1hXHa2yRKWSaUoHVVQd017f2M_7o0dK9gRoqSfMXBC_I/edit?usp=sharing</string>
+    <string name="sem7pjScheduleY">https://docs.google.com/presentation/d/15Zh79pSqNCGtdLgAKodlRPSupv_s4xOerqDXDIZYLZA/edit?usp=sharing</string>
+    <string name="sem7pjPatentsAct2005">https://docs.google.com/presentation/d/1J2ggrxXYbgqhcaQXNiFuBrjoImJPeq2RZ66KuX-75sE/edit?usp=sharing</string>
+    <string name="sem7pjNarcoticDrugsandPsychotropicSubstancesAct1985">https://docs.google.com/presentation/d/1p0rNyA2Vj3qJ1OvnttsPAIx6LNzRBQpDa4-pEjLkx9Y/edit?usp=sharing</string>
+    <string name="sem7pjMedicinalToiletPreparationsExciseDutiesAct">https://docs.google.com/presentation/d/1loB3DeBSImdCgVQE6j1fwbmD8c_aCQJyX6ShmrzD_Pg/edit?usp=sharing</string>
+    <string name="sem7pjINTRODUCTIONTODRUGREGULATORYAFFAIRS">https://docs.google.com/presentation/d/1ug4I1rXMpJsRwMi9QcyKAVKSzM3bevQ79nR7QKhC9iw/edit?usp=sharing</string>
+    <string name="sem7pjIndianpenalcodesectionsrelatedtoPharmacy1">https://docs.google.com/document/d/17ui5ggcg8DkfV0c0skcqcIpRNIMtTpbof27C0tQ8dBk/edit?usp=sharing</string>
+    <string name="sem7pjIndianPenalCodeIPC">https://docs.google.com/presentation/d/1zEZq0X1bp5RS5kFss_JBh4DQoUxzFR_01BGsAJR4nLA/edit?usp=sharing</string>
+    <string name="sem7pjFSSA2006">https://docs.google.com/document/d/18cg4UuikgptMf1o0-2pU5m5kxqVdliGD_orIReFyEfM/edit?usp=sharing</string>
+    <string name="sem7pjForensicpharmacyPharmacyAct25august2015">https://docs.google.com/presentation/d/1WEbjVRNrLeOQeIcuALYL6XucEbQ9zGyyPr3lL-Bvr0M/edit?usp=sharing</string>
+    <string name="sem7pjForensicpharmacyPatentsAct1970">https://docs.google.com/presentation/d/1wTX4aN39AWtoLnA99W2RdpgAnfc0KHv4LBlL_yRTVSo/edit?usp=sharing</string>
+    <string name="sem7pjForensicPharmacyHistory5December2014">https://docs.google.com/presentation/d/1geN0r3hjIbZCAi_qJJy_V-2hPouxY0Ryxfxcuf2Z4go/edit?usp=sharing</string>
+    <string name="sem7pjForensicpharmacyDCAPartII15January2015">https://docs.google.com/presentation/d/1fT-idfDbI02nPHyLIs0TUEaxbzM6wZFeM5DjqALaVHk/edit?usp=sharing</string>
+    <string name="sem7pjForensicPharmacyMagicRemediesAct1954">https://docs.google.com/presentation/d/1p1XecafIujLQECEZZB1uLNDf5nJDKYsPcTVr-vXC1d8/edit?usp=sharing</string>
+    <string name="sem7pjForensicPharmacyIntroductionandHistory">https://docs.google.com/document/d/19onsr1pZ4GD_GouVDPIpb1RJJlthApoawo7JQYK0bWs/edit?usp=sharing</string>
+    <string name="sem7pjForensicPharmacyExciseDutyAct">https://docs.google.com/presentation/d/1rJFT2b1kPG0Qxn03TIdBXwOpn4L7fpAiI-gj1PbFodw/edit?usp=sharing</string>
+    <string name="sem7pjDrugsmagicremediesadvertisementAct">https://drive.google.com/file/d/1tMSY_EsC8wMbSGnBCfOVsQDWz4KYPTpn/view?usp=sharing</string>
+    <string name="sem7pjDrugsMagicRemediesActOA">https://docs.google.com/presentation/d/1f7f3FWiZsyQYecybYMeOAee0FnHdZ2IIlI_NBCyjYfw/edit?usp=sharing</string>
+    <string name="sem7pjDPCO2013">https://docs.google.com/presentation/d/1G423qLExDq_hfOUJXkBl9txTLN6llkbDVObf9b_7vCE/edit?usp=sharing</string>
+    <string name="sem7pjDPCO201320September2015">https://docs.google.com/presentation/d/1WF0dhZ8I5POeTTmdOFf2Y4Ww0-fnEACtZsfBhHSZ2uo/edit?usp=sharing</string>
+    <string name="sem7pjDMRactfinal">https://drive.google.com/file/d/1gdRoyeVH8TOGD_sAMw9Y-z_yz_7JfHfA/view?usp=sharing</string>
+    <string name="sem7pjChopraandHatheeCommittee1">https://docs.google.com/document/d/1yLAXkyEKwMaSsyb021EsBfatPbFXKZBsl937H68XLpQ/edit?usp=sharing</string>
+
+
+    <!-- Pharmacology -->
+    <string name="sem7CologyWhatarerecommendedforDIABETIC">https://drive.google.com/file/d/1JLvHQUVRczoMOtALLb3EIBzBwcEn5ccO/view?usp=sharing</string>
+    <string name="sem7CologySTUDYOFANALGESICUSINGHOTPLATEORTAIL">https://docs.google.com/presentation/d/1I5nAhmf_aY9jGom2-7UMUDKwAxW0FVDyh7Eb8ah8Y7E/edit?usp=sharing</string>
+    <string name="sem7CologyRotaRod">https://docs.google.com/presentation/d/18TI7N06REUA16_7hspR1BEO8Hemjvl7eyCf8EkjRxN8/edit?usp=sharing</string>
+    <string name="sem7CologyLocalAnestheticsCBSGS">https://docs.google.com/presentation/d/1P2eiEx4VnmWMlvA__Vcax550unrHXZDyDIQnYzcwrbo/edit?usp=sharing</string>
+    <string name="sem7CologyLocalana1">https://docs.google.com/presentation/d/1oNHDpeVizzTjf6jZV_5Y6zQdumTVapac9xWG9bzcwzY/edit?usp=sharing</string>
+    <string name="sem7CologyHypoglycemi">https://docs.google.com/presentation/d/1zCj7jdcyeZ1-cwqNpZzDIdLtsSBCQGT1P31GtzOfmlM/edit?usp=sharing</string>
+    <string name="sem7CologyHaloperidolinducedCatalepsy">https://docs.google.com/presentation/d/1Q33R42BO7BZQsl4bhlqnEG6q4IvwCGSl2gmT4bKXQq0/edit?usp=sharing</string>
+    <string name="sem7CologyDIURETICS">https://docs.google.com/presentation/d/1RIBQ4I3av6-cb1lFJHG5FwGtr4z_-3iXN03GxVzlWGY/edit?usp=sharing</string>
+    <string name="sem7CologyDEMONSTRATIONOFANTICONVULSANTPROPERTYOFANANTIEPILEPTICDRUG1">https://docs.google.com/presentation/d/114rMSYhP43cD5EtFF_PgLwMH4SBOCodUSWqER8TkdRQ/edit?usp=sharing</string>
+    <string name="sem7CologyANTIHYPERTENSIVES_DIURETICS_ANTICOAGULANTS_AND_DYSLIPIDEMICSAutosaved">https://docs.google.com/presentation/d/11dA2EH86RhRHiy4ZBKcOc_vhPteE-YgkpT9fDFl2qnk/edit?usp=sharing</string>
+    <string name="sem7Cologyantihis">https://docs.google.com/presentation/d/1HXJe5fJ-FObREfT2ORJmQLbKssYcfJ9mEtUWhl30ZHk/edit?usp=sharing</string>
+    <string name="sem7CologyANTIHISTAMINESjulyh2016">https://docs.google.com/presentation/d/1nypr4_N8eYkpkJl_zED_P5zobyM3fnPIi-_hgfZHkYY/edit?usp=sharing</string>
+    <string name="sem7CologyANTIARRHYTHMICmodified">https://docs.google.com/presentation/d/1Bvk7_Me8oH5avcUgSMEa-NYvmSzSuffozI7aNnhtv6A/edit?usp=sharing</string>
+    <string name="sem7Cologyangina">https://docs.google.com/presentation/d/17hXmZy7BtpjkUgnQb7pp-0sANCloOSdhk6_2NF045l8/edit?usp=sharing</string>
+    <string name="sem7Cologyalzheimerspresentation">https://docs.google.com/presentation/d/14qJDA0FlqxjlKXWBIO0SW5-ZF0UgKeFl0ROdnWCGJNs/edit?usp=sharing</string>
+    <string name="sem7CologyACTOPHOTOMETEREXPERIMENT">https://docs.google.com/presentation/d/1yETcQhD89_eZro1-v8KqO0Ru1Gm_gKkXxHKcpfEQ03c/edit?usp=sharing</string>
+
+
+    <!-- Sem 8 -->
+    <!-- Cognosy -->
+    <string name="sem8cognovolatile_oils2401833021">https://docs.google.com/presentation/d/1k_Wi20N7QzwgQqFcyobyeCqjv9DhXJv75xK9uXJeYAQ/edit?usp=sharing</string>
+    <string name="sem8cognovoil22122015">https://docs.google.com/presentation/d/1uY8GgtO-A_MOGanQkPX4l3V-PdL1XAMq3Vs8W_2aeSk/edit?usp=sharing</string>
+    <string name="sem8cognoUmbelliferousfru">https://docs.google.com/presentation/d/1w1RM89fb6N5pbOCpuUqRuU-jBohQ0Js9H2wJsc-mNWM/edit?usp=sharing</string>
+    <string name="sem8cognoStandardisationofHerbalFormula">https://docs.google.com/presentation/d/1IRlbsBJ74eJibtXo0N6I2g5zx7rd-NVB2VoMzIUfel4/edit?usp=sharing</string>
+    <string name="sem8cognoResin">https://docs.google.com/presentation/d/1DQSSPthtCX_Bt_Z36djnJ4-ajfHSqyo7OxuxahW4pjk/edit?usp=sharing</string>
+    <string name="sem8cognoResin2">https://docs.google.com/presentation/d/1Eg3CuxqPphnwxz14-ND_e928lMBnGDlIgOvL5gvyBsI/edit?usp=sharing</string>
+    <string name="sem8cognoResin3">https://docs.google.com/presentation/d/1FKnmChra23ZEcJmJXHY4zJmvIitgGDEByEKzjNkbhZ0/edit?usp=sharing</string>
+    <string name="sem8cognoPhenylpropanoids">https://docs.google.com/presentation/d/1zWg2Sd6y5z2YqeDnMXUijZ7tBb8wbYf0JruvcAn9NII/edit?usp=sharing</string>
+    <string name="sem8cognoobjectivesAndselfstudies">https://drive.google.com/file/d/1yW42VospDBBIkKsTybRfnx5N8cfiLXzL/view?usp=sharing</string>
+    <string name="sem8cognoirridoidsandterpenoids">https://docs.google.com/presentation/d/1vRRl4EQUUlmnGEQr1BEs0eiRqycApf0qBHbPa32TJpQ/edit?usp=sharing</string>
+    <string name="sem8cognoherbalformulas">https://docs.google.com/presentation/d/1m9yrGzXsB2kX1aSjx4nUnjg8gkO-vsW4pbs3O_cxEpo/edit?usp=sharing</string>
+    <string name="sem8cognoHerbalcosmetics1">https://docs.google.com/presentation/d/1-OVaoMJgVIBZFvjPSY97S-Ko4S5wBg1_lhgtpV8l-Dg/edit?usp=sharing</string>
+    <string name="sem8cognoherbalcosmetic">https://docs.google.com/presentation/d/1a8pmeVFbIh0RqogGUpIfyTqV5bBq_ypSZVfVr8m5wsg/edit?usp=sharing</string>
+    <string name="sem8cognoherbdruginteractions">https://docs.google.com/presentation/d/1Km9ZD1B4WLTIm9_1uXJakVro13GmROt6vzXAbyXXoO0/edit?usp=sharing</string>
+    <string name="sem8cognoflavonoids">https://docs.google.com/presentation/d/1GEfgaUjSUFSSX4CcZIftaiO6PelS2MoEiNUigEV3sgE/edit?usp=sharing</string>
+    <string name="sem8cognodetoxificationofayurvedicmedicines">https://docs.google.com/presentation/d/1uBZqFTFUxTW0rAX2H4gSSEBxHsnPvPAZqmLqa7uRED4/edit?usp=sharing</string>
+    <string name="sem8cognoasu">https://docs.google.com/presentation/d/15jKikTjTpCcMtBZ7R3i57pB6BBl9MbeDKzwbjOYzlV4/edit?usp=sharing</string>
+    <string name="sem8cogno7glycosidesteroid">https://docs.google.com/presentation/d/1y7HGs45ihJljTMrvtQjmDGB1hAd1TTIC1tFT_GdSzqQ/edit?usp=sharing</string>
+    <string name="sem8cogno3phenolpropanoids">https://docs.google.com/presentation/d/1PXxX-ScAHGcje_ndCYqII6f9kjHK6nsDHytpoSom5Pk/edit?usp=sharing</string>
+
+    <!-- Ceutics -->
+    <string name="sem8ceuticsVendorAudit1">https://docs.google.com/presentation/d/1HHMAH_q6x66QJBD9jE-Qw-yvAE5R7yzVWi6kOzJ5Znw/edit?usp=sharing</string>
+    <string name="sem8ceuticsVendorAudit">https://drive.google.com/file/d/1BmeUKPx5Uos1mGihWgmI4RFeBUMU__AR/view?usp=sharing</string>
+    <string name="sem8ceuticsVendorAuditChecklist">https://drive.google.com/file/d/1r2MDBUbNAyltirF4fYl8a70iPkiTu-bb/view?usp=sharing</string>
+    <string name="sem8ceuticsvalidationofRMG">https://docs.google.com/document/d/19smad5sd-9WwKHpBVJV9l69Otg1gdjklHpf_1Aqq41w/edit?usp=sharing</string>
+    <string name="sem8ceuticsvalidationfinal">https://docs.google.com/presentation/d/1clldVNk3fqAM7dsSnYPeVKe2NR7E96MWjgvDTMyOaWE/edit?usp=sharing</string>
+    <string name="sem8ceuticsStandardoperatingprocedures">https://docs.google.com/document/d/1mSTUSJtY-BTr1ZCQMaF4Yld_Plq1D2UAqv0svrKAlX4/edit?usp=sharing</string>
+    <string name="sem8ceuticsSALESEFORECASTING">https://docs.google.com/presentation/d/1cGxOMb1M407duNQJysmKj8rqEEZZxEQkeM1z4bXzElE/edit?usp=sharing</string>
+    <string name="sem8ceuticsRole_of_QA_in_Pharma_Industry">https://drive.google.com/file/d/1gnBZdHstceSAP9m7EEVrvbaATC-eOdqN/view?usp=sharing</string>
+    <string name="sem8ceuticsrawmaterialvalidn">https://docs.google.com/presentation/d/1ll-MFeRU-P6AubaX18rnHPGXJMEG4J-shqNyCehmj00/edit?usp=sharing</string>
+    <string name="sem8ceuticsQUALITYASSURANCECONTROLINPHARMAINDUSTRY">https://drive.google.com/file/d/1TJsVsFymgmpQacVxxVrThi6tYLS1OyYk/view?usp=sharing</string>
+    <string name="sem8ceuticsQAFuntionSalientfeatures">https://drive.google.com/file/d/1CtqqbXQ3yyFgCbJKqcjuyTYpjeRmVhas/view?usp=sharing</string>
+    <string name="sem8ceuticsPilotPSemisolids">https://drive.google.com/file/d/1siByS7XogKLEHCYFrTrSExdOZFfZg-PG/view?usp=sharing</string>
+    <string name="sem8ceuticsPilotPlantScaleUpofInjectablesandLiquidOrals">https://drive.google.com/file/d/1Y89JFp-qs1qnmKT2YPUvlFgJDDIZ8y4Z/view?usp=sharing</string>
+    <string name="sem8ceuticsPilotScalesuspensioncaps">https://drive.google.com/file/d/19h7EdPNO75eTSIvgBZ9gPqcKe92MySXi/view?usp=sharing</string>
+    <string name="sem8ceuticsmucoddsneha">https://drive.google.com/file/d/1SGQouytKuEzfKs7sOQ16xhwOtBCM_NUQ/view?usp=sharing</string>
+    <string name="sem8ceuticsMicrospheres">https://docs.google.com/presentation/d/1XlR_TeNeVkZeQ9oHpXGrrX7bkOzic8q18Mn4BmRoq8A/edit?usp=sharing</string>
+    <string name="sem8ceuticsMicrosphereMicrocapsule">https://docs.google.com/presentation/d/19V4e3uLBZ8tzI6fx8nvsSpMejlIffotwFJd3kx-4Onk/edit?usp=sharing</string>
+    <string name="sem8ceuticsmicroencapsulationND">https://drive.google.com/file/d/1s846rnyBMME8ZOCAaS8vO_JiEg6jfLfj/view?usp=sharing</string>
+    <string name="sem8ceuticsIntroPilotScaleUpTechnique1">https://drive.google.com/file/d/1lvLf1IZ1BWMoEs9cGicZtGn078Bf2GlI/view?usp=sharing</string>
+    <string name="sem8ceuticsGRDDS">https://docs.google.com/presentation/d/1ltBMQ7YbC4DH9N_QnndOe6ZnmkFB2qR70kGZ4_YQhbI/edit?usp=sharing</string>
+    <string name="sem8ceuticsEntiresection103Materialmanagement">https://drive.google.com/file/d/1dS0QFX0Vcllx5IIyESec0P2vfG7qhqpX/view?usp=sharing</string>
+    <string name="sem8ceuticsEntire101ProductionManagement">https://drive.google.com/file/d/19rmrsOAX0rbe-XBB1QcPlMcXpouIwFSi/view?usp=sharing</string>
+    <string name="sem8ceuticsElementsofcostcontrol">https://docs.google.com/presentation/d/1riumX5CjoZxFTEDG5M__j3hZIeduwkJn8GgU-URJ4K4/edit?usp=sharing</string>
+    <string name="sem8ceuticsCopyofLiposomes">https://docs.google.com/presentation/d/16GUPk1HJL57hwN9QTaADxfH2O7uhPiB-kfkAt4HtfFU/edit?usp=sharing</string>
+    <string name="sem8ceuticsautoclave_validation_maliba">https://docs.google.com/presentation/d/1VtkeGIR579JQOtnMWKkqKhGpSfIZcAJNY59N3dYwt1E/edit?usp=sharing</string>
+    <string name="sem8ceutics61QualityAssurance">https://drive.google.com/file/d/1pOQtp10pR_rV4jkzWZckBwzCpVz1ZVwM/view?usp=sharing</string>
+    <string name="sem8ceutics12fiontsonoandIUD">https://drive.google.com/file/d/1y9LMF_CaSwhESgHRKQH1mtPxldY26_-Y/view?usp=sharing</string>
+    <string name="sem8ceutics12ecolloidal">https://drive.google.com/file/d/1Vh99RYpYVsTh8l3VdmtTrOjx94wraY2X/view?usp=sharing</string>
+    <string name="sem8ceutics12doccularInserts">https://drive.google.com/file/d/1dXT0mcC8Ier8DBfjbntxV67k1IJZq53K/view?usp=sharing</string>
+    <string name="sem8ceutics12ctransdermaldds">https://drive.google.com/file/d/1gP5kbodU3SqY7s5w0dYQHTiHoqMjdTTV/view?usp=sharing</string>
+    <string name="sem8ceutics12bfloatingDDS">https://drive.google.com/file/d/1OFG0CslE167rKc9Cy2FObQ_ZgZqs_brv/view?usp=sharing</string>
+    <string name="sem8ceutics12amultiparticulatedds">https://drive.google.com/file/d/1nZVeipl2zIS2AGSB4SqOeeyg7P8Zf0Y_/view?usp=sharing</string>
+    <string name="sem8ceutics11introductiontoNDDS">https://drive.google.com/file/d/1d3IyxY4wTraHWilO-372SthgLNy7eQiA/view?usp=sharing</string>
+
+    <!--PChem -->
+
+    <string name="sem8pchemSynthesisSem8CBSGS">https://drive.google.com/file/d/1f6j1iBEFUhWEVhLM1iqC3Gf978oVV5cA/view?usp=sharing</string>
+    <string name="sem8pchemSedativeHypnoticDrugs">https://docs.google.com/presentation/d/1ehOyITS47zcdWUBtuVb4ghQLdrZPrNvmFs329OPPnvc/edit?usp=sharing</string>
+    <string name="sem8pchemRashmiantipsychotics">https://docs.google.com/presentation/d/164LaS9G3nOb8KBoPEKPEX49jdfLMuLKQZrH7QGlqQnQ/edit?usp=sharing</string>
+    <string name="sem8pchemOpioidAnalgesics1">https://docs.google.com/presentation/d/1vKLjbcdu1LVi89ozWI3iT1hoVoetLJePhcMxDBJdvZ8/edit?usp=sharing</string>
+    <string name="sem8pchemNSAIDS">https://docs.google.com/presentation/d/1rVvJgaMoGt7HlI1Okt8pSiaUFrrNgWWdJECqz-wP88I/edit?usp=sharing</string>
+    <string name="sem8pchemAnalgesics">https://docs.google.com/presentation/d/1Jfas59FT4JFGO0Dmyjx5LAhOj2Yf0GPGFuEx38fXYX8/edit?usp=sharing</string>
+    <string name="sem8pchemadrenocorticosteroids">https://docs.google.com/presentation/d/1SIHFRG7m_3m7IDcCO7w2ra6kY1yVIEnAyvLB02uishY/edit?usp=sharing</string>
+    <string name="sem8pchem24_Anxiolytics_final">https://docs.google.com/presentation/d/1StTRN2jXKvaji0SmYumIdYM53nIVGt3iWgc9wACLu2U/edit?usp=sharing</string>
+    <string name="sem8pchem22_CalciumHomeostasis_final">https://drive.google.com/file/d/1BUZgcD3y0_4hMKqJkuB52M29dEiAIlfy/view?usp=sharing</string>
+    <string name="sem8pchem21_Thyroid_drugs_final">https://drive.google.com/file/d/15jrSQuIDaxhsQreRPVr9CGjDums-kw8X/view?usp=sharing</string>
+    <string name="sem8pchem20_AdrenoSteroids_SexH_part3_final">https://drive.google.com/file/d/1oJPJKKszcUITwtqhoxFuKy4Fnirp5P8S/view?usp=sharing</string>
+    <string name="sem8pchem19_20_AdrenoSteroids_SexHormones_final">https://drive.google.com/file/d/1lU8HJGr-cfUCaUE065bk2G-3BMM60vb5/view?usp=sharing</string>
+    <string name="sem8pchem18_AdrenoSteroids_GC_final">https://drive.google.com/file/d/1ouPo6rG6WzduajodrkCMjzLp2AP1CmP0/view?usp=sharing</string>
+    <string name="sem8pchem10_Adrenergic_drugs_part4_final">https://drive.google.com/file/d/1ruMwm9dKmYaGHV9it4ZXxcVG_AlCfTd_/view?usp=sharing</string>
+    <string name="sem8pchem10nsaids">https://docs.google.com/presentation/d/1PpLixO7YShnAs996BXIothANyrZTn3NSazGHUsoH_08/edit?usp=sharing</string>
+    <string name="sem8pchem09_Adrenergic_drugs_part3_final">https://drive.google.com/file/d/19AO5cXpKR3YupyYfZH9aXTe85GyhfEWD/view?usp=sharing</string>
+    <string name="sem8pchem08_Adrenergic_drugs_part12_final">https://drive.google.com/file/d/1MQndf90OUCyXLPi3cBD5_4xM14ZFQUot/view?usp=sharing</string>
+    <string name="sem8pchem02ThyroidHormones">https://docs.google.com/presentation/d/1hsOV0YLGVnzOvWBcXeampCIr9uRPDQVKImAx_hw0Ev0/edit?usp=sharing</string>
+
+    <!-- BioPharm-->
+    <string name="sem8BPChapter1Introduction_1490373071611">https://docs.google.com/document/d/18QYPQk239hEwICtJ418RIoHaPengqCOsN6R6gU7IndQ/edit?usp=sharing</string>
+    <string name="sem8BPChapter2Absorptionofdrugs_1490373071646">https://docs.google.com/document/d/1fIu_LCYWIQoLU6YxhPp8aF4xmXmxmCOsRbIh0sEOwv4/edit?usp=sharing</string>
+    <string name="sem8BPChapter3Distributionofdrugs_1490373071635">https://docs.google.com/document/d/1UOo6g7H8_empECcXqBMytJ7L6GwHTyc142xqyGYjwbg/edit?usp=sharing</string>
+    <string name="sem8BPChapter4Proteinbindingofdrugs_1490373071624">https://docs.google.com/document/d/1x0hBPc-q47aSk3bNrlcjvFTortnlhCdu3PzYf0Di0bg/edit?usp=sharing</string>
+    <string name="sem8BPChapter5Metabolismofdrugs_1490373071650">https://docs.google.com/document/d/1o6ug4nYqOIPTIscCMg_cpkitlDhdGCIXcCTj0azWV_0/edit?usp=sharing</string>
+    <string name="sem8BPChapter6Excretionofdrugs_1490373071679">https://docs.google.com/document/d/12ohIAV1FxCC8mXoDjMNeKzv1WdElxWf-BBUrc_x5Av8/edit?usp=sharing</string>
+    <string name="sem8BPChapter7DrugInteractions_1490373071675">https://docs.google.com/document/d/1aLMDNGgYyigKLnAw0D3Ntbd8iRechrBYWDIDWcsSAlI/edit?usp=sharing</string>
+    <string name="sem8BPChapter8PharmacokineticsBasicConsiderations_1490373071641">https://docs.google.com/document/d/125WLUBpGfRuefOgZuvSgno0MkdaHmqthdv7gqze6dGI/edit?usp=sharing</string>
+    <string name="sem8BPChapter9CompartmentModellling_14903730716548">https://docs.google.com/document/d/1i8T4_EevvMNnr9cSevJD4h6iPUfJwN5pB1-oWiurnrQ/edit?usp=sharing</string>
+    <string name="sem8BPChapter10NonlinearPharmacokinietics_1490373071657">https://docs.google.com/document/d/15sdqCCOSUAJN5Ur6uU-CmcwhwxHexHMQ-xkeGLj0mOU/edit?usp=sharing</string>
+    <string name="sem8BPChapter11BioavailabilityandBioequivalence_1490373071661">https://docs.google.com/document/d/1ACiVKL-A1dZMgPMlkKJlhzUYbwGKjz4vQ4FkTQxidWs/edit?usp=sharing</string>
+    <string name="sem8BPChapter12ApplicationsofPharmacokineticPrinciples_1490373071668">https://docs.google.com/document/d/1rbeMeLdR5fyd5oaLZJy5rR7zEzYO-Adg0Ik22txdFtw/edit?usp=sharing</string>
+    <string name="sem8BPChapter13DrugConcentrationandPharmacologicResponse_1490373071665">https://docs.google.com/document/d/1SNATWdEW0hD6847fKLaIdzPb_02zMMGyCAmCp9EFJLs/edit?usp=sharing</string>
+    <string name="sem8BPChapter14ControlledReleaseMedication_1490373071672">https://docs.google.com/document/d/1l1FTLJl5IdL9-4_OYus3hCEfsHPCBmkAV_ruJyVcu5Y/edit?usp=sharing</string>
+
+    <!-- Clinical Pharmacy -->
+    <string name="sem8CPtherapeuticdrugmonitoring">https://docs.google.com/presentation/d/1eRGUJmMcD-Phub1SK1CC5rDyXh6ZnmEhMyT0EhCqi7U/edit?usp=sharing</string>
+    <string name="sem8CPTherapeuticDrugMonitoring1">https://drive.google.com/file/d/1pCOu_DdyAJq93HZRVzoJihb4M8atI6rF/view?usp=sharing</string>
+    <string name="sem8CPPrinciplesofdrugtherapyinpregnancy">https://docs.google.com/document/d/1AfgruOONiJPj9tlvTe7zWjkoPEW5CQP-DffvolJBQRk/edit?usp=sharing</string>
+    <string name="sem8CPPharmacovigilance3May2017">https://docs.google.com/document/d/1J5tJy4gpUqcYlABV56Omp1hLejGGQAUTqRwizuSH3aM/edit?usp=sharing</string>
+    <string name="sem8CPpediatrictherapy">https://docs.google.com/presentation/d/1va_FY6Lm02k72b3qI-U5ikFhZUfXFWQziZAnKgmq7pQ/edit?usp=sharing</string>
+    <string name="sem8CPpediatricdrugstherapy">https://docs.google.com/presentation/d/12xLrKV0nHyxLbZVbMrx6hZd05rqRzlUS0khXTY_yHtA/edit?usp=sharing</string>
+    <string name="sem8CPPatientcounselling1">https://docs.google.com/document/d/1v5ScZcpXcntzLh3sMnnUvrf_JGLKonZZ_4otyRHLT4o/edit?usp=sharing</string>
+    <string name="sem8CPPatientCompilance">https://drive.google.com/file/d/1DeFp1LRrPmRuQAyTG1k9fFGfamweJ6F0/view?usp=sharing</string>
+    <string name="sem8CPIntroductiontoClinicalPharmacy">https://drive.google.com/file/d/1Sb04BCH-RW0IVOR2J-wT0zDS9YH0XTLY/view?usp=sharing</string>
+    <string name="sem8CPintrotodrugs">https://docs.google.com/presentation/d/1T3ANiq7RGBc5ZxcAV5rPFAPcBZ911iPdZyWqqy4MBzM/edit?usp=sharing</string>
+    <string name="sem8CPichintro">https://docs.google.com/presentation/d/1NB3oYWrdr7hyk-ojQp6amzf07Y4YxZjUVPbb-fcud_c/edit?usp=sharing</string>
+    <string name="sem8CPICHGCPandEthicscomittee">https://docs.google.com/document/d/1EHIuKPoGBZwoDa-WWenAhcsav4Z0tcJlNoLBU5ovj44/edit?usp=sharing</string>
+    <string name="sem8CPFinalGlossaryoftermsinClinicalresearch">https://docs.google.com/document/d/1gGx_WFOAPYiyFqys1ov6wfNuEbPhWyabaOC0Q7EE9mQ/edit?usp=sharing</string>
+    <string name="sem8CPdrugsusedinpregnancy">https://docs.google.com/presentation/d/1vdlJie644s7XBpLlZW9bBJEm3C7L5bY0DbvAcp4JwNA/edit?usp=sharing</string>
+    <string name="sem8CPdrugsusedingeritrics">https://drive.google.com/file/d/1Z0KiDKwDQ0Lv0tnB29PaD0S4ckdL74Uz/view?usp=sharing</string>
+    <string name="sem8CPdrugstherapyin">https://docs.google.com/presentation/d/1zlP2Sy8jwPFuYbhlKQmZN9V6Uo2DSGM3Ncq-_ktlYkU/edit?usp=sharing</string>
+    <string name="sem8CPDrugInteractions">https://docs.google.com/presentation/d/1Qz5ebAULAGqILyAtRU6GP-L678cHHxyCXtJ_Sc_S1DI/edit?usp=sharing</string>
+    <string name="sem8CPDrugDiscoveryDevelopment16">https://docs.google.com/presentation/d/1QprBjJtgnNfqmCggurNGpB_nax9-zGF4STeAf7ljIGw/edit?usp=sharing</string>
+    <string name="sem8CPCompl1">https://docs.google.com/presentation/d/1Lx8TUzlSnr8hltMljxfB7QPJbbunG6plfI2ArwV96To/edit?usp=sharing</string>
+    <string name="sem8CPclinicaltrials">https://drive.google.com/file/d/1cFdgRouhf5Mew0NfSSRTl9UcQYGo21jV/view?usp=sharing</string>
+    <string name="sem8CPclinicaltrialshistory">https://docs.google.com/presentation/d/1HWzUoDCv4TJrH8J80_nai0cJx3rjdbvKh7l7GOs5hnI/edit?usp=sharing</string>
+    <string name="sem8CPclinicalpharmacy">https://docs.google.com/presentation/d/1_iFWtXIlwsBDehdSGQJ1WGYG2vCeOgxyrPqIgEWQamY/edit?usp=sharing</string>
+    <string name="sem8CPclinicalpharma">https://docs.google.com/presentation/d/13NRnrDhcIFQM3qsG8no2nuOKXmpNjpcrPVbX0gILzmk/edit?usp=sharing</string>
+    <string name="sem8CPClinicalADR">https://docs.google.com/presentation/d/15wxs0myMvLeaf6sxYOLd-RM5hO_lqS1rj4v3Cuq-cOI/edit?usp=sharing</string>
+    <string name="sem8CPBA_BE">https://docs.google.com/presentation/d/1icY7r-NOFIPHlp3uBk1sMYhVg6qiw9B2RgvS4ki5UQA/edit?usp=sharing</string>
+    <string name="sem8CPadversedrugreaction">https://docs.google.com/presentation/d/1cXBxCf6Ixecncutobgcoy-qevli_5nyWJkDQa5Svwjk/edit?usp=sharing</string>
+    <string name="sem8CPADRmonitoring">https://drive.google.com/file/d/12rGhbYhkYIbCSz6rczjd5Oisu7b6NvYe/view?usp=sharing</string>
+
+
+</resources>
