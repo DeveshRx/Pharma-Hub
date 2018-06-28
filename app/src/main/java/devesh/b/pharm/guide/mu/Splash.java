@@ -2,52 +2,50 @@ package devesh.b.pharm.guide.mu;
 
 /* B.Pharm Guide App is Written & Developed by Devesh Chaushari
 
-*/
+ */
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 public class Splash extends Activity {
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		
-		super.onCreate(savedInstanceState);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
 
-		setContentView(R.layout.splashscreen);
-	//	ActionBar actionBar = getActionBar();
-	//	actionBar.hide();
-		
-	
+        super.onCreate(savedInstanceState);
 
-		Thread background = new Thread() {
-			public void run() {
+        setContentView(R.layout.splashscreen);
+        //	ActionBar actionBar = getActionBar();
+        //	actionBar.hide();
 
-				try {
-					// Thread will sleep for 5 seconds
-					sleep(1 * 1000);
 
-					// After 5 seconds redirect to another intent
-				
-				    Intent i = new Intent(getBaseContext(), home.class);
-					startActivity(i);
+        Thread background = new Thread() {
+            public void run() {
 
-					// Remove activity
-					finish();
+                try {
+                    // Thread will sleep for 5 seconds
+                    sleep(2 * 1000);
 
-				} catch (Exception e) {
+                    // After 5 seconds redirect to another intent
 
-				}
-			}
-		};
+                    Intent i = new Intent(getBaseContext(), MainActivity.class);
+                    startActivity(i);
 
-		// start thread
-		background.start();
+                    // Remove activity
+                    finish();
 
-	}
-	
+                } catch (Exception e) {
+
+                }
+            }
+        };
+
+        // start thread
+        background.start();
+
+    }
+
 }
 
 

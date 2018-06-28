@@ -1,1 +1,1 @@
-include ':app', ':Beta', ':instantapp', ':app1'
+include ':app', ':Premium'
