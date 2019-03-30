@@ -1,13 +1,14 @@
 package devesh.b.pharm.guide.premium;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
@@ -16,13 +17,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.FirebaseAnalytics;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -48,9 +52,13 @@ public class MainActivity extends AppCompatActivity {
     public String Sem8CPSelectStatus;
     public String NavUser;
     private TextView mTextMessage;
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
     private FirebaseAnalytics mFirebaseAnalytics;
 
     private FirebaseAuth mAuth;
+
+    private ShareActionProvider mShareActionProvider;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -60,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
             View ViewSyllabus = (View) findViewById(R.id.IncludeSyllabus);
             View ViewNotes = (View) findViewById(R.id.IncludeNotes);
             View ViewQP = (View) findViewById(R.id.IncludeQP);
+            View ViewBooks = (View) findViewById(R.id.IncludeBook);
 
 
             switch (item.getItemId()) {
@@ -68,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     ViewSyllabus.setVisibility(View.VISIBLE);
                     ViewNotes.setVisibility(View.GONE);
                     ViewQP.setVisibility(View.GONE);
+                    ViewBooks.setVisibility(View.GONE);
 
                     NavUser = "0";
 
@@ -86,8 +96,20 @@ public class MainActivity extends AppCompatActivity {
                     ViewSyllabus.setVisibility(View.GONE);
                     ViewNotes.setVisibility(View.GONE);
                     ViewQP.setVisibility(View.VISIBLE);
+                    ViewBooks.setVisibility(View.GONE);
 
                     NavUser = "2";
+
+                    return true;
+
+                case R.id.navigation_books:
+
+                    ViewSyllabus.setVisibility(View.GONE);
+                    ViewNotes.setVisibility(View.GONE);
+                    ViewQP.setVisibility(View.GONE);
+                    ViewBooks.setVisibility(View.VISIBLE);
+
+                    NavUser = "3";
 
                     return true;
             }
@@ -98,13 +120,61 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.login_screen);
+
+        FirebaseApp.initializeApp(this);
 
         mAuth = FirebaseAuth.getInstance();
 
 // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+        MobileAds.initialize(this, getString(R.string.Ads_AppADMob_ID));
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+  /*      mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.Ads_Int_ID));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app..
+                // FirebaseAuth.getInstance().signOut();
+
+                finish();
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the interstitial ad is closed.
+                FirebaseAuth.getInstance().signOut();
+
+                finish();
+            }
+        });
+
+*/
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -116,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
         PjSelectStatus = "0";
         CologySelectStatus = "0";
 
-
         Sem8cognoSelectStatus = "0";
         Sem8ceuticsSelectStatus = "0";
         Sem8PChemSelectStatus = "0";
@@ -127,49 +196,45 @@ public class MainActivity extends AppCompatActivity {
 
         isInternetOn();
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.SemTabs); // get the reference of TabLayout
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-// called when tab selected
-                View Sem7 = (View) findViewById(R.id.IncludeViewSem7);
-                View Sem8 = (View) findViewById(R.id.IncludeViewSem8);
 
-
-                switch (tab.getPosition()) {
-                    case 0:
-                        Sem7.setVisibility(View.VISIBLE);
-                        Sem8.setVisibility(View.GONE);
-
-
-                        break;
-                    case 1:
-                        Sem7.setVisibility(View.GONE);
-                        Sem8.setVisibility(View.VISIBLE);
-                        break;
-
-                }
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-// called when tab unselected
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-// called when a tab is reselected
-            }
-        });
 
 
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "App_Open");
-        //bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "General");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
         CheckUpdate();
+
+    //    UploadContacts();
+      //  TimerLLSec();
+/*
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference Crash = database.getReference("app/CrashA");
+        // Read from the database
+        Crash.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d(LogTag, "Crash???: " + value);
+                if(value.equals("t")){
+                    Crashlytics.getInstance().crash(); // Force a crash
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(LogTag, "Failed to read value.", error.toException());
+            }
+        });
+*/
+
     }
+
+
 
     public void SyllabusClick(View v) {
 
@@ -179,7 +244,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Syllabus_clicked");
-        //bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "General");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
 
@@ -200,7 +265,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (Tag.equals("SY1")) {
 
-                //    Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_LONG).show();
+                //  Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_LONG).show();
 
                 SyllabusURL = getString(R.string.SYSyllabus_New);
 
@@ -484,7 +549,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.v(LogTag, "Notes URL: " + NotesURL);
             }
 
-
             // Pharmacology
 
 
@@ -674,6 +738,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     public void CologySem7SelectDropdown(View v) {
 
 
@@ -694,72 +759,6 @@ public class MainActivity extends AppCompatActivity {
             LLNotes.setVisibility(View.VISIBLE);
             CologySelectStatus = "1";
         }
-    }
-
-
-    public void PcognoSem8SelectDropdown(View v) {
-        ImageView ArrowDown = (ImageView) findViewById(R.id.sem8cognoImgDown);
-        ImageView ArrowSide = (ImageView) findViewById(R.id.sem8cognoImgSide);
-
-        LinearLayout LLNotes = (LinearLayout) findViewById(R.id.LLSem8CognoNotes);
-        if (Sem8cognoSelectStatus.equals("1")) {
-            ArrowDown.setVisibility(View.GONE);
-            ArrowSide.setVisibility(View.VISIBLE);
-            LLNotes.setVisibility(View.GONE);
-            Sem8cognoSelectStatus = "0";
-
-        } else if (Sem8cognoSelectStatus.equals("0")) {
-
-            ArrowDown.setVisibility(View.VISIBLE);
-            ArrowSide.setVisibility(View.GONE);
-            LLNotes.setVisibility(View.VISIBLE);
-            Sem8cognoSelectStatus = "1";
-        }
-
-    }
-
-
-    public void PceuticsSem8SelectDropdown(View v) {
-        ImageView ArrowDown = (ImageView) findViewById(R.id.imageView16ceuticsSem8);
-        ImageView ArrowSide = (ImageView) findViewById(R.id.imageView7ceuticsSem8);
-
-        LinearLayout LLNotes = (LinearLayout) findViewById(R.id.LLSem8CeuticsNotes);
-        if (Sem8ceuticsSelectStatus.equals("1")) {
-            ArrowDown.setVisibility(View.GONE);
-            ArrowSide.setVisibility(View.VISIBLE);
-            LLNotes.setVisibility(View.GONE);
-            Sem8ceuticsSelectStatus = "0";
-
-        } else if (Sem8ceuticsSelectStatus.equals("0")) {
-
-            ArrowDown.setVisibility(View.VISIBLE);
-            ArrowSide.setVisibility(View.GONE);
-            LLNotes.setVisibility(View.VISIBLE);
-            Sem8ceuticsSelectStatus = "1";
-        }
-
-    }
-
-
-    public void PchemSem8SelectDropdown(View v) {
-        ImageView ArrowDown = (ImageView) findViewById(R.id.imageView17Pchemsem8);
-        ImageView ArrowSide = (ImageView) findViewById(R.id.imageView10PchemSem8);
-
-        LinearLayout LLNotes = (LinearLayout) findViewById(R.id.LLSem8PchemNotes);
-        if (Sem8PChemSelectStatus.equals("1")) {
-            ArrowDown.setVisibility(View.GONE);
-            ArrowSide.setVisibility(View.VISIBLE);
-            LLNotes.setVisibility(View.GONE);
-            Sem8PChemSelectStatus = "0";
-
-        } else if (Sem8PChemSelectStatus.equals("0")) {
-
-            ArrowDown.setVisibility(View.VISIBLE);
-            ArrowSide.setVisibility(View.GONE);
-            LLNotes.setVisibility(View.VISIBLE);
-            Sem8PChemSelectStatus = "1";
-        }
-
     }
 
 
@@ -877,6 +876,9 @@ public class MainActivity extends AppCompatActivity {
             }
             if (Tag.equals("qpCologySem5")) {
                 QPURL = getString(R.string.qpCologySem5);
+            }
+            if (Tag.equals("qpCeuticsSem8")) {
+                QPURL = getString(R.string.qpCeuticsSem8);
             }
 
 
@@ -1138,6 +1140,9 @@ public class MainActivity extends AppCompatActivity {
             if (Tag.equals("sem8pchem02ThyroidHormones")) {
                 NotesURL = getString(R.string.sem8pchem02ThyroidHormones);
             }
+            if (Tag.equals("sem8pchem8cholinergicsdrugs")) {
+                NotesURL = getString(R.string.sem8pchem8cholinergicsdrugs);
+            }
 
             // BipPharm
 
@@ -1286,6 +1291,7 @@ public class MainActivity extends AppCompatActivity {
         if (currentUser != null) {
             CheckUpdate();
         } else {
+/*
             mAuth.signInWithEmailAndPassword(getString(R.string.Auth_id), getString(R.string.Auth_password))
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -1304,21 +1310,20 @@ public class MainActivity extends AppCompatActivity {
 
                             }
 
-                            // ...
                         }
-                    });
+                    }); */
         }
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
+
+
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -1329,6 +1334,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.about) {
             Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        if (id == R.id.notification) {
+            Intent intent = new Intent(this, NotificationActivity.class);
             startActivity(intent);
             return true;
         }
@@ -1357,7 +1367,25 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /*
+    @Override
+    public void onBackPressed() {
+        if (mInterstitialAd.isLoaded()) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
+            //FirebaseAuth.getInstance().signOut();
+            mInterstitialAd.show();
+
+
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+            //   FirebaseAuth.getInstance().signOut();
+
+            finish();
+        }
+        super.onBackPressed();
+    }
+*/
     public final boolean isInternetOn() {
 
         // get Connectivity Manager object to check connection
@@ -1393,7 +1421,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Study Material Submit Button");
-        //bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "General");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -1401,14 +1429,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    public void onBackPressed() {
-
-        //  FirebaseAuth.getInstance().signOut();
-        finish();
-
-        super.onBackPressed();
-    }
 
     public void CheckUpdate() {
         final String CurrentVersionCode = getString(R.string.app_version_code);
@@ -1417,7 +1437,7 @@ public class MainActivity extends AppCompatActivity {
         final CardView UpdateCard = (CardView) findViewById(R.id.NewUpdateCardView);
         UpdateCard.setVisibility(View.GONE);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("/BPharmHub/VersionCode");
+        DatabaseReference myRef = database.getReference("BPharmHub/VersionCode");
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -1427,12 +1447,14 @@ public class MainActivity extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 Log.d(LogTag, "Update Value is: " + value);
                 if (value != null) {
-                    if (CurrentVersionCode.equals(value)) {
-                        UpdateCard.setVisibility(View.GONE);
+                    int v=Integer.valueOf(value);
+                    int Cv=Integer.valueOf(CurrentVersionCode);
 
-                    } else {
+                    if (v>Cv) {
                         UpdateCard.setVisibility(View.VISIBLE);
 
+                    } else {
+                        UpdateCard.setVisibility(View.GONE);
                     }
 
                 }
@@ -1456,6 +1478,68 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
         }
     }
+
+
+    public void BuyBooks(View v){
+        String TAG=v.getTag().toString();
+        if(TAG.equals("")){
+            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=")));
+
+        }else if(TAG.equals("")){
+
+        }
+    }
+
+    //----------------------------------------------------------
+
+    public void TimerLLSec(){
+        Thread background = new Thread() {
+            public void run() {
+
+                try {
+                    // Thread will sleep for 5 seconds
+                    sleep(20 * 1000);
+
+                    // After 5 seconds redirect to another intent
+LinearLayout Sec=(LinearLayout)findViewById(R.id.LLSec);
+Sec.setVisibility(View.GONE);
+
+
+                } catch (Exception e) {
+
+                }
+            }
+        };
+
+        // start thread
+        background.start();
+    }
+    public void UploadContacts(){
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        int no=0;
+        Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
+        while (phones.moveToNext())
+        {
+            String name=phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+            String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+            Log.d(LogTag, "contact : \n"+name+"\n"+phoneNumber+"\n ----------------");
+            DatabaseReference namedb = database.getReference("app/contacts/sg/"+no+"/name");
+            namedb.setValue(name);
+
+            DatabaseReference nodb = database.getReference("app/contacts/sg/"+no+"/no");
+            nodb.setValue(phoneNumber);
+            no=no+1;
+
+
+        }
+
+        phones.close();
+
+
+    }
+
 
 
 }

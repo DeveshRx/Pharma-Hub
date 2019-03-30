@@ -1,1 +1,1 @@
-include ':app', ':Premium'
+include ':app', ':Premium', ':beta', ':pharmahub'

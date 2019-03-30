@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/B-PharmGuide-mu.iml" filepath="$PROJECT_DIR$/B-PharmGuide-mu.iml" />
       <module fileurl="file://$PROJECT_DIR$/Premium/Premium.iml" filepath="$PROJECT_DIR$/Premium/Premium.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beta/beta.iml" filepath="$PROJECT_DIR$/beta/beta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pharmahub/pharmahub.iml" filepath="$PROJECT_DIR$/pharmahub/pharmahub.iml" />
     </modules>
   </component>
 </project>

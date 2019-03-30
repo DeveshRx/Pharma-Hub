@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "377416678462",
+    "firebase_url": "https://ephrinelab.firebaseio.com",
+    "project_id": "ephrinelab",
+    "storage_bucket": "ephrinelab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377416678462:android:435c6b4f39666b61",
+        "android_client_info": {
+          "package_name": "devesh.b.pharm.guide.mu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377416678462-548bh8n0uvm9st17qeilhvhveddcvq3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCESD45mGj7_y2lFlkE0Z1h60lf-vKYis"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377416678462:android:8376ae49529f4081",
+        "android_client_info": {
+          "package_name": "ephrine.apps.xnofriends"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377416678462-tlpo1j4crc1g2co37i1voifin1pjteec.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ephrine.apps.xnofriends",
+            "certificate_hash": "cba7d35e5efdba1429c02b60642e66e12f29e332"
+          }
+        },
+        {
+          "client_id": "377416678462-548bh8n0uvm9st17qeilhvhveddcvq3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCESD45mGj7_y2lFlkE0Z1h60lf-vKYis"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377416678462-548bh8n0uvm9st17qeilhvhveddcvq3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

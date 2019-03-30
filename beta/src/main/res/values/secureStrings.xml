@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="Auth_id">bpharm.app@ephrine.in</string>
+    <string name="Auth_password">123456789</string>
+
+    <!-- Ads ID -->
+    <!-- Test IDs-->
+    <string name="Ads_AppADMob_ID">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="Ads_Banner_ID">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="Ads_Banner_ID1">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="Ads_Int_ID">ca-app-pub-3940256099942544/1033173712</string>
+
+    <!-- Original ADMob IDs
+    <string name="Ads_AppADMob_ID">ca-app-pub-6702661245453687~6086706651</string>
+    <string name="Ads_Banner_ID">ca-app-pub-6702661245453687/1937964650</string>
+    <string name="Ads_Banner_ID1">ca-app-pub-6702661245453687/3414697859</string>
+    <string name="Ads_Int_ID">ca-app-pub-6702661245453687/7563439851</string>
+-->
+
+</resources>

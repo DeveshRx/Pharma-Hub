@@ -39,16 +39,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Premium Edition"
-                    android:textColor="@android:color/holo_orange_light"
-                    android:textStyle="bold" />
+                    android:text="@string/app_version"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/app_version"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:text="Premium Version"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="wrap_content"

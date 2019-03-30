@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+<item android:title="Main Menu">
+    <menu>
+
+        <group android:checkableBehavior="single">
+            <item
+                android:id="@+id/navigation_home"
+                android:icon="@drawable/ic_home_black_24dp"
+                android:title="Study Notes" />
+
+            <item
+                android:id="@+id/navigation_syllabus"
+                android:icon="@drawable/notes_icon"
+                android:title="Syllabus" />
+
+            <item
+                android:id="@+id/navigation_questionpapers"
+                android:icon="@drawable/qp_icon"
+                android:title="Question Papers" />
+
+            <item
+                android:id="@+id/navigation_books"
+                android:icon="@drawable/qp_icon"
+                android:title="E-Books"
+                 />
+
+            <item
+                android:id="@+id/share_menu"
+                android:icon="@drawable/share"
+                android:title="Share with Friends"
+                android:visible="true" />
+
+
+
+            <item
+                android:id="@+id/about_menu"
+                android:icon="@drawable/abouticon"
+                android:title="About"
+                android:visible="true" />
+
+            <item
+                android:id="@+id/navigation_feedback"
+                android:icon="@drawable/ic_feedback_black_50dp"
+                android:title="Feedback"
+                android:visible="true" />
+
+            <item
+                android:id="@+id/navigation_buypro"
+                android:icon="@drawable/ic_do_not_disturb_black_50dp"
+                android:title="Disable Ads !!"
+                />
+        </group>
+
+    </menu>
+</item>
+
+    <item android:title="My Account"
+        android:visible="false">
+        <menu>
+            <group>
+                <item
+                    android:id="@+id/myprofile"
+                    android:icon="@drawable/qp_icon"
+                    android:title="Profile"
+                 />
+            </group>
+        </menu>
+    </item>
+</menu>
