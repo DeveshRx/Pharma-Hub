@@ -61,10 +61,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -231,8 +236,19 @@ public class HomeActivity extends AppCompatActivity
         ChemBooksList = new ArrayList<>();
        // lv = (ListView) findViewById(R.id.list);
 
-        new GetContacts().execute();
+    //    new GetContacts().execute();
 
+        try {
+            //  Block of code to try
+            OkHttpGet example = new OkHttpGet();
+            String response = example.run("http://ephrine.github.io/B-PharmGuide-mu/app_files/books.json");
+            System.out.println(response);
+            Log.d(TAG, "\n------------- \nonCreate:\n "+response);
+
+        }
+        catch(Exception e) {
+            //  Block of code to handle errors
+        }
 
     }
 
@@ -1585,6 +1601,7 @@ if(EBookListDownloaded){
 
 
 
+
     private class GetContacts extends AsyncTask<Void, Void, Void> {
         @Override
         protected void onPreExecute() {
@@ -1595,9 +1612,12 @@ if(EBookListDownloaded){
 
         @Override
         protected Void doInBackground(Void... arg0) {
+
+
+            //----
             HttpHandler sh = new HttpHandler();
             // Making a request to url and getting response
-            String url = "https://raw.githubusercontent.com/chinmayjk97/wallpaper-json/gh-pages/books";
+            String url = "http://ephrine.github.io/B-PharmGuide-mu/app_files/books.json";
             String jsonStr = sh.makeServiceCall(url);
 
             Log.e(TAG, "Response from url: " + jsonStr);
