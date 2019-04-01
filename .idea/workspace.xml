@@ -27,7 +27,7 @@
     <session id="-803808782">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="44" />
+          <entry key="project.closed" value="45" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
@@ -751,6 +751,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21692">
           <caret line="1329" column="16" lean-forward="true" selection-start-line="1329" selection-start-column="16" selection-end-line="1329" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
