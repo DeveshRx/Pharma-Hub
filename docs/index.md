@@ -3,7 +3,7 @@ title: B.Pharm Hub
 ---
 
 
-![](https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png")(https://ephrine.github.io/B-PharmGuide-mu)
+![](https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png)(https://ephrine.github.io/B-PharmGuide-mu)
 
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
