@@ -8,12 +8,12 @@ All in One App for pharmacy students, to stay up-to-date with latest syllabus, S
 <br><br>
 <b>Features:</b>
 <br>
-*   Contains Latest Syllabus of B.pharm (for Mumbai University only).
-*   Get Study notes for every subjects included in B.Pharm.
-*   Subject notes available in PPT, PDF, Doc.
-*   View Previous year Question Papers.
-*   upload your personal study notes to increase collection of notes.
-   More are Coming soon........
+*   Contains Latest Syllabus of B.pharm (for Mumbai University only).<br>
+*   Get Study notes for every subjects included in B.Pharm.<br>
+*   Subject notes available in PPT, PDF, Doc.<br>
+*   View Previous year Question Papers.<br>
+*   upload your personal study notes to increase collection of notes.<br>
+   More are Coming soon........<br>
 <br><br>
 
 <i>Note: Made for Mumbai university Students of B.Pharmacy</i>
@@ -22,7 +22,7 @@ All in One App for pharmacy students, to stay up-to-date with latest syllabus, S
 <hr>
 
 
-<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="300" height="250"> </a>
+<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="400" height="250"> </a>
 <br>
 <br>
 <h2><a href="www.google.com">Download E-Book Plugin</a></h2>
