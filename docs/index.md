@@ -1,5 +1,5 @@
 ---
-title: Ephrine Apps
+title: B.Pharm Hub
 ---
 
 ![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
