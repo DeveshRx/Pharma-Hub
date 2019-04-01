@@ -2,7 +2,7 @@
 title: B.Pharm Hub
 ---
 
-![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
+![](https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png)
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
