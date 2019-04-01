@@ -1,12 +1,10 @@
 ---
 title: B.Pharm Hub
 ---
-<html><head></head><body>
-<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png"> </a>
 
-</body></html>
 
-![](https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png)
+![](https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png")(https://ephrine.github.io/B-PharmGuide-mu)
+
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
