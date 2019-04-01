@@ -1,6 +1,8 @@
 ---
-title: Ephrine Apps
+title: B.Pharm Hub
 ---
+
+![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
 
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
