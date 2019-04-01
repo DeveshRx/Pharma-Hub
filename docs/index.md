@@ -22,7 +22,7 @@ _Note: Made for Mumbai university Students of B.Pharmacy_
 <hr>
 
 
-<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="100" height="50"> </a>
+<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="300" height="250"> </a>
 <br>
 
 # [](#header-2)<a href="www.google.com">Download E-Book Plugin</a>
