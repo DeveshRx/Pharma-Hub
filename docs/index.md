@@ -29,7 +29,7 @@ All in One App for pharmacy students, to stay up-to-date with latest syllabus, S
 <br>
 <br>
 -----------------<br>
-<b>Bug Report :</b> http://goo.gl/forms/K5o2cr0cxk <br>
+<b>Bug Report :</b><a href="http://goo.gl/forms/K5o2cr0cxk">http://goo.gl/forms/K5o2cr0cxk</a><br>
 if there is any problem with app submit a bug report instead of giving low rating <br>
 ------------------- <br>
 <br>
