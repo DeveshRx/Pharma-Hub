@@ -5,34 +5,35 @@ title: B.Pharm Hub
 
 All in One App for pharmacy students, to stay up-to-date with latest syllabus, Study notes & study material for b.pharmacy course of Mumbai University. This is must have app for every students and teachers for quick access to study.
 
-<br>
+<br><br>
 <b>Features:</b>
 <br>
-* Contains Latest Syllabus of B.pharm (for Mumbai University only).
-* Get Study notes for every subjects included in B.Pharm.
-* Subject notes available in PPT, PDF, Doc.
-* View Previous year Question Papers.
-* upload your personal study notes to increase collection of notes.
+*   Contains Latest Syllabus of B.pharm (for Mumbai University only).
+*   Get Study notes for every subjects included in B.Pharm.
+*   Subject notes available in PPT, PDF, Doc.
+*   View Previous year Question Papers.
+*   upload your personal study notes to increase collection of notes.
    More are Coming soon........
-<br>
+<br><br>
 
-_Note: Made for Mumbai university Students of B.Pharmacy_
-
+<i>Note: Made for Mumbai university Students of B.Pharmacy</i>
+<br><br>
 
 <hr>
 
 
 <a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="300" height="250"> </a>
 <br>
-
-# [](#header-2)<a href="www.google.com">Download E-Book Plugin</a>
+<br>
+<h2><a href="www.google.com">Download E-Book Plugin</a></h2>
+<br>
 <br>
 -----------------<br>
 <b>Bug Report :</b> http://goo.gl/forms/K5o2cr0cxk <br>
 if there is any problem with app submit a bug report instead of giving low rating <br>
 ------------------- <br>
-
-
+<br>
+<hr>
 </body></html>
 
 
