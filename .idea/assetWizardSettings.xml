@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/D:/Android_Development/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_feedback_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/D:/Android_Development/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_account_balance_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -34,7 +34,7 @@
                         <option name="values">
                           <map>
                             <entry key="height" value="50" />
-                            <entry key="outputName" value="ic_feedback_black_50dp" />
+                            <entry key="outputName" value="ic_account_balance_black_50dp" />
                             <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="C:\Users\Devesh" />
                             <entry key="width" value="50" />

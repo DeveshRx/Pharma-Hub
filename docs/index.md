@@ -2,6 +2,7 @@
 title: Ephrine Apps
 ---
 
+![](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
