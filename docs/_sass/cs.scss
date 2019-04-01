@@ -106,9 +106,8 @@ a {
 }
 
 .page-header {
-  color: $header-heading-color;
-  text-align: center;
-  background-color: $header-bg-color;
+   text-align: center;
+
   background-image: "https://ephrine.github.io/B-PharmGuide-mu/assets/header.jpg";
 
   @include large {
