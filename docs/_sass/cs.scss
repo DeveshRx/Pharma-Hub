@@ -108,7 +108,7 @@ a {
 .page-header {
    text-align: center;
 
-  background-image: "https://ephrine.github.io/B-PharmGuide-mu/assets/header.jpg";
+  background-image: url("https://ephrine.github.io/B-PharmGuide-mu/assets/header.jpg");
 
   @include large {
     padding: 5rem 6rem;
