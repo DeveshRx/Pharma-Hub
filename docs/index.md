@@ -18,9 +18,9 @@ All in One App for pharmacy students, to stay up-to-date with latest syllabus, S
 <i>Note: Made for Mumbai university Students of B.Pharmacy</i>
 <br>
 <hr>
-<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="350" height="50"></a>
+<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="350" height="150"></a>
 <br>
-<h2><a href="www.google.com">Download E-Book Plugin</a></h2><br><i>Essential to Read Pharmaacy & Medical E-Books in App </i><br>
+<p><h2><a href="www.google.com">Download E-Book Plugin</a></h2><br><i>Plugin is Essential to Read Pharmaacy & Medical E-Books in App </i><br></p>
 <br>
 -----------------<br>
 <b>Bug Report :</b><a href="http://goo.gl/forms/K5o2cr0cxk">http://goo.gl/forms/K5o2cr0cxk</a><br>
