@@ -22,7 +22,7 @@ All in One App for pharmacy students, to stay up-to-date with latest syllabus, S
 <hr>
 
 
-<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="350" height="250"> </a>
+<a href="https://ephrine.github.io/B-PharmGuide-mu/"><img src="https://ephrine.github.io/B-PharmGuide-mu/assets/google-play-badge.png" width="350" height="150"> </a>
 <br>
 <br>
 <h2><a href="www.google.com">Download E-Book Plugin</a></h2>
