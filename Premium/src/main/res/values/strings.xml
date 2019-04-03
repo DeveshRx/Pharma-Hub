@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">B.Pharm Hub</string>
+    <string name="app_name">Pharma Hub</string>
 
-    <string name="app_version">Version 2.0.2</string>
-    <string name="app_version_code">11</string>
+    <string name="app_version">Version 2.1.0</string>
+    <string name="app_version_code">15</string>
 
     <string name="App_desc">All in One App for pharmacy students, to stay up-to-date with latest syllabus of b.pharmacy course of Mumbai University. This is must have app for every students and teachers for quick reference on study portion.</string>
     <string name="feedback_form_URL">https://goo.gl/forms/IZXaxu2xzhb2R2on2</string>
@@ -12,6 +12,7 @@
     <string name="title_activity_profile">Notifications</string>
     <string name="Share_message">B.Pharm Study Notes, Syllabus &amp; Previous year Question Papers and much more available in B.Pharm Hub App. \n \n
         Free Download @ https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu</string>
+    <string name="ebook_msg">To View E-Books for Study, you will need to download Plugin from our Website\n \nhttps://pharmahub.ephrine.in \n</string>
 
 
     <!--Syllabus URL -->
@@ -22,9 +23,10 @@
     <string name="SYSyllabus_New">https://drive.google.com/file/d/10q2MKhwk4316aoEW19UTYXcnRg0HLQL_/view?usp=sharing</string>
 
     <string name="TYSyllabus_OLD">https://drive.google.com/file/d/1Npd786vNAQx7gyTZr3GxGs6mTBBvDcfG/view?usp=sharing</string>
-    <string name="TYSyllabus_New">0</string>
+    <string name="TYSyllabus_New">https://drive.google.com/file/d/127e-wmEAlw4jcZ5vaH2PbydRRY4-mcjc/view?usp=sharing</string>
 
     <string name="FinalSyllabus_OLD">https://drive.google.com/file/d/1f9gnkTO3esrE05PO4KSq7cGyD0uf5G5s/view?usp=sharing</string>
+    <string name="FinalSyllabus_NEW">https://drive.google.com/file/d/1fM4CVIwmC3VwqonTx2ZUmPFNu1BzRZoL/view?usp=sharing</string>
 
     <!-- Hall Ticket URL -->
 

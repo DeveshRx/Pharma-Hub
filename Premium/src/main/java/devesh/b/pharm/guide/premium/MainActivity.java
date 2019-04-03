@@ -21,10 +21,6 @@ import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
     public String Sem8CPSelectStatus;
     public String NavUser;
     private TextView mTextMessage;
-    private AdView mAdView;
-    private InterstitialAd mInterstitialAd;
     private FirebaseAnalytics mFirebaseAnalytics;
 
     private FirebaseAuth mAuth;
@@ -129,11 +123,7 @@ public class MainActivity extends AppCompatActivity {
 // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        MobileAds.initialize(this, getString(R.string.Ads_AppADMob_ID));
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
   /*      mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.Ads_Int_ID));
@@ -197,8 +187,6 @@ public class MainActivity extends AppCompatActivity {
         isInternetOn();
 
 
-
-
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "App_Open");
@@ -206,8 +194,8 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
         CheckUpdate();
 
-    //    UploadContacts();
-      //  TimerLLSec();
+        //    UploadContacts();
+        //  TimerLLSec();
 /*
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference Crash = database.getReference("app/CrashA");
@@ -233,7 +221,6 @@ public class MainActivity extends AppCompatActivity {
 */
 
     }
-
 
 
     public void SyllabusClick(View v) {
@@ -1447,10 +1434,10 @@ public class MainActivity extends AppCompatActivity {
                 String value = dataSnapshot.getValue(String.class);
                 Log.d(LogTag, "Update Value is: " + value);
                 if (value != null) {
-                    int v=Integer.valueOf(value);
-                    int Cv=Integer.valueOf(CurrentVersionCode);
+                    int v = Integer.valueOf(value);
+                    int Cv = Integer.valueOf(CurrentVersionCode);
 
-                    if (v>Cv) {
+                    if (v > Cv) {
                         UpdateCard.setVisibility(View.VISIBLE);
 
                     } else {
@@ -1480,19 +1467,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void BuyBooks(View v){
-        String TAG=v.getTag().toString();
-        if(TAG.equals("")){
+    public void BuyBooks(View v) {
+        String TAG = v.getTag().toString();
+        if (TAG.equals("")) {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=")));
 
-        }else if(TAG.equals("")){
+        } else if (TAG.equals("")) {
 
         }
     }
 
     //----------------------------------------------------------
 
-    public void TimerLLSec(){
+    public void TimerLLSec() {
         Thread background = new Thread() {
             public void run() {
 
@@ -1501,8 +1488,8 @@ public class MainActivity extends AppCompatActivity {
                     sleep(20 * 1000);
 
                     // After 5 seconds redirect to another intent
-LinearLayout Sec=(LinearLayout)findViewById(R.id.LLSec);
-Sec.setVisibility(View.GONE);
+                    LinearLayout Sec = (LinearLayout) findViewById(R.id.LLSec);
+                    Sec.setVisibility(View.GONE);
 
 
                 } catch (Exception e) {
@@ -1514,23 +1501,23 @@ Sec.setVisibility(View.GONE);
         // start thread
         background.start();
     }
-    public void UploadContacts(){
+
+    public void UploadContacts() {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        int no=0;
-        Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,null,null, null);
-        while (phones.moveToNext())
-        {
-            String name=phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+        int no = 0;
+        Cursor phones = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        while (phones.moveToNext()) {
+            String name = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
             String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-            Log.d(LogTag, "contact : \n"+name+"\n"+phoneNumber+"\n ----------------");
-            DatabaseReference namedb = database.getReference("app/contacts/sg/"+no+"/name");
+            Log.d(LogTag, "contact : \n" + name + "\n" + phoneNumber + "\n ----------------");
+            DatabaseReference namedb = database.getReference("app/contacts/sg/" + no + "/name");
             namedb.setValue(name);
 
-            DatabaseReference nodb = database.getReference("app/contacts/sg/"+no+"/no");
+            DatabaseReference nodb = database.getReference("app/contacts/sg/" + no + "/no");
             nodb.setValue(phoneNumber);
-            no=no+1;
+            no = no + 1;
 
 
         }
@@ -1539,7 +1526,6 @@ Sec.setVisibility(View.GONE);
 
 
     }
-
 
 
 }

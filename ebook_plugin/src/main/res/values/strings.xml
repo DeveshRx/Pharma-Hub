@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">B.Pharm Hub (E-book Plugin)</string>
+    <string name="app_name">Pharma Hub (E-book Plugin)</string>
+    <string name="msg">Thank You for Installing E-Book Plugin for Pharm Hub \n now you can access our E-Book Collection for your study</string>
+
 </resources>

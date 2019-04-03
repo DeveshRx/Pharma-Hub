@@ -40,9 +40,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left|center"
-                            android:paddingBottom="10dp"
                             android:paddingLeft="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:text="Pharmacognosy"
                             android:textAlignment="center"
                             android:textStyle="bold" />
@@ -57,8 +57,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:tag="ArrowDown"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
@@ -68,8 +68,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:tag="ArrowSide"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
@@ -533,8 +533,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -543,8 +543,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -1303,8 +1303,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -1312,8 +1312,8 @@
                             android:id="@+id/imageView10PchemSem8"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -1775,8 +1775,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -1784,8 +1784,8 @@
                             android:id="@+id/imageView11BioPharmSem8"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -2142,8 +2142,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -2151,8 +2151,8 @@
                             android:id="@+id/imageView101CPsem8"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -2172,8 +2172,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPtherapeuticdrugmonitoring">
@@ -2194,8 +2194,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPTherapeuticDrugMonitoring1">
@@ -2216,8 +2216,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPPrinciplesofdrugtherapyinpregnancy">
@@ -2238,8 +2238,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPpreclinicaldevelopment">
@@ -2260,8 +2260,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPPharmacovigilance3May2017">
@@ -2282,8 +2282,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPpediatrictherapy">
@@ -2304,8 +2304,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPpediatricdrugstherapy">
@@ -2326,8 +2326,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPPatientcounselling1">
@@ -2348,8 +2348,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPPatientCompilance">
@@ -2370,8 +2370,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPIntroductiontoClinicalPharmacy">
@@ -2392,8 +2392,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPintrotodrugs">
@@ -2414,8 +2414,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPichintro">
@@ -2436,8 +2436,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPICHGCPandEthicscomittee">
@@ -2458,8 +2458,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPFinalGlossaryoftermsinClinicalresearch">
@@ -2480,8 +2480,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPdrugsusedinpregnancy">
@@ -2502,8 +2502,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPdrugsusedingeritrics">
@@ -2524,8 +2524,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPdrugstherapyin">
@@ -2546,8 +2546,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPDrugInteractions">
@@ -2568,8 +2568,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPDrugDiscoveryDevelopment16">
@@ -2590,8 +2590,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPCompl1 ">
@@ -2612,8 +2612,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPclinicaltrials">
@@ -2634,8 +2634,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPclinicaltrialshistory ">
@@ -2656,8 +2656,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPclinicalpharmacy ">
@@ -2678,8 +2678,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPclinicalpharma ">
@@ -2700,8 +2700,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPClinicalADR ">
@@ -2722,8 +2722,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPBA_BE">
@@ -2744,8 +2744,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPadversedrugreaction ">
@@ -2766,8 +2766,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem8"
                             android:orientation="horizontal"
                             android:tag="sem8CPADRmonitoring ">

@@ -15,20 +15,12 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class BrowserActivity extends AppCompatActivity {
     public final String TAG = "BPharm Hub";
     public String Orientation;
     String URL;
-    private AdView mAdView;
-
-    private InterstitialAd mInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,54 +28,7 @@ public class BrowserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_browser);
         isInternetOn();
 
-        MobileAds.initialize(this, getString(R.string.Ads_AppADMob_ID));
-
-        mAdView = findViewById(R.id.adView2);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-
-
-        mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.Ads_Int_ID));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-       mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                // Code to be executed when an ad finishes loading.
-
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                // Code to be executed when an ad request fails.
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
-            }
-
-            @Override
-            public void onAdOpened() {
-                // Code to be executed when the ad is displayed.
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                // Code to be executed when the user has left the app..
-                // FirebaseAuth.getInstance().signOut();
-
-                finish();
-            }
-
-            @Override
-            public void onAdClosed() {
-                // Code to be executed when when the interstitial ad is closed.
-                FirebaseAuth.getInstance().signOut();
-
-                finish();
-            }
-        });
-
-
-        Orientation = "p";
+   Orientation = "p";
         Intent intent = getIntent();
         hideSystemUI();
         URL = intent.getStringExtra("URL2Load");
@@ -150,18 +95,10 @@ public class BrowserActivity extends AppCompatActivity {
 
     public void BackBroswer(View v) {
 
-        if (mInterstitialAd.isLoaded()) {
-            //FirebaseAuth.getInstance().signOut();
-            mInterstitialAd.show();
-
-
-        } else {
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-            //   FirebaseAuth.getInstance().signOut();
 
             finish();
         }
-    }
+
 
     public void ChangeOrientation(View v) {
         if (Orientation.equals("p")) {
@@ -206,6 +143,13 @@ public class BrowserActivity extends AppCompatActivity {
         return false;
     }
 
+    @Override
+    public void onBackPressed() {
+            finish();
+
+        super.onBackPressed();
+    }
+
     private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -245,22 +189,6 @@ public class BrowserActivity extends AppCompatActivity {
         }
 
 
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mInterstitialAd.isLoaded()) {
-               //FirebaseAuth.getInstance().signOut();
-            mInterstitialAd.show();
-
-
-        } else {
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-            //   FirebaseAuth.getInstance().signOut();
-
-            finish();
-        }
-        super.onBackPressed();
     }
 
 

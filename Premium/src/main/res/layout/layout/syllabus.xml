@@ -54,8 +54,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:id="@+id/textView52"
@@ -68,8 +68,8 @@
                                     android:id="@+id/textView93"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
                                     android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:onClick="SyllabusClick"
                                     android:tag="FY"
                                     android:text="Syllabus"
@@ -92,8 +92,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:id="@+id/textView72"
@@ -106,8 +106,8 @@
                                     android:id="@+id/textView3"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
                                     android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:onClick="SyllabusClick"
                                     android:tag="SY"
                                     android:text="Syllabus"
@@ -130,8 +130,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:id="@+id/textView2"
@@ -144,8 +144,8 @@
                                     android:id="@+id/textView35"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
                                     android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:onClick="SyllabusClick"
                                     android:tag="TY"
                                     android:text="Syllabus"
@@ -168,8 +168,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:layout_width="match_parent"
@@ -261,8 +261,8 @@
                                 android:id="@+id/textView12"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginBottom="5dp"
                                 android:layout_marginTop="5dp"
+                                android:layout_marginBottom="5dp"
                                 android:onClick="HallTicketClick"
                                 android:tag="Sem8HallTicket"
                                 android:text="Semester 8 Exam"

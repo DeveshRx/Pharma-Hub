@@ -30,13 +30,12 @@ public class NotificationActivity extends AppCompatActivity {
 
         //Toast.makeText(this, "Loading.....", Toast.LENGTH_SHORT).show();
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
-      //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        // setSupportActionBar(toolbar);
+        //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         NotificationGetTotal();
-      //  ForceCrash();
+        //  ForceCrash();
     }
-
 
 
     public void NotificationGetTotal() {
@@ -50,21 +49,21 @@ public class NotificationActivity extends AppCompatActivity {
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
                 Log.d(TAG, "Get Total Value is: " + value);
-                if(value!=null){
-                    if(value.equals("0")){
-                        TextView NoNotification=(TextView)findViewById(R.id.textViewNoNotification);
+                if (value != null) {
+                    if (value.equals("0")) {
+                        TextView NoNotification = (TextView) findViewById(R.id.textViewNoNotification);
                         NoNotification.setVisibility(View.VISIBLE);
-                    }else {
+                    } else {
 
-                        NTotal=value;
+                        NTotal = value;
                         LoadNotifications();
 
-                        TextView NoNotification=(TextView)findViewById(R.id.textViewNoNotification);
+                        TextView NoNotification = (TextView) findViewById(R.id.textViewNoNotification);
                         NoNotification.setVisibility(View.GONE);
 
                     }
-                }else {
-                    TextView NoNotification=(TextView)findViewById(R.id.textViewNoNotification);
+                } else {
+                    TextView NoNotification = (TextView) findViewById(R.id.textViewNoNotification);
                     NoNotification.setVisibility(View.VISIBLE);
 
                 }
@@ -79,7 +78,6 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
 
-
     public void LoadNotifications() {
 
 
@@ -90,11 +88,11 @@ public class NotificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(v.getTag().toString().equals("x")){
+                if (v.getTag().toString().equals("x")) {
 
 
-                }else {
-                    ContentURL=v.getTag().toString();
+                } else {
+                    ContentURL = v.getTag().toString();
 
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(ContentURL));
@@ -118,9 +116,9 @@ public class NotificationActivity extends AppCompatActivity {
             mcard.setUseCompatPadding(true);
             // mcard.setId(j);
             //mcard.setTag(No);
-               mcard.setOnClickListener(click);
+            mcard.setOnClickListener(click);
 
-            if(LLViewNotice!=null){
+            if (LLViewNotice != null) {
                 LLViewNotice.addView(mcard);
                 LinearLayout LL = new LinearLayout(this);
                 LL.setLayoutParams(new LinearLayout.LayoutParams(
@@ -166,11 +164,11 @@ public class NotificationActivity extends AppCompatActivity {
                 txNotice.setText(" ");
                 LL1.addView(txNotice);
 
-                DatabaseReference GetTitle = database.getReference("BPharmHub/notifications/"+No+"/title");
-                DatabaseReference GetNMesssage = database.getReference("BPharmHub/notifications/"+No+"/msg");
-                DatabaseReference GetContentURL = database.getReference("BPharmHub/notifications/"+No+"/url");
+                DatabaseReference GetTitle = database.getReference("BPharmHub/notifications/" + No + "/title");
+                DatabaseReference GetNMesssage = database.getReference("BPharmHub/notifications/" + No + "/msg");
+                DatabaseReference GetContentURL = database.getReference("BPharmHub/notifications/" + No + "/url");
 
-final int JJ=j;
+                final int JJ = j;
                 GetTitle.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -178,11 +176,11 @@ final int JJ=j;
                         // whenever data at this location is updated.
                         String value = dataSnapshot.getValue(String.class);
                         Log.d(TAG, "Notification Title value is: " + value);
-                        if(value!=null){
+                        if (value != null) {
                             txTitle.setText(value);
 
-                            if(JJ==1){
-                                LinearLayout LLloading=(LinearLayout)findViewById(R.id.LLLoading);
+                            if (JJ == 1) {
+                                LinearLayout LLloading = (LinearLayout) findViewById(R.id.LLLoading);
                                 LLloading.setVisibility(View.GONE);
                             }
                         }
@@ -202,7 +200,7 @@ final int JJ=j;
                         // whenever data at this location is updated.
                         String value = dataSnapshot.getValue(String.class);
                         Log.d(TAG, "Notification Msg value is: " + value);
-                        if(value!=null){
+                        if (value != null) {
                             txNotice.setText(value);
                         }
                     }
@@ -221,9 +219,9 @@ final int JJ=j;
                         // whenever data at this location is updated.
                         String value = dataSnapshot.getValue(String.class);
                         Log.d(TAG, "Notification Msg value is: " + value);
-                        if(value!=null){
+                        if (value != null) {
                             mcard.setTag(value);
-                        }else {
+                        } else {
                             mcard.setTag("x");
                         }
                     }
@@ -237,8 +235,6 @@ final int JJ=j;
 
 
             }
-
-
 
 
         }

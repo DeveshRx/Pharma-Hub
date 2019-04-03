@@ -52,9 +52,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left|center"
-                            android:paddingBottom="10dp"
                             android:paddingLeft="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:text="Pharmacognosy"
                             android:textAlignment="center"
                             android:textStyle="bold" />
@@ -69,8 +69,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:tag="ArrowDown"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
@@ -80,8 +80,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:tag="ArrowSide"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
@@ -286,8 +286,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -296,8 +296,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -708,8 +708,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -717,8 +717,8 @@
                             android:id="@+id/imageView10"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -909,8 +909,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -918,8 +918,8 @@
                             android:id="@+id/imageView11"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -1003,8 +1003,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pamanjuHPTLC">
@@ -1090,8 +1090,8 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_gravity="center"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             android:visibility="gone"
                             app:srcCompat="@drawable/arrorrdown" />
 
@@ -1099,8 +1099,8 @@
                             android:id="@+id/imageView101"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
-                            android:paddingBottom="10dp"
                             android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
                             app:srcCompat="@drawable/arrorr" />
                     </LinearLayout>
 
@@ -1121,8 +1121,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjDrugsMagicRemediesActOA">
@@ -1143,8 +1143,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjDrugsmagicremediesadvertisementAct">
@@ -1165,8 +1165,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjDPCO2013">
@@ -1187,8 +1187,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjIndianpenalcodesectionsrelatedtoPharmacy1">
@@ -1209,8 +1209,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjDPCO201320September2015">
@@ -1231,8 +1231,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjForensicPharmacyIntroductionandHistory">
@@ -1253,8 +1253,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjNarcoticDrugsandPsychotropicSubstancesAct1985">
@@ -1275,8 +1275,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjForensicPharmacyHistory5December2014">
@@ -1297,8 +1297,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjForensicpharmacyDCAPartII15January2015">
@@ -1319,8 +1319,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjFSSA2006">
@@ -1341,8 +1341,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjForensicpharmacyPharmacyAct25august2015">
@@ -1363,8 +1363,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjPatentsAct2005">
@@ -1385,8 +1385,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjForensicpharmacyPatentsAct1970">
@@ -1407,8 +1407,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjDMRactfinal">
@@ -1429,8 +1429,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjTheFactoriesAct">
@@ -1451,8 +1451,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjIndianPenalCodeIPC">
@@ -1473,8 +1473,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjMedicinalToiletPreparationsExciseDutiesAct">
@@ -1495,8 +1495,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjScheduleY">
@@ -1517,8 +1517,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjINTRODUCTIONTODRUGREGULATORYAFFAIRS">
@@ -1539,8 +1539,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjTheBombayshopsandestablishmentsact1948">
@@ -1561,8 +1561,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjForensicPharmacyMagicRemediesAct1954">
@@ -1583,8 +1583,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjForensicPharmacyExciseDutyAct">
@@ -1605,8 +1605,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginBottom="10dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
                             android:tag="sem7pjChopraandHatheeCommittee1">

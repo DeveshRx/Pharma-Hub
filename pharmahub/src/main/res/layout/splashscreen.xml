@@ -14,7 +14,7 @@
         android:layout_alignBottom="@+id/CardviewLogo"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
-        android:text="B.Pharm Hub"
+        android:text="Pharma Hub"
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textStyle="bold" />
 

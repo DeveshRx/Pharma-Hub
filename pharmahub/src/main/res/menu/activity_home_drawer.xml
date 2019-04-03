@@ -24,7 +24,7 @@
 
             <item
                 android:id="@+id/navigation_books"
-                android:icon="@drawable/qp_icon"
+                android:icon="@drawable/book_icon_menu"
                 android:title="E-Books"
                  />
 

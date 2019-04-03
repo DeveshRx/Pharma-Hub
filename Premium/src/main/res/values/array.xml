@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="array_subject_books">
+        <item>Medicinal Chemistry</item>                             <!-- 0 -->
+        <item>Anatomy, Physiology and Pathophysiology</item>         <!-- 1 -->
+        <item>Pharmaceutics</item>                                   <!-- 2 -->
+        <item>Pharmaceutical Analysis</item>                         <!-- 3 -->
+        <item>Pharmaceutical Biochemistry</item>                     <!-- 4 -->
+        <item>Physical Pharmacy</item>                              <!-- 5 -->
+        <item>Pharmacognosy</item>                                  <!-- 6 -->
+        <item>Other Books</item>                                    <!-- 7 -->
+    </array>
+
+</resources>

@@ -429,12 +429,15 @@ public class HomeActivity extends AppCompatActivity
 
             }else{
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("To View E-Books for Study, you will need to download Plugin from our Website")
+                String msg=getResources().getString(R.string.ebook_msg);
+                //String url=getResources().getString(R.string.ebook_plugin_url);
+                String url="https://pharmahub.ephrine.in";
+                builder.setMessage(msg)
                         .setIcon(R.mipmap.ic_launcher_round)
-                        .setPositiveButton("Go to", new DialogInterface.OnClickListener() {
+                        .setPositiveButton("Go to Website", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                                intent.setData(Uri.parse("https://www.ephrine.in"));
+                                intent.setData(Uri.parse(url));
                                 startActivity(intent);
 
                             }
@@ -1056,9 +1059,12 @@ dialog.dismiss();
 
 
     public void HallTicketClick(View v) {
-        String Tag = v.getTag().toString();
+
+
 
         String HallTicketURL = "0";
+        HallTicketURL = getString(R.string.AltHallTicket);
+
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Hall Ticket Clicked");
@@ -1067,19 +1073,8 @@ dialog.dismiss();
 
 
         if (isInternetOn()) {
-            if (Tag.equals("AltHallTicket")) {
-                HallTicketURL = getString(R.string.AltHallTicket);
-            }
-
-            if (Tag.equals("Sem8HallTicket")) {
-                HallTicketURL = getString(R.string.Sem8HallTicket);
-            }
-            if (Tag.equals("Sem7HallTicket")) {
-                HallTicketURL = getString(R.string.Sem7HallTicket);
-            }
-
-            Intent intent = new Intent(this, BrowserActivity.class);
-            intent.putExtra(EXTRA_MESSAGE, HallTicketURL);  //Add URL
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(HallTicketURL));
             startActivity(intent);
 
         } else {

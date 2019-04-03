@@ -31,7 +31,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="B.Pharm Hub"
+                    android:text="@string/app_name"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:textStyle="bold" />
 
@@ -47,8 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Premium Version"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textStyle="bold" />
+                    android:textColor="@android:color/holo_orange_dark" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -82,8 +81,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:onClick="VisitWebsite"
                     android:text="Vist our Website: www.Ephrine.in"
                     android:textAllCaps="false"
@@ -115,7 +114,17 @@
                         android:onClick="ClearCache"
                         android:text="Delete Cache"
                         android:textAllCaps="false" />
+
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/uninstallEbookButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:onClick="uninstallEbook"
+                    android:text="Delete E-Book Plugin" />
 
                 <Space
                     android:layout_width="match_parent"

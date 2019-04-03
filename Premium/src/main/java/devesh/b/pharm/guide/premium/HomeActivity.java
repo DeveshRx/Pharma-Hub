@@ -1,6 +1,9 @@
 package devesh.b.pharm.guide.premium;
 
+
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
@@ -9,6 +12,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
@@ -16,9 +20,14 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.ShareActionProvider;
+import android.widget.SimpleAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,11 +42,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String EXTRA_MESSAGE = "URL2Load";
-    public static final String LogTag = "Bpharm Hub ";
+    public static final String TAG = "Bpharm Hub ";
     public String PcognoSelectStatus;
     public String PceuticsSelectStatus;
     public String PchemSelectStatus;
@@ -50,22 +63,33 @@ public class HomeActivity extends AppCompatActivity
     public String Sem8BioPharmSelectStatus;
     public String Sem8CPSelectStatus;
     public String NavUser;
+    public boolean EBookListDownloaded;
+    public boolean installed;
+    ListView lv;
+    int SubSelected;
+    ArrayList<HashMap<String, String>> APPBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> AnalysisBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> BiochemBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> ChemistryBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> HPDSMBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> OthersBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> PPBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> PharmaceuticsBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> PharmacognosyBooksList = new ArrayList<HashMap<String, String>>();
     private TextView mTextMessage;
-
     private FirebaseAnalytics mFirebaseAnalytics;
-
     private FirebaseAuth mAuth;
-
     private ShareActionProvider mShareActionProvider;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        isAppInstalled("devesh.b.pharm.guide.mu.ebook");
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        EBookListDownloaded = false;
 
 // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -79,7 +103,6 @@ public class HomeActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
         //------------
 
         FirebaseApp.initializeApp(this);
@@ -89,9 +112,51 @@ public class HomeActivity extends AppCompatActivity
 // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
+
+
+  /*      mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getString(R.string.Ads_Int_ID));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                // Code to be executed when an ad finishes loading.
+
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                // Code to be executed when an ad request fails.
+                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
+            }
+
+            @Override
+            public void onAdOpened() {
+                // Code to be executed when the ad is displayed.
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                // Code to be executed when the user has left the app..
+                // FirebaseAuth.getInstance().signOut();
+
+                finish();
+            }
+
+            @Override
+            public void onAdClosed() {
+                // Code to be executed when when the interstitial ad is closed.
+                FirebaseAuth.getInstance().signOut();
+
+                finish();
+            }
+        });
+
+*/
         mTextMessage = (TextView) findViewById(R.id.message);
         //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-      //  navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //  navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         PcognoSelectStatus = "0";
         PceuticsSelectStatus = "0";
@@ -111,14 +176,14 @@ public class HomeActivity extends AppCompatActivity
         isInternetOn();
 
 
-
-
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "App_Open");
         bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "General");
         mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
         CheckUpdate();
+        LoadBooksList();
+
 
         //    UploadContacts();
         //  TimerLLSec();
@@ -132,7 +197,7 @@ public class HomeActivity extends AppCompatActivity
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                Log.d(LogTag, "Crash???: " + value);
+                Log.d(TAG, "Crash???: " + value);
                 if(value.equals("t")){
                     Crashlytics.getInstance().crash(); // Force a crash
                 }
@@ -141,10 +206,23 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(LogTag, "Failed to read value.", error.toException());
+                Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
 */
+
+
+        //ChemBooksList = new ArrayList<>();
+        // lv = (ListView) findViewById(R.id.list);
+
+        //    new GetContacts().execute();
+
+        try {
+            //  Block of code to try
+
+        } catch (Exception e) {
+            //  Block of code to handle errors
+        }
 
     }
 
@@ -157,10 +235,6 @@ public class HomeActivity extends AppCompatActivity
             super.onBackPressed();
         }
     }
-
-
-
-
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -186,6 +260,7 @@ public class HomeActivity extends AppCompatActivity
             ViewSyllabus.setVisibility(View.VISIBLE);
             ViewNotes.setVisibility(View.GONE);
             ViewQP.setVisibility(View.GONE);
+            ViewBooks.setVisibility(View.GONE);
 
             NavUser = "1";
 
@@ -200,32 +275,181 @@ public class HomeActivity extends AppCompatActivity
 
 
         } else if (id == R.id.navigation_books) {
+            isAppInstalled("devesh.b.pharm.guide.mu.ebook");
 
-            ViewSyllabus.setVisibility(View.GONE);
-            ViewNotes.setVisibility(View.GONE);
-            ViewQP.setVisibility(View.GONE);
-            ViewBooks.setVisibility(View.VISIBLE);
+            if (installed) {
 
-            NavUser = "3";
+                SubSelected = 0;
+                ViewSyllabus.setVisibility(View.GONE);
+                ViewNotes.setVisibility(View.GONE);
+                ViewQP.setVisibility(View.GONE);
+                ViewBooks.setVisibility(View.VISIBLE);
+
+                NavUser = "3";
+                lv = (ListView) findViewById(R.id.list);
+                ListAdapter adapter = new SimpleAdapter(HomeActivity.this, ChemistryBooksList,
+                        R.layout.list_item, new String[]{"book_name", "book_edition"},
+                        new int[]{R.id.email, R.id.mobile});
+                lv.setAdapter(adapter);
+                lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position,
+                                            long id) {
+
+                        Log.d(TAG, "onItemClick: \n" + position);
+                        String BName = "";
+                        String Burl = "0";
+
+                        if (SubSelected == 0) {
+                            BName = ChemistryBooksList.get(position).get("book_name");
+                            Burl = ChemistryBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 1) {
+                            BName = APPBooksList.get(position).get("book_name");
+                            Burl = APPBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 2) {
+                            BName = PharmaceuticsBooksList.get(position).get("book_name");
+                            Burl = PharmaceuticsBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 3) {
+                            BName = AnalysisBooksList.get(position).get("book_name");
+                            Burl = AnalysisBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 4) {
+                            BName = BiochemBooksList.get(position).get("book_name");
+                            Burl = BiochemBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 5) {
+                            BName = PPBooksList.get(position).get("book_name");
+                            Burl = PPBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 6) {
+                            BName = PharmacognosyBooksList.get(position).get("book_name");
+                            Burl = PharmacognosyBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 7) {
+                            BName = OthersBooksList.get(position).get("book_name");
+                            Burl = OthersBooksList.get(position).get("book_url");
+                        }
+
+                        if (Burl.contains("drive.google.com")) {
+                            Burl = Burl + "/view?usp=sharing";
+                        }
+
+                        Log.d(TAG, "onItemClick: \n" + BName + "\n" + Burl);
+                        Intent intent = new Intent(HomeActivity.this, BrowserActivity.class);
+                        intent.putExtra(EXTRA_MESSAGE, Burl);  //Add URL
+                        startActivity(intent);
+                    }
+                });
+
+                Spinner SubjectSpinner = (Spinner) findViewById(R.id.subjectspinner);
+                SubjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        int selectedItem = position; //this is your selected item
+                        if (selectedItem == 0) {
+
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, ChemistryBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        } else if (selectedItem == 1) {
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, APPBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        } else if (selectedItem == 2) {
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, PharmaceuticsBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        } else if (selectedItem == 3) {
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, AnalysisBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        } else if (selectedItem == 4) {
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, BiochemBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        } else if (selectedItem == 5) {
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, PPBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        } else if (selectedItem == 6) {
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, PharmacognosyBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        } else if (selectedItem == 7) {
+                            ListAdapter adapter = new SimpleAdapter(HomeActivity.this, OthersBooksList,
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
+                                    new int[]{R.id.email, R.id.mobile});
+                            lv.setAdapter(adapter);
+                            SubSelected = selectedItem;
+
+                        }
 
 
-        }else if(id==R.id.about_menu){
+                    }
+
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
+            } else {
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                String msg = getResources().getString(R.string.ebook_msg);
+                builder.setMessage(msg)
+                        .setIcon(R.mipmap.ic_launcher_round)
+                        .setPositiveButton("Go to Website", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                Intent intent = new Intent(Intent.ACTION_VIEW);
+                                intent.setData(Uri.parse("https://pharmahub.ephrine.in/"));
+                                startActivity(intent);
+
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+
+                dialog.show();
+
+            }
+
+
+        } else if (id == R.id.about_menu) {
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
 
-        }else if(id==R.id.share_menu){
+        } else if (id == R.id.share_menu) {
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.Share_message));
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
 
-        }else if(id==R.id.navigation_buypro){
+        } else if (id == R.id.navigation_buypro) {
             Toast.makeText(this, "Buy Ad-Free Version \n -Thank you :)", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(getString(R.string.AdFreeVersion)));
             startActivity(intent);
-        }else if(id==R.id.navigation_feedback){
+        } else if (id == R.id.navigation_feedback) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(getString(R.string.feedback_form_URL)));
             startActivity(intent);
@@ -236,7 +460,6 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
     public void SyllabusClick(View v) {
 
@@ -276,11 +499,15 @@ public class HomeActivity extends AppCompatActivity
 
             } else if (Tag.equals("TY1")) {
 
-                Toast.makeText(getApplicationContext(), "Not Available", Toast.LENGTH_LONG).show();
+
                 SyllabusURL = getString(R.string.TYSyllabus_New);
+
 
             } else if (Tag.equals("Final")) {
                 SyllabusURL = getString(R.string.FinalSyllabus_OLD);
+
+            } else if (Tag.equals("FinalNEW")) {
+                SyllabusURL = getString(R.string.FinalSyllabus_NEW);
 
             }
 
@@ -311,244 +538,244 @@ public class HomeActivity extends AppCompatActivity
             // PharmaCognosy
             if (Tag.equals("sem7cognoNutraceuticals(1)")) {
                 NotesURL = getString(R.string.sem7cognoNutraceuticals1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             if (Tag.equals("sem7cognonEUTRACEUTICALS1")) {
                 NotesURL = getString(R.string.sem7cognonEUTRACEUTICALS1);// Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             if (Tag.equals("sem7cognonaturalpesticide")) {
                 NotesURL = getString(R.string.sem7cognonaturalpesticide);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             if (Tag.equals("sem7cognocardiacglycosides")) {
                 NotesURL = getString(R.string.sem7cognocardiacglycosides);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             if (Tag.equals("sem7cognoCardiacGlycosides(1)")) {
                 NotesURL = getString(R.string.sem7cognoCardiacGlycosides1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7cognoglycosides")) {
                 NotesURL = getString(R.string.sem7cognoglycosides);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             //PharmaCeutics
 
             if (Tag.equals("sem7ceuticsSTABILITYSTUDIESupdated")) {
                 NotesURL = getString(R.string.sem7ceuticsSTABILITYSTUDIESupdated);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsPARENTRALSCONTAINERS")) {
                 NotesURL = getString(R.string.sem7ceuticsPARENTRALSCONTAINERS);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsParenteralsTypesofproducts")) {
                 NotesURL = getString(R.string.sem7ceuticsParenteralsTypesofproducts);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsOphthalmicPreparations2_1479488103494_1479565618611")) {
                 NotesURL = getString(R.string.sem7ceuticsOphthalmicPreparations2_1479488103494_1479565618611);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsOCRD_1479531207097")) {
                 NotesURL = getString(R.string.sem7ceuticsOCRD_1479531207097);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsLVP")) {
                 NotesURL = getString(R.string.sem7ceuticsLVP);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsimpPPTtabletexcipients(1)")) {
                 NotesURL = getString(R.string.sem7ceuticsimpPPTtabletexcipients1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsEvaluationofSRformulations")) {
                 NotesURL = getString(R.string.sem7ceuticsEvaluationofSRformulations);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsacceleratedstabilitystudes_1479487312088_1479565618596")) {
                 NotesURL = getString(R.string.sem7ceuticsacceleratedstabilitystudes_1479487312088_1479565618596);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsTOXICITYSTUDIES")) {
                 NotesURL = getString(R.string.sem7ceuticsTOXICITYSTUDIES);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsTabletTechnology")) {
                 NotesURL = getString(R.string.sem7ceuticsTabletTechnology);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsstabilitystudies")) {
                 NotesURL = getString(R.string.sem7ceuticsstabilitystudies);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             if (Tag.equals("sem7ceuticsstabilitystudies1")) {
                 NotesURL = getString(R.string.sem7ceuticsstabilitystudies1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsSRDDSEVALUATION")) {
                 NotesURL = getString(R.string.sem7ceuticsSRDDSEVALUATION);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsContainersandclosures")) {
                 NotesURL = getString(R.string.sem7ceuticsContainersandclosures);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7ceuticsICHguideline1478588402168")) {
                 NotesURL = getString(R.string.sem7ceuticsICHguideline1478588402168);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             // Pharma Chem
 
             if (Tag.equals("sem7pchemLocal_ana1")) {
                 NotesURL = getString(R.string.sem7pchemLocal_ana1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pchemAntiviral")) {
                 NotesURL = getString(R.string.sem7pchemAntiviral);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pchemAntineoplastics")) {
                 NotesURL = getString(R.string.sem7pchemAntineoplastics);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pchemanticancer")) {
                 NotesURL = getString(R.string.sem7pchemanticancer);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pchemDiuretics")) {
                 NotesURL = getString(R.string.sem7pchemDiuretics);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pchemsynthesisall")) {
                 NotesURL = getString(R.string.sem7pchemsynthesisall);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             // Pharma Analysis
 
             if (Tag.equals("sem7pamanjuHPTLC")) {
                 NotesURL = getString(R.string.sem7pamanjuHPTLC);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7paSLmassspect1478597249577")) {
                 NotesURL = getString(R.string.sem7paSLmassspect1478597249577);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7paAnalysischapterwiseQuestionBank")) {
                 NotesURL = getString(R.string.sem7paAnalysischapterwiseQuestionBank);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7paMASSSPECTROSCOPY")) {
                 NotesURL = getString(R.string.sem7paMASSSPECTROSCOPY);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7paanalyticalmethodvalidation")) {
                 NotesURL = getString(R.string.sem7paanalyticalmethodvalidation);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             // Pharma Juris
 
             if (Tag.equals("sem7pjTheFactoriesAct")) {
                 NotesURL = getString(R.string.sem7pjTheFactoriesAct);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjTheBombayshopsandestablishmentsact1948")) {
                 NotesURL = getString(R.string.sem7pjTheBombayshopsandestablishmentsact1948);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjScheduleY")) {
                 NotesURL = getString(R.string.sem7pjScheduleY);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjPatentsAct2005")) {
                 NotesURL = getString(R.string.sem7pjPatentsAct2005);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjNarcoticDrugsandPsychotropicSubstancesAct1985")) {
                 NotesURL = getString(R.string.sem7pjNarcoticDrugsandPsychotropicSubstancesAct1985);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjMedicinalToiletPreparationsExciseDutiesAct")) {
                 NotesURL = getString(R.string.sem7pjMedicinalToiletPreparationsExciseDutiesAct);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjINTRODUCTIONTODRUGREGULATORYAFFAIRS")) {
                 NotesURL = getString(R.string.sem7pjINTRODUCTIONTODRUGREGULATORYAFFAIRS);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjIndianpenalcodesectionsrelatedtoPharmacy1")) {
                 NotesURL = getString(R.string.sem7pjIndianpenalcodesectionsrelatedtoPharmacy1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjIndianPenalCodeIPC")) {
                 NotesURL = getString(R.string.sem7pjIndianPenalCodeIPC);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjFSSA2006")) {
                 NotesURL = getString(R.string.sem7pjFSSA2006);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjForensicpharmacyPharmacyAct25august2015")) {
                 NotesURL = getString(R.string.sem7pjForensicpharmacyPharmacyAct25august2015);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjForensicpharmacyPatentsAct1970")) {
                 NotesURL = getString(R.string.sem7pjForensicpharmacyPatentsAct1970);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjForensicPharmacyHistory5December2014")) {
                 NotesURL = getString(R.string.sem7pjForensicPharmacyHistory5December2014);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjForensicpharmacyDCAPartII15January2015")) {
                 NotesURL = getString(R.string.sem7pjForensicpharmacyDCAPartII15January2015);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjForensicPharmacyMagicRemediesAct1954")) {
                 NotesURL = getString(R.string.sem7pjForensicPharmacyMagicRemediesAct1954);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjForensicPharmacyIntroductionandHistory")) {
                 NotesURL = getString(R.string.sem7pjForensicPharmacyIntroductionandHistory);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjForensicPharmacyExciseDutyAct")) {
                 NotesURL = getString(R.string.sem7pjForensicPharmacyExciseDutyAct);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjDrugsmagicremediesadvertisementAct")) {
                 NotesURL = getString(R.string.sem7pjDrugsmagicremediesadvertisementAct);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjDrugsMagicRemediesActOA")) {
                 NotesURL = getString(R.string.sem7pjDrugsMagicRemediesActOA);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjDPCO2013")) {
                 NotesURL = getString(R.string.sem7pjDPCO2013);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjDPCO201320September2015")) {
                 NotesURL = getString(R.string.sem7pjDPCO201320September2015);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjDMRactfinal")) {
                 NotesURL = getString(R.string.sem7pjDMRactfinal);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7pjChopraandHatheeCommittee1")) {
                 NotesURL = getString(R.string.sem7pjChopraandHatheeCommittee1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
             // Pharmacology
@@ -556,67 +783,67 @@ public class HomeActivity extends AppCompatActivity
 
             if (Tag.equals("sem7CologyWhatarerecommendedforDIABETIC")) {
                 NotesURL = getString(R.string.sem7CologyWhatarerecommendedforDIABETIC);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologySTUDYOFANALGESICUSINGHOTPLATEORTAIL")) {
                 NotesURL = getString(R.string.sem7CologySTUDYOFANALGESICUSINGHOTPLATEORTAIL);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyRotaRod")) {
                 NotesURL = getString(R.string.sem7CologyRotaRod);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyLocalAnestheticsCBSGS")) {
                 NotesURL = getString(R.string.sem7CologyLocalAnestheticsCBSGS);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyLocalana1")) {
                 NotesURL = getString(R.string.sem7CologyLocalana1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyHypoglycemi")) {
                 NotesURL = getString(R.string.sem7CologyHypoglycemi);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyHaloperidolinducedCatalepsy")) {
                 NotesURL = getString(R.string.sem7CologyHaloperidolinducedCatalepsy);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyDIURETICS")) {
                 NotesURL = getString(R.string.sem7CologyDIURETICS);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyDEMONSTRATIONOFANTICONVULSANTPROPERTYOFANANTIEPILEPTICDRUG1")) {
                 NotesURL = getString(R.string.sem7CologyDEMONSTRATIONOFANTICONVULSANTPROPERTYOFANANTIEPILEPTICDRUG1);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyANTIHYPERTENSIVES_DIURETICS_ANTICOAGULANTS_AND_DYSLIPIDEMICSAutosaved")) {
                 NotesURL = getString(R.string.sem7CologyANTIHYPERTENSIVES_DIURETICS_ANTICOAGULANTS_AND_DYSLIPIDEMICSAutosaved);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7Cologyantihis")) {
                 NotesURL = getString(R.string.sem7Cologyantihis);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyANTIHISTAMINESjulyh2016")) {
                 NotesURL = getString(R.string.sem7CologyANTIHISTAMINESjulyh2016);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyANTIARRHYTHMICmodified")) {
                 NotesURL = getString(R.string.sem7CologyANTIARRHYTHMICmodified);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7Cologyangina")) {
                 NotesURL = getString(R.string.sem7Cologyangina);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7Cologyalzheimerspresentation")) {
                 NotesURL = getString(R.string.sem7Cologyalzheimerspresentation);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
             if (Tag.equals("sem7CologyACTOPHOTOMETEREXPERIMENT")) {
                 NotesURL = getString(R.string.sem7CologyACTOPHOTOMETEREXPERIMENT);  // Add URL for Notes
-                Log.v(LogTag, "Notes URL: " + NotesURL);
+                Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
 
@@ -740,7 +967,6 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
-
     public void CologySem7SelectDropdown(View v) {
 
 
@@ -763,7 +989,6 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
-
     public void BioPharmSem8SelectDropdown(View v) {
         ImageView ArrowDown = (ImageView) findViewById(R.id.imageView18BioPharmSem8);
         ImageView ArrowSide = (ImageView) findViewById(R.id.imageView11BioPharmSem8);
@@ -784,7 +1009,6 @@ public class HomeActivity extends AppCompatActivity
         }
 
     }
-
 
     public void CPSem8SelectDropdown(View v) {
         ImageView ArrowDown = (ImageView) findViewById(R.id.imageView19CPsem8);
@@ -807,11 +1031,10 @@ public class HomeActivity extends AppCompatActivity
 
     }
 
-
     public void HallTicketClick(View v) {
-        String Tag = v.getTag().toString();
-
         String HallTicketURL = "0";
+        HallTicketURL = getString(R.string.AltHallTicket);
+
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
         bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Hall Ticket Clicked");
@@ -820,26 +1043,14 @@ public class HomeActivity extends AppCompatActivity
 
 
         if (isInternetOn()) {
-            if (Tag.equals("AltHallTicket")) {
-                HallTicketURL = getString(R.string.AltHallTicket);
-            }
-
-            if (Tag.equals("Sem8HallTicket")) {
-                HallTicketURL = getString(R.string.Sem8HallTicket);
-            }
-            if (Tag.equals("Sem7HallTicket")) {
-                HallTicketURL = getString(R.string.Sem7HallTicket);
-            }
-
-            Intent intent = new Intent(this, BrowserActivity.class);
-            intent.putExtra(EXTRA_MESSAGE, HallTicketURL);  //Add URL
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(HallTicketURL));
             startActivity(intent);
 
         } else {
             Toast.makeText(getApplicationContext(), "No Internet !! Please Connect to Internet", Toast.LENGTH_LONG).show();
 
         }
-
 
     }
 
@@ -893,7 +1104,6 @@ public class HomeActivity extends AppCompatActivity
 
         }
     }
-
 
     public void NotesSelectSem8(View v) {
         String Tag = v.getTag().toString();
@@ -1284,7 +1494,6 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
-
     @Override
     public void onStart() {
         super.onStart();
@@ -1396,7 +1605,6 @@ public class HomeActivity extends AppCompatActivity
         return false;
     }
 
-
     public void SubmitStudyMaterial(View v) {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
@@ -1408,7 +1616,6 @@ public class HomeActivity extends AppCompatActivity
         intent.setData(Uri.parse(getString(R.string.Submit_notes_URL)));
         startActivity(intent);
     }
-
 
     public void CheckUpdate() {
         final String CurrentVersionCode = getString(R.string.app_version_code);
@@ -1425,12 +1632,12 @@ public class HomeActivity extends AppCompatActivity
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 String value = dataSnapshot.getValue(String.class);
-                Log.d(LogTag, "Update Value is: " + value);
+                Log.d(TAG, "Update Value is: " + value);
                 if (value != null) {
-                    int v=Integer.valueOf(value);
-                    int Cv=Integer.valueOf(CurrentVersionCode);
+                    int v = Integer.valueOf(value);
+                    int Cv = Integer.valueOf(CurrentVersionCode);
 
-                    if (v>Cv) {
+                    if (v > Cv) {
                         UpdateCard.setVisibility(View.VISIBLE);
 
                     } else {
@@ -1443,7 +1650,7 @@ public class HomeActivity extends AppCompatActivity
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w(LogTag, "Failed to read value.", error.toException());
+                Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
 
@@ -1459,21 +1666,392 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
+    public void LoadBooksList() {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-    public void BuyBooks(View v){
-        String TAG=v.getTag().toString();
-        if(TAG.equals("")){
-            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=")));
 
-        }else if(TAG.equals("")){
+        DatabaseReference APPBookDB = database.getReference("/BPharmHub/books/APP");
+        APPBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
 
-        }
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> APPBook = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    APPBook.put("book_name", BookName);
+                    APPBook.put("book_url", BookURL);
+                    APPBook.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    APPBooksList.add(APPBook);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference AnalysisBookDB = database.getReference("/BPharmHub/books/Analysis");
+        AnalysisBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> AnalysisBook = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    AnalysisBook.put("book_name", BookName);
+                    AnalysisBook.put("book_url", BookURL);
+                    AnalysisBook.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    AnalysisBooksList.add(AnalysisBook);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference BiochemBookDB = database.getReference("/BPharmHub/books/Biochem");
+        BiochemBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> Book = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    Book.put("book_name", BookName);
+                    Book.put("book_url", BookURL);
+                    Book.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    BiochemBooksList.add(Book);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference ChemistryBookDB = database.getReference("/BPharmHub/books/Chemistry");
+        ChemistryBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> Book = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    Book.put("book_name", BookName);
+                    Book.put("book_url", BookURL);
+                    Book.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    ChemistryBooksList.add(Book);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference HPDSMBookDB = database.getReference("/BPharmHub/books/HPDSM");
+        HPDSMBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> Book = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    Book.put("book_name", BookName);
+                    Book.put("book_url", BookURL);
+                    Book.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    HPDSMBooksList.add(Book);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference OthersBookDB = database.getReference("/BPharmHub/books/Others");
+        OthersBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> Book = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    Book.put("book_name", BookName);
+                    Book.put("book_url", BookURL);
+                    Book.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    OthersBooksList.add(Book);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference PPBookDB = database.getReference("/BPharmHub/books/PP");
+        PPBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> Book = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    Book.put("book_name", BookName);
+                    Book.put("book_url", BookURL);
+                    Book.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    PPBooksList.add(Book);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference PharmaceuticsBookDB = database.getReference("/BPharmHub/books/Pharmaceutics");
+        PharmaceuticsBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> Book = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    Book.put("book_name", BookName);
+                    Book.put("book_url", BookURL);
+                    Book.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    PharmaceuticsBooksList.add(Book);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+        DatabaseReference PharmacognosyBookDB = database.getReference("/BPharmHub/books/Pharmacognosy");
+        PharmacognosyBookDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
+
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    // TODO: handle the post
+                    //String BookSubject=postSnapshot.getKey();
+                    HashMap<String, String> Book = new HashMap<>();
+
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
+
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // tmp hash map for single contact
+                    // adding each child node to HashMap key => value
+                    //      contact.put("id", id);
+                    Book.put("book_name", BookName);
+                    Book.put("book_url", BookURL);
+                    Book.put("book_edition", BookEdition);
+
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
+
+                    // adding contact to contact list
+                    PharmacognosyBooksList.add(Book);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(TAG, "Failed to read value.", error.toException());
+            }
+        });
+
+
     }
 
 
-    public void UserSignIn(){
-
-
+    private boolean isAppInstalled(String uri) {
+        PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            installed = true;
+        } catch (PackageManager.NameNotFoundException e) {
+            installed = false;
+        }
+        return installed;
     }
 
 
