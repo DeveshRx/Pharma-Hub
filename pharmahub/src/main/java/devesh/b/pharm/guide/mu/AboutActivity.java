@@ -12,17 +12,18 @@ import android.widget.Toast;
 
 public class AboutActivity extends AppCompatActivity {
     public static final String LogTag = "Bpharm Hub ";
-boolean installed;
+    boolean installed;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
         isAppInstalled("devesh.b.pharm.guide.mu.ebook");
-        Button UninstallEbookBT=(Button)findViewById(R.id.uninstallEbookButton);
-        if(installed){
+        Button UninstallEbookBT = (Button) findViewById(R.id.uninstallEbookButton);
+        if (installed) {
             UninstallEbookBT.setVisibility(View.VISIBLE);
 
-        }else {
+        } else {
             UninstallEbookBT.setVisibility(View.GONE);
 
         }
@@ -62,10 +63,10 @@ boolean installed;
         }
     }
 
-    public void uninstallEbook(View v){
+    public void uninstallEbook(View v) {
         isAppInstalled("devesh.b.pharm.guide.mu.ebook");
 
-        if(installed){
+        if (installed) {
 
             Intent intent = new Intent(Intent.ACTION_DELETE);
             intent.setData(Uri.parse("package:devesh.b.pharm.guide.mu.ebook"));
@@ -73,6 +74,7 @@ boolean installed;
 
         }
     }
+
     private boolean isAppInstalled(String uri) {
 
         PackageManager pm = getPackageManager();

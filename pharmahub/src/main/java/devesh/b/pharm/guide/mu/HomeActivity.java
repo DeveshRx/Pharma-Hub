@@ -1,6 +1,6 @@
 package devesh.b.pharm.guide.mu;
 
-
+import com.duapps.ad.base.DuAdNetwork;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,19 +8,18 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
-
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.CardView;
-import android.util.Log;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -32,29 +31,26 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.adcolony.sdk.AdColony;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-
-
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.analytics.FirebaseAnalytics;
-
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.jirbo.adcolony.AdColonyAdapter;
+import com.jirbo.adcolony.AdColonyBundleBuilder;
+import com.mopub.common.MoPub;
+import com.mopub.common.SdkConfiguration;
 
 import java.util.ArrayList;
-
 import java.util.HashMap;
 
 
@@ -75,27 +71,58 @@ public class HomeActivity extends AppCompatActivity
     public String Sem8BioPharmSelectStatus;
     public String Sem8CPSelectStatus;
     public String NavUser;
+    public boolean EBookListDownloaded;
+    public boolean installed;
+    ListView lv;
+    int SubSelected;
+    ArrayList<HashMap<String, String>> APPBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> AnalysisBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> BiochemBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> ChemistryBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> HPDSMBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> OthersBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> PPBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> PharmaceuticsBooksList = new ArrayList<HashMap<String, String>>();
+    ArrayList<HashMap<String, String>> PharmacognosyBooksList = new ArrayList<HashMap<String, String>>();
     private TextView mTextMessage;
     private AdView mAdView;
     private InterstitialAd mInterstitialAd;
     private FirebaseAnalytics mFirebaseAnalytics;
-
     private FirebaseAuth mAuth;
-
     private ShareActionProvider mShareActionProvider;
 
-    public boolean EBookListDownloaded;
-
-    public boolean installed;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         isAppInstalled("devesh.b.pharm.guide.mu.ebook");
 
+        AdColonyBundleBuilder.setGdprConsentString("1");
+        AdColonyBundleBuilder.setGdprRequired(true);
+
+        AdRequest request = new AdRequest.Builder()
+                .addNetworkExtrasBundle(AdColonyAdapter.class,AdColonyBundleBuilder.build())
+                .build();
+
+        String AdColonyAppID=getResources().getString(R.string.ADCOLONY_APP_ID);
+        String AdColonyZoneID=getResources().getString(R.string.ADCOLONY_ZONE_ID);
+        AdColony.configure(this,           // activity context
+                AdColonyAppID,
+                AdColonyZoneID); // list of all your zones set up on the AdColony Dashboard
+
+
+        String MoPubAdUnitId=getResources().getString(R.string.MOPUB_AD_UNIT_ID);
+        SdkConfiguration sdkConfiguration =
+                new SdkConfiguration.Builder(MoPubAdUnitId).build();
+
+        MoPub.initializeSdk(this, sdkConfiguration, null);
+
+        DuAdNetwork.setConsentStatus(this, true);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        EBookListDownloaded=false;
+        EBookListDownloaded = false;
 
 // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -166,7 +193,7 @@ public class HomeActivity extends AppCompatActivity
 */
         mTextMessage = (TextView) findViewById(R.id.message);
         //BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-      //  navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        //  navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         PcognoSelectStatus = "0";
         PceuticsSelectStatus = "0";
@@ -184,8 +211,6 @@ public class HomeActivity extends AppCompatActivity
         NavUser = "0";
 
         isInternetOn();
-
-
 
 
         Bundle bundle = new Bundle();
@@ -225,15 +250,14 @@ public class HomeActivity extends AppCompatActivity
 
 
         //ChemBooksList = new ArrayList<>();
-       // lv = (ListView) findViewById(R.id.list);
+        // lv = (ListView) findViewById(R.id.list);
 
-    //    new GetContacts().execute();
+        //    new GetContacts().execute();
 
         try {
             //  Block of code to try
 
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             //  Block of code to handle errors
         }
 
@@ -249,8 +273,6 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
-    ListView lv;
-    int SubSelected;
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -292,9 +314,9 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.navigation_books) {
             isAppInstalled("devesh.b.pharm.guide.mu.ebook");
 
-            if(installed){
+            if (installed) {
 
-                SubSelected=0;
+                SubSelected = 0;
                 ViewSyllabus.setVisibility(View.GONE);
                 ViewNotes.setVisibility(View.GONE);
                 ViewQP.setVisibility(View.GONE);
@@ -303,7 +325,7 @@ public class HomeActivity extends AppCompatActivity
                 NavUser = "3";
                 lv = (ListView) findViewById(R.id.list);
                 ListAdapter adapter = new SimpleAdapter(HomeActivity.this, ChemistryBooksList,
-                        R.layout.list_item, new String[]{ "book_name","book_edition"},
+                        R.layout.list_item, new String[]{"book_name", "book_edition"},
                         new int[]{R.id.email, R.id.mobile});
                 lv.setAdapter(adapter);
                 lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -311,127 +333,123 @@ public class HomeActivity extends AppCompatActivity
                     public void onItemClick(AdapterView<?> parent, View view, int position,
                                             long id) {
 
-                        Log.d(TAG, "onItemClick: \n"+position);
-                        String BName="";
-                        String Burl="0";
+                        Log.d(TAG, "onItemClick: \n" + position);
+                        String BName = "";
+                        String Burl = "0";
 
-                        if(SubSelected==0){
-                            BName=ChemistryBooksList.get(position).get("book_name");
-                            Burl=ChemistryBooksList.get(position).get("book_url");
-                        }else if(SubSelected==1){
-                            BName=APPBooksList.get(position).get("book_name");
-                            Burl=APPBooksList.get(position).get("book_url");
-                        }else if(SubSelected==2){
-                            BName=PharmaceuticsBooksList.get(position).get("book_name");
-                            Burl=PharmaceuticsBooksList.get(position).get("book_url");
-                        }else if(SubSelected==3){
-                            BName=AnalysisBooksList.get(position).get("book_name");
-                            Burl=AnalysisBooksList.get(position).get("book_url");
-                        }else if(SubSelected==4){
-                            BName=BiochemBooksList.get(position).get("book_name");
-                            Burl=BiochemBooksList.get(position).get("book_url");
-                        }else if(SubSelected==5){
-                            BName=PPBooksList.get(position).get("book_name");
-                            Burl=PPBooksList.get(position).get("book_url");
-                        }else if(SubSelected==6){
-                            BName=PharmacognosyBooksList.get(position).get("book_name");
-                            Burl=PharmacognosyBooksList.get(position).get("book_url");
-                        }else if(SubSelected==7){
-                            BName=OthersBooksList.get(position).get("book_name");
-                            Burl=OthersBooksList.get(position).get("book_url");
+                        if (SubSelected == 0) {
+                            BName = ChemistryBooksList.get(position).get("book_name");
+                            Burl = ChemistryBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 1) {
+                            BName = APPBooksList.get(position).get("book_name");
+                            Burl = APPBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 2) {
+                            BName = PharmaceuticsBooksList.get(position).get("book_name");
+                            Burl = PharmaceuticsBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 3) {
+                            BName = AnalysisBooksList.get(position).get("book_name");
+                            Burl = AnalysisBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 4) {
+                            BName = BiochemBooksList.get(position).get("book_name");
+                            Burl = BiochemBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 5) {
+                            BName = PPBooksList.get(position).get("book_name");
+                            Burl = PPBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 6) {
+                            BName = PharmacognosyBooksList.get(position).get("book_name");
+                            Burl = PharmacognosyBooksList.get(position).get("book_url");
+                        } else if (SubSelected == 7) {
+                            BName = OthersBooksList.get(position).get("book_name");
+                            Burl = OthersBooksList.get(position).get("book_url");
                         }
 
-                        if(Burl.contains("drive.google.com")){
-                            Burl=Burl+"/view?usp=sharing";
+                        if (Burl.contains("drive.google.com")) {
+                            Burl = Burl + "/view?usp=sharing";
                         }
 
-                        Log.d(TAG, "onItemClick: \n"+BName+"\n"+Burl);
+                        Log.d(TAG, "onItemClick: \n" + BName + "\n" + Burl);
                         Intent intent = new Intent(HomeActivity.this, BrowserActivity.class);
                         intent.putExtra(EXTRA_MESSAGE, Burl);  //Add URL
                         startActivity(intent);
                     }
                 });
 
-                Spinner SubjectSpinner=(Spinner)findViewById(R.id.subjectspinner);
+                Spinner SubjectSpinner = (Spinner) findViewById(R.id.subjectspinner);
                 SubjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-                    {
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                         int selectedItem = position; //this is your selected item
-                        if(selectedItem==0){
+                        if (selectedItem == 0) {
 
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, ChemistryBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
-                        }else if(selectedItem==1){
+                        } else if (selectedItem == 1) {
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, APPBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
-                        }else if(selectedItem==2){
+                        } else if (selectedItem == 2) {
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, PharmaceuticsBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
-                        }else if(selectedItem==3){
+                        } else if (selectedItem == 3) {
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, AnalysisBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
-                        }else if(selectedItem==4){
+                        } else if (selectedItem == 4) {
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, BiochemBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
-                        }else if(selectedItem==5){
+                        } else if (selectedItem == 5) {
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, PPBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
-                        }else if(selectedItem==6){
+                        } else if (selectedItem == 6) {
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, PharmacognosyBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
-                        }else if(selectedItem==7){
+                        } else if (selectedItem == 7) {
                             ListAdapter adapter = new SimpleAdapter(HomeActivity.this, OthersBooksList,
-                                    R.layout.list_item, new String[]{ "book_name","book_edition"},
+                                    R.layout.list_item, new String[]{"book_name", "book_edition"},
                                     new int[]{R.id.email, R.id.mobile});
                             lv.setAdapter(adapter);
-                            SubSelected=selectedItem;
+                            SubSelected = selectedItem;
 
                         }
 
 
-
-
-
                     }
-                    public void onNothingSelected(AdapterView<?> parent)
-                    {
+
+                    public void onNothingSelected(AdapterView<?> parent) {
 
                     }
                 });
 
-            }else{
+            } else {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                String msg=getResources().getString(R.string.ebook_msg);
+                String msg = getResources().getString(R.string.ebook_msg);
                 //String url=getResources().getString(R.string.ebook_plugin_url);
-                String url="https://pharmahub.ephrine.in";
+                String url = "https://pharmahub.ephrine.in";
                 builder.setMessage(msg)
                         .setIcon(R.mipmap.ic_launcher_round)
                         .setPositiveButton("Go to Website", new DialogInterface.OnClickListener() {
@@ -444,7 +462,7 @@ public class HomeActivity extends AppCompatActivity
                         })
                         .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-dialog.dismiss();
+                                dialog.dismiss();
                             }
                         });
                 AlertDialog dialog = builder.create();
@@ -454,24 +472,23 @@ dialog.dismiss();
             }
 
 
-
-        }else if(id==R.id.about_menu){
+        } else if (id == R.id.about_menu) {
             Intent intent = new Intent(this, AboutActivity.class);
             startActivity(intent);
 
-        }else if(id==R.id.share_menu){
+        } else if (id == R.id.share_menu) {
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
             sendIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.Share_message));
             sendIntent.setType("text/plain");
             startActivity(sendIntent);
 
-        }else if(id==R.id.navigation_buypro){
+        } else if (id == R.id.navigation_buypro) {
             Toast.makeText(this, "Buy Ad-Free Version \n -Thank you :)", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(getString(R.string.AdFreeVersion)));
             startActivity(intent);
-        }else if(id==R.id.navigation_feedback){
+        } else if (id == R.id.navigation_feedback) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(getString(R.string.feedback_form_URL)));
             startActivity(intent);
@@ -482,7 +499,6 @@ dialog.dismiss();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
     public void SyllabusClick(View v) {
 
@@ -529,7 +545,7 @@ dialog.dismiss();
             } else if (Tag.equals("Final")) {
                 SyllabusURL = getString(R.string.FinalSyllabus_OLD);
 
-            }else if (Tag.equals("FinalNEW")) {
+            } else if (Tag.equals("FinalNEW")) {
                 SyllabusURL = getString(R.string.FinalSyllabus_NEW);
 
             }
@@ -990,7 +1006,6 @@ dialog.dismiss();
         }
     }
 
-
     public void CologySem7SelectDropdown(View v) {
 
 
@@ -1013,7 +1028,6 @@ dialog.dismiss();
         }
     }
 
-
     public void BioPharmSem8SelectDropdown(View v) {
         ImageView ArrowDown = (ImageView) findViewById(R.id.imageView18BioPharmSem8);
         ImageView ArrowSide = (ImageView) findViewById(R.id.imageView11BioPharmSem8);
@@ -1034,7 +1048,6 @@ dialog.dismiss();
         }
 
     }
-
 
     public void CPSem8SelectDropdown(View v) {
         ImageView ArrowDown = (ImageView) findViewById(R.id.imageView19CPsem8);
@@ -1057,9 +1070,7 @@ dialog.dismiss();
 
     }
 
-
     public void HallTicketClick(View v) {
-
 
 
         String HallTicketURL = "0";
@@ -1135,7 +1146,6 @@ dialog.dismiss();
 
         }
     }
-
 
     public void NotesSelectSem8(View v) {
         String Tag = v.getTag().toString();
@@ -1526,7 +1536,6 @@ dialog.dismiss();
         }
     }
 
-
     @Override
     public void onStart() {
         super.onStart();
@@ -1638,7 +1647,6 @@ dialog.dismiss();
         return false;
     }
 
-
     public void SubmitStudyMaterial(View v) {
         Bundle bundle = new Bundle();
         bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "B.Pharm Hub");
@@ -1650,7 +1658,6 @@ dialog.dismiss();
         intent.setData(Uri.parse(getString(R.string.Submit_notes_URL)));
         startActivity(intent);
     }
-
 
     public void CheckUpdate() {
         final String CurrentVersionCode = getString(R.string.app_version_code);
@@ -1669,10 +1676,10 @@ dialog.dismiss();
                 String value = dataSnapshot.getValue(String.class);
                 Log.d(TAG, "Update Value is: " + value);
                 if (value != null) {
-                    int v=Integer.valueOf(value);
-                    int Cv=Integer.valueOf(CurrentVersionCode);
+                    int v = Integer.valueOf(value);
+                    int Cv = Integer.valueOf(CurrentVersionCode);
 
-                    if (v>Cv) {
+                    if (v > Cv) {
                         UpdateCard.setVisibility(View.VISIBLE);
 
                     } else {
@@ -1701,18 +1708,7 @@ dialog.dismiss();
         }
     }
 
-
-    ArrayList<HashMap<String, String>> APPBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> AnalysisBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> BiochemBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> ChemistryBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> HPDSMBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> OthersBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> PPBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> PharmaceuticsBooksList=new ArrayList<HashMap<String, String>>();
-    ArrayList<HashMap<String, String>> PharmacognosyBooksList=new ArrayList<HashMap<String, String>>();
-
-    public void LoadBooksList(){
+    public void LoadBooksList() {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
@@ -1722,19 +1718,19 @@ dialog.dismiss();
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-             //   String value = dataSnapshot.getValue(String.class);
-              //  Log.d(TAG, "Value is: " + value);
+                //   String value = dataSnapshot.getValue(String.class);
+                //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> APPBook = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -1743,7 +1739,7 @@ dialog.dismiss();
                     APPBook.put("book_url", BookURL);
                     APPBook.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     APPBooksList.add(APPBook);
@@ -1766,16 +1762,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> AnalysisBook = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -1784,7 +1780,7 @@ dialog.dismiss();
                     AnalysisBook.put("book_url", BookURL);
                     AnalysisBook.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     AnalysisBooksList.add(AnalysisBook);
@@ -1807,16 +1803,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> Book = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -1825,7 +1821,7 @@ dialog.dismiss();
                     Book.put("book_url", BookURL);
                     Book.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     BiochemBooksList.add(Book);
@@ -1848,16 +1844,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> Book = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -1866,7 +1862,7 @@ dialog.dismiss();
                     Book.put("book_url", BookURL);
                     Book.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     ChemistryBooksList.add(Book);
@@ -1889,16 +1885,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> Book = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -1907,7 +1903,7 @@ dialog.dismiss();
                     Book.put("book_url", BookURL);
                     Book.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     HPDSMBooksList.add(Book);
@@ -1930,16 +1926,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> Book = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -1948,7 +1944,7 @@ dialog.dismiss();
                     Book.put("book_url", BookURL);
                     Book.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     OthersBooksList.add(Book);
@@ -1971,16 +1967,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> Book = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -1989,7 +1985,7 @@ dialog.dismiss();
                     Book.put("book_url", BookURL);
                     Book.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     PPBooksList.add(Book);
@@ -2012,16 +2008,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> Book = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -2030,7 +2026,7 @@ dialog.dismiss();
                     Book.put("book_url", BookURL);
                     Book.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     PharmaceuticsBooksList.add(Book);
@@ -2053,16 +2049,16 @@ dialog.dismiss();
                 //   String value = dataSnapshot.getValue(String.class);
                 //  Log.d(TAG, "Value is: " + value);
 
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     // TODO: handle the post
                     //String BookSubject=postSnapshot.getKey();
                     HashMap<String, String> Book = new HashMap<>();
 
-                    String BookName=postSnapshot.child("book_name").getValue(String.class);
-                    String BookEdition=postSnapshot.child("book_edition").getValue(String.class);
-                    String BookURL=postSnapshot.child("book_url").getValue(String.class);
+                    String BookName = postSnapshot.child("book_name").getValue(String.class);
+                    String BookEdition = postSnapshot.child("book_edition").getValue(String.class);
+                    String BookURL = postSnapshot.child("book_url").getValue(String.class);
 
-                    Log.d(TAG, "onDataChange: "+"\n"+BookName+"\n"+BookEdition+"\n"+BookURL);
+                    Log.d(TAG, "onDataChange: " + "\n" + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // tmp hash map for single contact
                     // adding each child node to HashMap key => value
@@ -2071,7 +2067,7 @@ dialog.dismiss();
                     Book.put("book_url", BookURL);
                     Book.put("book_edition", BookEdition);
 
-                    Log.d(TAG,   " Book HashMap added: " + BookName + "\n" + BookEdition+"\n"+BookURL);
+                    Log.d(TAG, " Book HashMap added: " + BookName + "\n" + BookEdition + "\n" + BookURL);
 
                     // adding contact to contact list
                     PharmacognosyBooksList.add(Book);
@@ -2099,10 +2095,6 @@ dialog.dismiss();
         }
         return installed;
     }
-
-
-
-
 
 
 

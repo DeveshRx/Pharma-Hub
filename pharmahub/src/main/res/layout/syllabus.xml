@@ -46,8 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/holo_blue_bright"
-                android:visibility="gone"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -111,8 +111,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -123,8 +123,8 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
                                     android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:onClick="SyllabusClick"
                                     android:tag="FY"
                                     android:text="Syllabus"
@@ -146,8 +146,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:layout_width="match_parent"
@@ -158,8 +158,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
                                     android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:onClick="SyllabusClick"
                                     android:tag="SY"
                                     android:text="Syllabus"
@@ -181,8 +181,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:layout_width="match_parent"
@@ -193,8 +193,8 @@
                                 <TextView
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginBottom="5dp"
                                     android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"
                                     android:onClick="SyllabusClick"
                                     android:tag="TY"
                                     android:text="Syllabus"
@@ -216,8 +216,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical"
-                                android:paddingBottom="5dp"
-                                android:paddingTop="2dp">
+                                android:paddingTop="2dp"
+                                android:paddingBottom="5dp">
 
                                 <TextView
                                     android:layout_width="match_parent"
@@ -264,10 +264,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
                     android:onClick="HallTicketClick"
-                    android:tag="AltHallTicket"
-                    >
+                    android:orientation="vertical"
+                    android:tag="AltHallTicket">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -302,7 +301,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                 android:text="View My Hall Ticket"
+                                android:text="View My Hall Ticket"
                                 android:textColor="@android:color/holo_blue_dark"
                                 android:textStyle="bold" />
                         </LinearLayout>

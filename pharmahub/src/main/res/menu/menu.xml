@@ -27,6 +27,6 @@
     <item
         android:id="@+id/feedback"
         android:title="Give Feedback"
-        android:visible="false"/>
+        android:visible="false" />
 
 </menu>

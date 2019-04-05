@@ -1,9 +1,9 @@
 package devesh.b.pharm.guide.mu;
 
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -23,16 +23,14 @@ import java.util.concurrent.TimeUnit;
 
 public class LoginActivity extends AppCompatActivity {
 
-    public String TAG="Ephrine Apps";
     private static final String KEY_VERIFY_IN_PROGRESS = "key_verify_in_progress";
-
     private static final int STATE_INITIALIZED = 1;
     private static final int STATE_CODE_SENT = 2;
     private static final int STATE_VERIFY_FAILED = 3;
     private static final int STATE_VERIFY_SUCCESS = 4;
     private static final int STATE_SIGNIN_FAILED = 5;
     private static final int STATE_SIGNIN_SUCCESS = 6;
-
+    public String TAG = "Ephrine Apps";
     // [START declare_auth]
     private FirebaseAuth mAuth;
     // [END declare_auth]
@@ -101,9 +99,9 @@ public class LoginActivity extends AppCompatActivity {
 
                 // [START_EXCLUDE silent]
                 // Update the UI and attempt sign in with the phone credential
-             //   updateUI(STATE_VERIFY_SUCCESS, credential);
+                //   updateUI(STATE_VERIFY_SUCCESS, credential);
                 // [END_EXCLUDE]
-           //     signInWithPhoneAuthCredential(credential);
+                //     signInWithPhoneAuthCredential(credential);
             }
 
             @Override
@@ -118,7 +116,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     // Invalid request
                     // [START_EXCLUDE]
-                 //   mPhoneNumberField.setError("Invalid phone number.");
+                    //   mPhoneNumberField.setError("Invalid phone number.");
                     // [END_EXCLUDE]
                 } else if (e instanceof FirebaseTooManyRequestsException) {
                     // The SMS quota for the project has been exceeded
@@ -148,7 +146,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 // [START_EXCLUDE]
                 // Update UI
-             //   updateUI(STATE_CODE_SENT);
+                //   updateUI(STATE_CODE_SENT);
                 // [END_EXCLUDE]
             }
         };
@@ -157,10 +155,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void SignIn(View v){
+    public void SignIn(View v) {
 
-        EditText PhoneNoET=(EditText)findViewById(R.id.editTextPhone);
-        String phoneNumber=PhoneNoET.getText().toString();
+        EditText PhoneNoET = (EditText) findViewById(R.id.editTextPhone);
+        String phoneNumber = PhoneNoET.getText().toString();
 
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
                 phoneNumber,        // Phone number to verify
@@ -173,14 +171,12 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void Verify(View v){
+    public void Verify(View v) {
 
-        EditText codeET=(EditText)findViewById(R.id.editTextVerify);
-        String code=codeET.getText().toString();
+        EditText codeET = (EditText) findViewById(R.id.editTextVerify);
+        String code = codeET.getText().toString();
 
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
-
-
 
 
     }

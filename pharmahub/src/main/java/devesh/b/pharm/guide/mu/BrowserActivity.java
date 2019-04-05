@@ -46,7 +46,7 @@ public class BrowserActivity extends AppCompatActivity {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.Ads_Int_ID));
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
-       mInterstitialAd.setAdListener(new AdListener() {
+        mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
@@ -206,6 +206,22 @@ public class BrowserActivity extends AppCompatActivity {
         return false;
     }
 
+    @Override
+    public void onBackPressed() {
+        if (mInterstitialAd.isLoaded()) {
+            //FirebaseAuth.getInstance().signOut();
+            mInterstitialAd.show();
+
+
+        } else {
+            Log.d("TAG", "The interstitial wasn't loaded yet.");
+            //   FirebaseAuth.getInstance().signOut();
+
+            finish();
+        }
+        super.onBackPressed();
+    }
+
     private class MyWebViewClient extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -245,22 +261,6 @@ public class BrowserActivity extends AppCompatActivity {
         }
 
 
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mInterstitialAd.isLoaded()) {
-               //FirebaseAuth.getInstance().signOut();
-            mInterstitialAd.show();
-
-
-        } else {
-            Log.d("TAG", "The interstitial wasn't loaded yet.");
-            //   FirebaseAuth.getInstance().signOut();
-
-            finish();
-        }
-        super.onBackPressed();
     }
 
 

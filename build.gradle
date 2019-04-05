@@ -26,8 +26,14 @@ allprojects {
         google()
         maven {
             url "https://maven.google.com"
+        }
 
-
+        maven {
+            url  "https://adcolony.bintray.com/AdColony"
+        }
+        maven { url "https://s3.amazonaws.com/moat-sdk-builds" }
+        flatDir {
+            dirs 'libs'
         }
     }
 }
