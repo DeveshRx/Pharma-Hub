@@ -8,6 +8,7 @@ All in One App for pharmacy students, to stay up-to-date with latest syllabus, S
 * Contains Latest Syllabus of B.pharm (for Mumbai University only).
 * Get Study notes for every subjects included in B.Pharm.
 * Subject notes available in PPT, PDF, Doc.
+* Free E-Books
 * View Previous year Question Papers.
 * upload your personal study notes to increase collection of notes.
    More are Coming soon........
