@@ -19,4 +19,5 @@ All in One App for pharmacy students, to stay up-to-date with latest syllabus, S
 <a href='https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
 <br>
 Follow on Facebook: https://www.facebook.com/ephrineapps   <br>
-Website: https://pharmahub.ephrine.in
+App Website: https://pharmahub.ephrine.in <br>
+Official Ephrine Apps Website: https://www.ephrine.in
