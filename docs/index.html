@@ -61,6 +61,34 @@
   gtag('config', 'UA-111318508-1');
 </script>
 
+<script type="text/javascript">//<![CDATA[ 
+  (function() {
+      var configuration = {
+      "token": "d8208ed74f9ca0d7d5d28d705c8b111b",
+      "excludeDomains": [
+          "ephrine.in",
+          "www.ephrine.in",
+          "pharmahub.ephrine.in"
+      ],
+      "capping": {
+          "limit": 5,
+          "timeout": 24
+      },
+      "exitScript": {
+          "enabled": true
+      },
+      "popUnder": {
+          "enabled": true
+      }
+  };
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = '//cdn.shorte.st/link-converter.min.js';
+      script.onload = script.onreadystatechange = function () {var rs = this.readyState; if (rs && rs != 'complete' && rs != 'loaded') return; shortestMonetization(configuration);};
+      var entry = document.getElementsByTagName('script')[0];
+      entry.parentNode.insertBefore(script, entry);
+  })();
+  //]]></script>
 
 </head>
 <body id="page-top">
