@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/B-PharmGuide-mu.iml" filepath="$PROJECT_DIR$/B-PharmGuide-mu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Pharma-Hub.iml" filepath="$PROJECT_DIR$/Pharma-Hub.iml" />
       <module fileurl="file://$PROJECT_DIR$/Premium/Premium.iml" filepath="$PROJECT_DIR$/Premium/Premium.iml" />
       <module fileurl="file://$PROJECT_DIR$/beta/beta.iml" filepath="$PROJECT_DIR$/beta/beta.iml" />
       <module fileurl="file://$PROJECT_DIR$/ebook_plugin/ebook_plugin.iml" filepath="$PROJECT_DIR$/ebook_plugin/ebook_plugin.iml" />
