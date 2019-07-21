@@ -64,25 +64,7 @@
 
     gtag('config', 'UA-111318508-2');
   </script>
-  <script>
-
-    var urlstring = window.location.href; // "http://www.example.com/t.html?c=Devesh"; 
-    var url = new URL(urlstring);
-    var id = url.searchParams.get("download"); // http://pharmahub.ephrine.in/?download=plugin
-    console.log("Current id: " + id);
-    if (id == "plugin") {
-      //  window.location.href = "https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu.ebook";
-      // window.location.replace="https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu.ebook";  
-      console.log("download plugin");
-      ShowModal();
-
-    }
-
-    function ShowModal() {
-      $('#exampleModal').modal("show")
-    }
-
-  </script>
+  
 
   <!--
 <script type="text/javascript">//<![CDATA[ 
@@ -333,6 +315,28 @@
       <script type="text/javascript" language="javascript" src="https://c.amazon-adsystem.com/aax2/assoc.js"></script>
     </center>
   </div>
+
+
+  <script>
+
+      var urlstring = window.location.href; // "http://www.example.com/t.html?c=Devesh"; 
+      var url = new URL(urlstring);
+      var id = url.searchParams.get("download"); // http://pharmahub.ephrine.in/?download=plugin
+      console.log("Current id: " + id);
+      if (id == "plugin") {
+        //  window.location.href = "https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu.ebook";
+        // window.location.replace="https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu.ebook";  
+        console.log("download plugin");
+        ShowModal();
+  
+      }
+  
+      function ShowModal() {
+        $('#exampleModal').modal("show")
+      }
+  
+    </script>
+    
 </body>
 
 </html>
