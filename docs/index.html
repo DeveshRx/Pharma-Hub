@@ -67,8 +67,9 @@ var url = new URL(urlstring);
 var id = url.searchParams.get("download"); // pharmahub.ephrine.in/?download=plugin
 console.log("Current id: " + id);
 if(id=="plugin"){
-    window.location.href = "https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu.ebook";
-    console.log("download plugin");
+  //  window.location.href = "https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu.ebook";
+  window.location.replace="https://play.google.com/store/apps/details?id=devesh.b.pharm.guide.mu.ebook";  
+  console.log("download plugin");
 
 }
 
