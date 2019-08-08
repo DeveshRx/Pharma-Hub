@@ -1,1 +1,1 @@
-include ':Premium', ':beta', ':pharmahub', ':ebook_plugin'
+include ':Premium', ':pharmahub', ':ebook_plugin'

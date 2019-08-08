@@ -7,7 +7,7 @@ package devesh.b.pharm.guide.premium;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.multidex.MultiDex;
+import androidx.multidex.MultiDex;
 
 public class Splash extends Activity {
 

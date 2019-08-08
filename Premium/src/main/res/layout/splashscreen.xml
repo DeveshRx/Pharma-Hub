@@ -18,7 +18,7 @@
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         android:textStyle="bold" />
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/CardviewLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/pharmarx" />
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="wrap_content"
