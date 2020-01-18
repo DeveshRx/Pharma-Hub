@@ -2,8 +2,8 @@
     <string name="app_name">Pharma Hub</string>
 
     <string name="app_version">Version 2.1.0</string>
-    <string name="app_version_code">15</string>
-
+   <!-- <string name="app_version_code">15</string>
+-->
     <string name="App_desc">All in One App for pharmacy students, to stay up-to-date with latest syllabus of b.pharmacy course of Mumbai University. This is must have app for every students and teachers for quick reference on study portion.</string>
     <string name="feedback_form_URL">https://goo.gl/forms/IZXaxu2xzhb2R2on2</string>
     <string name="Submit_notes_URL">https://goo.gl/forms/5wjD2o9J4slG3UrQ2</string>

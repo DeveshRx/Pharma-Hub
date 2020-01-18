@@ -1,13 +1,20 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
+def f = new File('pharmahub/google-services.json')
+if (!f.exists()) {
+    new URL(System.getenv('google.services.json')).withInputStream{ i -> f.withOutputStream{ it << i }}
+}
+
+
 android {
+
     compileSdkVersion 29
     defaultConfig {
         applicationId "devesh.b.pharm.guide.mu"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 17
+        versionCode 18
         versionName "2.1.0"
         multiDexEnabled true
 
@@ -15,10 +22,29 @@ android {
 
         vectorDrawables.useSupportLibrary = true
 
+        resValue "string", "app_version_code", "\"" + versionCode + "\""
+    
+        resValue "string", "Ads_AppADMob_ID", "\"" + System.getenv("admob.app.id") + "\""
+
+        resValue "string", "Ads_Banner_ID", "\"" + System.getenv("admob.ad.banner") + "\""
+
+        resValue "string", "Ads_Banner_ID1", "\"" + System.getenv("admob.ad.banner1") + "\""
+
+        resValue "string", "Ads_Int_ID", "\"" + System.getenv("admob.ad.int") + "\""
+
+        resValue "string", "ADCOLONY_APP_ID", "\"" + System.getenv("adcolony.app.id") + "\""
+
+        resValue "string", "ADCOLONY_ZONE_ID", "\"" + System.getenv("adcolony.zone.id") + "\""
+
+        resValue "string", "MOPUB_AD_UNIT_ID", "\"" + System.getenv("mopub.ad.unit.id") +"\""
+
+          resValue "string", "MS_appcenter", "\"" + System.getenv("ms.appcenter.sec") + "\""
+
+  
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -27,21 +53,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.appcompat:appcompat:+'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.vectordrawable:vectordrawable:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:+'
     //implementation 'com.google.firebase:firebase-core:16.0.3'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test:runner:+'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:+'
     // Firebase SDK
 
-    implementation platform('com.google.firebase:firebase-bom:21.0.0')
+    implementation platform('com.google.firebase:firebase-bom:24.5.0')
     implementation 'com.google.firebase:firebase-core'
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
@@ -59,16 +86,16 @@ dependencies {
     // Facebook
     implementation 'com.facebook.android:audience-network-sdk:5.1.0'
     implementation 'com.google.ads.mediation:facebook:5.1.0.0'
-    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.multidex:multidex:+'
     implementation 'androidx.cardview:cardview:1.0.0'
     // Firebase Auth UI
-    implementation 'com.firebaseui:firebase-ui-auth:5.0.0'
+    implementation 'com.firebaseui:firebase-ui-auth:+'
     //google login
     implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
     //AdColony
     implementation 'com.adcolony:sdk:3.3.8'
-    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.annotation:annotation:+'
     implementation 'com.google.ads.mediation:adcolony:3.3.8.1'
 
     //MoPub
@@ -80,10 +107,16 @@ dependencies {
     implementation 'com.google.ads.mediation:mopub:5.4.1.1'
 
     //Du Ad Platform
-    implementation "com.google.ads.mediation:duadplatform:1.0.0.0"
+//    implementation "com.google.ads.mediation:duadplatform:1.0.0.0"
     implementation 'androidx.palette:palette:1.0.0'
-    implementation "com.google.android.gms:play-services-ads:18.1.0"
-    implementation (name: 'DuappsAd-CW-v1.2.7', ext: 'aar')
-    implementation (name: 'DuVideoSdk-v1.1.0', ext: 'aar')
+    implementation "com.google.android.gms:play-services-ads:+"
+  //  implementation (name: 'DuappsAd-CW-v1.2.7', ext: 'aar')
+  //  implementation (name: 'DuVideoSdk-v1.1.0', ext: 'aar')
+
+    //Microsoft App Center
+    def appCenterSdkVersion = '2.5.1'
+    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
+    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+
 
 }

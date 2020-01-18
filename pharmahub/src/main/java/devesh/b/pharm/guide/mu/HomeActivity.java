@@ -1,6 +1,5 @@
 package devesh.b.pharm.guide.mu;
 
-import com.duapps.ad.base.DuAdNetwork;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -47,11 +47,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.jirbo.adcolony.AdColonyAdapter;
 import com.jirbo.adcolony.AdColonyBundleBuilder;
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.crashes.Crashes;
 import com.mopub.common.MoPub;
 import com.mopub.common.SdkConfiguration;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
 
 
 public class HomeActivity extends AppCompatActivity
@@ -97,6 +103,9 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         isAppInstalled("devesh.b.pharm.guide.mu.ebook");
 
+        AppCenter.start(getApplication(), getString(R.string.MS_appcenter),
+                Analytics.class, Crashes.class);
+
         AdColonyBundleBuilder.setGdprConsentString("1");
         AdColonyBundleBuilder.setGdprRequired(true);
 
@@ -117,7 +126,7 @@ public class HomeActivity extends AppCompatActivity
 
         MoPub.initializeSdk(this, sdkConfiguration, null);
 
-        DuAdNetwork.setConsentStatus(this, true);
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
