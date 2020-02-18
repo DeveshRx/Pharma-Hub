@@ -26,8 +26,8 @@ jobs:
          sign.key.alias: ${{secrets.sign_key_alias}}
          sign.key.path: ${{secrets.sign_key_path}}
          g.license.key: ${{secrets.g_license_key}}
-         google.services.json: ${{secrets.google_services_json}}
-         key.url: ${{secrets.key_url}}
+         google.services.json: ${{google_services_json}}
+         local.properties.url: ${{local_properties_url}}
 
   apk:
     name: Generate APK
