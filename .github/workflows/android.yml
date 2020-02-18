@@ -42,9 +42,8 @@ jobs:
       - name: Build debug APK
         run: bash ./gradlew assembleDebug --stacktrace
         env: 
-         local.properties.url: ${{local_properties_url}}
          google.services.json: ${{google_services_json}}
-         key.url: ${{secrets.key_url}}
+         local.properties.url: ${{local_properties_url}}
       - name: Upload APK
         uses: actions/upload-artifact@v1
         with:
