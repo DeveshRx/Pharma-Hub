@@ -7,6 +7,53 @@ if (!f.exists()) {
 }
 
 
+Properties properties = new Properties()
+
+def adMobAppID
+def admobAdBannerID
+def admobAdBannerID1
+def admobAdInitID
+def adColonyAppID
+def adColonyZoneID
+def moPubAdUnitID
+def msAppCenter
+
+def lp = new File('pharmahub.local.properties')
+if (!lp.exists()) {
+    new URL(System.getenv('local.properties.url')).withInputStream { i ->
+        lp.withOutputStream {
+            it << i
+        }
+    }
+    project.logger.info('Downloaded local.properties file')
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+     adMobAppID = properties.getProperty('admob.app.id')
+    admobAdBannerID = properties.getProperty('admob.ad.banner')
+     admobAdBannerID1 = properties.getProperty('admob.ad.banner1')
+     admobAdInitID = properties.getProperty('admob.ad.int')
+     adColonyAppID = properties.getProperty('adcolony.app.id')
+     adColonyZoneID = properties.getProperty('adcolony.zone.id')
+     moPubAdUnitID = properties.getProperty('mopub.ad.unit.id')
+     msAppCenter = properties.getProperty('ms.appcenter.sec')
+
+
+} else {
+    project.logger.info('Located local.properties file')
+
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    adMobAppID = properties.getProperty('admob.app.id')
+    admobAdBannerID = properties.getProperty('admob.ad.banner')
+    admobAdBannerID1 = properties.getProperty('admob.ad.banner1')
+    admobAdInitID = properties.getProperty('admob.ad.int')
+    adColonyAppID = properties.getProperty('adcolony.app.id')
+    adColonyZoneID = properties.getProperty('adcolony.zone.id')
+    moPubAdUnitID = properties.getProperty('mopub.ad.unit.id')
+    msAppCenter = properties.getProperty('ms.appcenter.sec')
+
+}
+
+
 android {
 
     compileSdkVersion 29
@@ -14,7 +61,7 @@ android {
         applicationId "devesh.b.pharm.guide.mu"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 18
+        versionCode 19
         versionName "2.1.0"
         multiDexEnabled true
 
@@ -24,21 +71,21 @@ android {
 
         resValue "string", "app_version_code", "\"" + versionCode + "\""
     
-        resValue "string", "Ads_AppADMob_ID", "\"" + System.getenv("admob.app.id") + "\""
+        resValue "string", "Ads_AppADMob_ID", "\"" + adMobAppID + "\""
 
-        resValue "string", "Ads_Banner_ID", "\"" + System.getenv("admob.ad.banner") + "\""
+        resValue "string", "Ads_Banner_ID", "\"" + admobAdBannerID + "\""
 
-        resValue "string", "Ads_Banner_ID1", "\"" + System.getenv("admob.ad.banner1") + "\""
+        resValue "string", "Ads_Banner_ID1", "\"" + admobAdBannerID1 + "\""
 
-        resValue "string", "Ads_Int_ID", "\"" + System.getenv("admob.ad.int") + "\""
+        resValue "string", "Ads_Int_ID", "\"" + admobAdInitID + "\""
 
-        resValue "string", "ADCOLONY_APP_ID", "\"" + System.getenv("adcolony.app.id") + "\""
+        resValue "string", "ADCOLONY_APP_ID", "\"" + adColonyAppID + "\""
 
-        resValue "string", "ADCOLONY_ZONE_ID", "\"" + System.getenv("adcolony.zone.id") + "\""
+        resValue "string", "ADCOLONY_ZONE_ID", "\"" + adColonyZoneID + "\""
 
-        resValue "string", "MOPUB_AD_UNIT_ID", "\"" + System.getenv("mopub.ad.unit.id") +"\""
+        resValue "string", "MOPUB_AD_UNIT_ID", "\"" + moPubAdUnitID +"\""
 
-          resValue "string", "MS_appcenter", "\"" + System.getenv("ms.appcenter.sec") + "\""
+          resValue "string", "MS_appcenter", "\"" + msAppCenter + "\""
 
   
     }
@@ -59,8 +106,8 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.appcompat:appcompat:+'
-    implementation 'com.google.android.material:material:1.0.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.google.android.material:material:+'
+    implementation 'androidx.constraintlayout:constraintlayout:+'
     implementation 'androidx.vectordrawable:vectordrawable:+'
     //implementation 'com.google.firebase:firebase-core:16.0.3'
     testImplementation 'junit:junit:4.12'
@@ -68,11 +115,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:+'
     // Firebase SDK
 
-    implementation platform('com.google.firebase:firebase-bom:24.5.0')
-    implementation 'com.google.firebase:firebase-core'
-    implementation 'com.google.firebase:firebase-auth'
-    implementation 'com.google.firebase:firebase-database'
-    implementation 'com.google.firebase:firebase-ads'
+   // implementation platform('com.google.firebase:firebase-bom:24.5.0')
+    implementation 'com.google.firebase:firebase-core:+'
+    implementation 'com.google.firebase:firebase-auth:+'
+    implementation 'com.google.firebase:firebase-database:+'
+    implementation 'com.google.firebase:firebase-ads:+'
     //  implementation 'com.google.firebase:firebase-core:16.0.5'
     //  implementation 'com.google.firebase:firebase-database:16.0.5'
     //implementation 'com.google.firebase:firebase-ads:17.1.0'
@@ -84,27 +131,27 @@ dependencies {
     //  implementation 'com.google.firebase:firebase-invites:16.0.5'
     //implementation 'com.google.firebase:firebase-inappmessaging-display:17.0.4'
     // Facebook
-    implementation 'com.facebook.android:audience-network-sdk:5.1.0'
-    implementation 'com.google.ads.mediation:facebook:5.1.0.0'
+    implementation 'com.facebook.android:audience-network-sdk:+'
+    implementation 'com.google.ads.mediation:facebook:+'
     implementation 'androidx.multidex:multidex:+'
-    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.cardview:cardview:+'
     // Firebase Auth UI
     implementation 'com.firebaseui:firebase-ui-auth:+'
     //google login
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.google.android.gms:play-services-auth:+'
 
     //AdColony
-    implementation 'com.adcolony:sdk:3.3.8'
+    implementation 'com.adcolony:sdk:+'
     implementation 'androidx.annotation:annotation:+'
-    implementation 'com.google.ads.mediation:adcolony:3.3.8.1'
+    implementation 'com.google.ads.mediation:adcolony:+'
 
     //MoPub
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.mopub.volley:mopub-volley:2.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:+'
+    implementation 'com.mopub.volley:mopub-volley:+'
     implementation('com.mopub:mopub-sdk:5.4.1@aar') {
         transitive = true
     }
-    implementation 'com.google.ads.mediation:mopub:5.4.1.1'
+    implementation 'com.google.ads.mediation:mopub:+'
 
     //Du Ad Platform
 //    implementation "com.google.ads.mediation:duadplatform:1.0.0.0"
@@ -114,9 +161,9 @@ dependencies {
   //  implementation (name: 'DuVideoSdk-v1.1.0', ext: 'aar')
 
     //Microsoft App Center
-    def appCenterSdkVersion = '2.5.1'
-    implementation "com.microsoft.appcenter:appcenter-analytics:${appCenterSdkVersion}"
-    implementation "com.microsoft.appcenter:appcenter-crashes:${appCenterSdkVersion}"
+    //def appCenterSdkVersion = '2.5.1'
+    implementation "com.microsoft.appcenter:appcenter-analytics:+"
+    implementation "com.microsoft.appcenter:appcenter-crashes:+"
 
 
 }
