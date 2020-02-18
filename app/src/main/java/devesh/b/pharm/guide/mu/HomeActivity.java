@@ -8,6 +8,8 @@ import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.adcolony.sdk.AdColonyAppOptions;
+import com.google.ads.mediation.adcolony.AdColonyMediationAdapter;
 import com.google.android.material.navigation.NavigationView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -106,8 +108,12 @@ public class HomeActivity extends AppCompatActivity
         AppCenter.start(getApplication(), getString(R.string.MS_appcenter),
                 Analytics.class, Crashes.class);
 
-        AdColonyBundleBuilder.setGdprConsentString("1");
-        AdColonyBundleBuilder.setGdprRequired(true);
+        AdColonyAppOptions appOptions = AdColonyMediationAdapter.getAppOptions();
+        appOptions.setGDPRConsentString("1");
+        appOptions.setGDPRRequired(true);
+
+       // AdColonyBundleBuilder.setGdprConsentString("1");
+       // AdColonyBundleBuilder.setGdprRequired(true);
 
         AdRequest request = new AdRequest.Builder()
                 .addNetworkExtrasBundle(AdColonyAdapter.class,AdColonyBundleBuilder.build())
