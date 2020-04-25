@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Pharma-Hub.iml" filepath="$PROJECT_DIR$/Pharma-Hub.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/libs/IAP6Helper/IAP6Helper.iml" filepath="$PROJECT_DIR$/app/libs/IAP6Helper/IAP6Helper.iml" group="Pharma-Hub/IAP6Helper" />
+      <module fileurl="file://$PROJECT_DIR$/Pharma-Hub.iml" filepath="$PROJECT_DIR$/Pharma-Hub.iml" group="Pharma-Hub" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Pharma-Hub/app" />
     </modules>
   </component>
 </project>

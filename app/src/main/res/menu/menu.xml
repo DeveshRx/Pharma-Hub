@@ -20,10 +20,12 @@
         android:title="Share"
         app:showAsAction="always" />
 
-    <item
+<item
         android:id="@+id/disableads"
         android:title="Disable Ads !!"
-        android:visible="false" />
+        android:visible="false"
+    />
+
     <item
         android:id="@+id/feedback"
         android:title="Give Feedback"

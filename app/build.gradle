@@ -59,7 +59,8 @@ android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "devesh.b.pharm.guide.mu"
-        minSdkVersion 16
+        minSdkVersion 19
+        // minSdkVersion 16 (PlayStore)
         targetSdkVersion 29
         versionCode 19
         versionName "2.1.0"
@@ -99,6 +100,31 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    // Specifies one flavor dimension.
+    flavorDimensions "appstore"
+    productFlavors {
+        galaxystore {
+            // Assigns this product flavor to the "version" flavor dimension.
+            // If you are using only one dimension, this property is optional,
+            // and the plugin automatically assigns all the module's flavors to
+            // that dimension.
+            dimension "appstore"
+            applicationId "devesh.b.pharm.guide.mu"
+            minSdkVersion 19
+            // minSdkVersion 16 (PlayStore)
+            versionName "2.1.0 (Galaxy)"
+
+        }
+        master {
+            dimension "appstore"
+            applicationId "devesh.b.pharm.guide.mu"
+            minSdkVersion 19
+            // minSdkVersion 16 (PlayStore)
+            versionName "2.1.0"
+
+        }
     }
 
 }
@@ -164,6 +190,10 @@ dependencies {
     //def appCenterSdkVersion = '2.5.1'
     implementation "com.microsoft.appcenter:appcenter-analytics:+"
     implementation "com.microsoft.appcenter:appcenter-crashes:+"
+
+    //Samsung Galaxy IAP
+    implementation project(':IAP6Helper')
+
 
 
 }

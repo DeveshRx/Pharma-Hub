@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.adcolony.sdk.AdColonyAppOptions;
@@ -98,6 +99,7 @@ public class HomeActivity extends AppCompatActivity
     private FirebaseAnalytics mFirebaseAnalytics;
     private FirebaseAuth mAuth;
     private ShareActionProvider mShareActionProvider;
+    boolean isSamsung;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -237,44 +239,16 @@ public class HomeActivity extends AppCompatActivity
         LoadBooksList();
 
 
-        //    UploadContacts();
-        //  TimerLLSec();
-/*
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference Crash = database.getReference("app/CrashA");
-        // Read from the database
-        Crash.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Crash???: " + value);
-                if(value.equals("t")){
-                    Crashlytics.getInstance().crash(); // Force a crash
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-*/
 
 
-        //ChemBooksList = new ArrayList<>();
-        // lv = (ListView) findViewById(R.id.list);
 
-        //    new GetContacts().execute();
-
-        try {
-            //  Block of code to try
-
-        } catch (Exception e) {
-            //  Block of code to handle errors
+        String mfg=getDeviceMFGName();
+        if(mfg.equals("samsung")){
+            isSamsung=true;
+        }else {
+            isSamsung=false;
         }
+        Log.d(TAG," #545 Manufactuer: "+mfg);
 
     }
 
@@ -499,10 +473,19 @@ public class HomeActivity extends AppCompatActivity
             startActivity(sendIntent);
 
         } else if (id == R.id.navigation_buypro) {
-            Toast.makeText(this, "Buy Ad-Free Version \n -Thank you :)", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(getString(R.string.AdFreeVersion)));
-            startActivity(intent);
+
+            if(isSamsung){
+                //samsungapps://ProductDetail/com.sec.android.app.samsungapps
+                Toast.makeText(this, "Buy Ad-Free Version \n -Thank you :)", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("samsungapps://ProductDetail/devesh.b.pharm.guide.premium"));
+                startActivity(intent);
+            }else {
+                Toast.makeText(this, "Buy Ad-Free Version \n -Thank you :)", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(getString(R.string.AdFreeVersion)));
+                startActivity(intent);
+            }
         } else if (id == R.id.navigation_feedback) {
             Intent intent = new Intent(Intent.ACTION_VIEW);
             intent.setData(Uri.parse(getString(R.string.feedback_form_URL)));
@@ -2112,6 +2095,15 @@ public class HomeActivity extends AppCompatActivity
     }
 
 
+    public static String getDeviceMFGName() {
+        String manufacturer = Build.MANUFACTURER;
+        String model = Build.MODEL;
+       /* if (model.startsWith(manufacturer)) {
+            return capitalize(model);
+        }
+        */
+        return manufacturer;
+    }
 
 
 }
