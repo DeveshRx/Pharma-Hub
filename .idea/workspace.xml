@@ -10,185 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a72f506d-f80c-4f8c-8c19-457288fe6c19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/aidl/com/samsung/android/iap/IAPConnector.aidl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/aidl/com/samsung/android/iap/IAPServiceCallback.aidl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/activity/AccountActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/activity/BaseActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/activity/CheckPackageActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/activity/DialogActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/activity/PaymentActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/dialog/BaseDialogFragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/HelperDefine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/HelperListenerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/HelperUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/IapHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/task/BaseTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/task/ConsumePurchasedItemsTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/task/GetOwnedListTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/task/GetProductsDetailsTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/helper/task/GetPromotionEligibilityTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/listener/OnConsumePurchasedItemsListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/listener/OnGetOwnedListListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/listener/OnGetProductsDetailsListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/listener/OnGetPromotionEligibilityListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/listener/OnIapBindListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/listener/OnPaymentListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/listener/OnSucceedBind.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/service/BaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/service/ConsumePurchasedItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/service/OwnedProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/service/ProductsDetails.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/service/PromotionEligibility.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/BaseVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/ConsumeVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/ErrorVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/OwnedProductVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/ProductVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/PromotionEligibilityVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/PurchaseVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/java/com/samsung/android/sdk/iap/lib/vo/util/VoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/color/dialog_button_text_color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-hdpi/tw_widget_progressbar_effect_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-hdpi/tw_widget_progressbar_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-mdpi/tw_widget_progressbar_effect_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-mdpi/tw_widget_progressbar_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-xhdpi/tw_widget_progressbar_effect_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-xhdpi/tw_widget_progressbar_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-xxhdpi/tw_widget_progressbar_effect_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable-xxhdpi/tw_widget_progressbar_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable/dialog_button_animation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable/dialog_full_holo_light.9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable/dialog_radius.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable/progressbar_middle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable/tw_widget_progressbar_effect_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/drawable/tw_widget_progressbar_holo_light.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/layout/base_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/layout/progress_dialog.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ar/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-as/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-az-rAZ/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-be-rBY/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-bg/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-bn-rBD/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-bn-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-bo/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-bs/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ca/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-cs/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-da/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-de/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-el/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-en-rCA/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-en-rPH/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-en-rUS/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-en-rZG/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-en/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-es-rES/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-es-rUS/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-et-rEE/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-eu-rES/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-fa/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-fi/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-fr-rCA/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-fr/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ga/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-gl-rES/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-gu-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-hi/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-hr/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-hu/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-hy-rAM/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-in/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-is-rIS/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-it/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-iw/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ja/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ka-rGE/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-kk-rKZ/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-km-rKH/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-kn-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ko/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ky-rKG/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-lo-rLA/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-lt/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-lv/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-mg/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-mk-rMK/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ml-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-mn-rMN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-mr-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ms-rMY/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-my-rMM/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-my-rZG/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-nb/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ne-rNP/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ne/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-nl/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-or/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-pa-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-pl-rSP/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-pl/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-pt-rBR/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-pt-rPT/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ro/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ru/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-si-rLK/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-si/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-sk/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-sl/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-sq-rAL/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-sr/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-sv/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ta-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-te-rIN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-tg/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-th/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-tk/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-tl/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-tr/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-uk/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-ur-rPK/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-uz-rUZ/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-vi/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-w1920dp/integers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-w480dp/integers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-w600dp/integers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-w960dp/integers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-xh/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-zh-rCN/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-zh-rHK/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-zh-rTW/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values-zu/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values/color.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values/dimen.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values/integers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/src/main/res/values/styles.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/debug/out/com/samsung/android/iap/IAPConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/debug/out/com/samsung/android/iap/IAPServiceCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/source/buildConfig/debug/com/samsung/android/sdk/iap/lib/BuildConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APK/release/app-release.apk" beforeDir="false" afterPath="$PROJECT_DIR$/APK/release/app-release.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/APK/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/APK/release/output.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/devesh/b/pharm/guide/mu/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/devesh/b/pharm/guide/mu/HomeActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/activity_home_drawer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_27" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RZ8N20CKY4J" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -222,6 +60,11 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ApkExportedModule" value="app" />
@@ -229,13 +72,14 @@
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="ExportApk.SignV1" value="true" />
     <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.project.structure.last.selected" value="pharmahub" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Pixel_2_XL_API_28" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/ebook_plugin/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/APK" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Build Variants" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -262,18 +106,6 @@
       <recent name="D:\Android_Development\GitHub\B-PharmGuide-mu\Premium\src\main\res\drawable" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="Android App.pharmahub">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -299,29 +131,8 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -350,29 +161,8 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -401,29 +191,8 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -452,29 +221,8 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
@@ -503,29 +251,8 @@
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
-      <Auto>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Auto>
-      <Hybrid>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Hybrid>
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Java />
-      <Native>
-        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
-        <option name="SHOW_STATIC_VARS" value="true" />
-        <option name="WORKING_DIR" value="" />
-        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
-        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
-      </Native>
       <Profilers>
         <option name="ADVANCED_PROFILING_ENABLED" value="false" />
         <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
