@@ -718,6 +718,27 @@
                             android:layout_marginBottom="10dp"
                             android:onClick="NotesSelectSem7"
                             android:orientation="horizontal"
+                            android:tag="PHARMACEUTICAL_DOSAGE_FORMS_DHRUVI_PATEL">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Pharmaceutical Dosage Forms"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
                             android:tag="sem7ceuticsTOXICITYSTUDIES">
 
                             <ImageView
@@ -730,6 +751,27 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="Toxicity Studies"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="TOXICITY_1_himanshu_sharma_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="OECA Guideline for Testing of Chemicals"
                                 android:textColor="@android:color/holo_blue_dark" />
                         </LinearLayout>
 
@@ -1742,6 +1784,28 @@
                                 android:textColor="@android:color/holo_blue_dark" />
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem8"
+                            android:orientation="horizontal"
+                            android:tag="dosage_forms_Umesh_Misal">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Dosage Forms"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+
                     </LinearLayout>
 
 
@@ -1817,6 +1881,133 @@
                             android:layout_height="2dp"
                             android:layout_marginBottom="5dp"
                             app:srcCompat="@android:color/holo_blue_light" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="NSAIDS_1_Akshaya_Ghag_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="NSAIDS Drugs"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="SAR_SEM_8_Akshaya_Ghag_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="SAR of Drugs"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="anti_pyschotics_rishab">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/ppt" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Anti Pyschotics"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="sed_hyp_akshaya_ghag_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Sedative and Hyptonic"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="medichem_2_hypnotic_and_sedative_ppt_amit_panaskar">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Sedative and Hyptonic II"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="the_opium_analgesics_akshaya_ghag_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="The Opium Analgesics"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -1920,6 +2111,27 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:text="Diuretics Drugs"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="vitaminsallRushikeshWakle">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/ppt" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Vitamins"
                                 android:textColor="@android:color/holo_blue_dark" />
                         </LinearLayout>
 
@@ -2522,6 +2734,29 @@
                                 android:text="Mass Spectroscopy"
                                 android:textColor="@android:color/holo_blue_dark" />
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="Official_Compounds_Diwani_Vaibhavi">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Drugs and Assay"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -3525,6 +3760,50 @@
                                 android:textColor="@android:color/holo_blue_dark" />
                         </LinearLayout>
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="hcl_production_MA_KA_SAPOOT">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="HCL Production"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem7"
+                            android:orientation="horizontal"
+                            android:tag="Epilepsy_1_ppt_Unstoppable_Unmesh">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/ppt" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Epilepsy "
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
                     </LinearLayout>
 
                 </LinearLayout>
@@ -3964,6 +4243,51 @@
                             android:layout_height="2dp"
                             android:layout_marginBottom="5dp"
                             app:srcCompat="@android:color/holo_blue_light" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem8"
+                            android:orientation="horizontal"
+                            android:tag="isolation_and_preservation_Ashish_Desi_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Isolation and Preservation"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem8"
+                            android:orientation="horizontal"
+                            android:tag="microscope_Ashish_Desi_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Microscope"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -4580,6 +4904,51 @@
                                 android:text="ADR monitoring"
                                 android:textColor="@android:color/holo_blue_dark" />
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem8"
+                            android:orientation="horizontal"
+                            android:tag="introduction_of_microbiology_Ashish_Desi_pdf ">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Introduction of Microbiology"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="NotesSelectSem8"
+                            android:orientation="horizontal"
+                            android:tag="growth_curve_Ashish_Desi_pdf">
+
+                            <ImageView
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                app:srcCompat="@drawable/pdf1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Growth Curve"
+                                android:textColor="@android:color/holo_blue_dark" />
+                        </LinearLayout>
+
 
                     </LinearLayout>
 

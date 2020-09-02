@@ -13,3 +13,7 @@
 Pharma-Hub.zip
 /xapp
 app/src/main/res/values/secureStrings.xml
+
+sign-key-gplay
+
+*.pepk

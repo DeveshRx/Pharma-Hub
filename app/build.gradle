@@ -62,8 +62,8 @@ android {
         minSdkVersion 19
         // minSdkVersion 16 (PlayStore)
         targetSdkVersion 30
-        versionCode 20
-        versionName "2.1.1"
+        versionCode 21
+        versionName "2.1.2"
         multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -72,13 +72,6 @@ android {
 
         resValue "string", "app_version_code", "\"" + versionCode + "\""
     
-        resValue "string", "Ads_AppADMob_ID", "\"" + adMobAppID + "\""
-
-        resValue "string", "Ads_Banner_ID", "\"" + admobAdBannerID + "\""
-
-        resValue "string", "Ads_Banner_ID1", "\"" + admobAdBannerID1 + "\""
-
-        resValue "string", "Ads_Int_ID", "\"" + admobAdInitID + "\""
 
         resValue "string", "ADCOLONY_APP_ID", "\"" + adColonyAppID + "\""
 
@@ -92,15 +85,51 @@ android {
     }
     buildTypes {
         release {
+            resValue "string", "Ads_AppADMob_ID", "\"" + adMobAppID + "\""
+
+            resValue "string", "Ads_Banner_ID", "\"" + admobAdBannerID + "\""
+
+            resValue "string", "Ads_Banner_ID1", "\"" + admobAdBannerID1 + "\""
+
+            resValue "string", "Ads_Int_ID", "\"" + admobAdInitID + "\""
+
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        debug{
+            resValue "string", "Ads_AppADMob_ID", "\"" + "ca-app-pub-3940256099942544~3347511713" + "\""
+
+            resValue "string", "Ads_Banner_ID", "\"" + "ca-app-pub-3940256099942544/6300978111" + "\""
+
+            resValue "string", "Ads_Banner_ID1", "\"" + "ca-app-pub-3940256099942544/6300978111" + "\""
+
+            resValue "string", "Ads_Int_ID", "\"" + "ca-app-pub-3940256099942544/1033173712" + "\""
+
+        }
     }
-    buildToolsVersion '28.0.3'
+    buildToolsVersion '30.0.2'
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+   signingConfigs {
+        release {
+            if (System.getenv("CICD")) {
+            } else {
+
+             //   storeFile file(keypath)
+              //  storePassword keypassword
+              //  keyAlias = keyalias
+               // keyPassword keypassword
+              // Optional, specify signing versions used
+
+            }
+            v1SigningEnabled true
+            v2SigningEnabled true
+
+        }
+    }
+
 
     // Specifies one flavor dimension.
     flavorDimensions "appstore"

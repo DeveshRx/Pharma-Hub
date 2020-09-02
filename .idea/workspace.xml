@@ -2,7 +2,9 @@
 <project version="4">
   <component name="AndroidLayouts">
     <shared>
-      <config />
+      <config>
+        <device id="pixel_3_xl" />
+      </config>
     </shared>
   </component>
   <component name="AndroidLogFilters">
@@ -10,16 +12,99 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a72f506d-f80c-4f8c-8c19-457288fe6c19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/debug/out/com/samsung/android/iap/IAPConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/debug/out/com/samsung/android/iap/IAPServiceCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/source/buildConfig/debug/com/samsung/android/sdk/iap/lib/BuildConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APK/master/release/app-master-release.aab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/google-services.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/CNAME" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/_config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/_layouts/default.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/ads.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/app-ads.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/app_files/books.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/app_files/kokate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/app_files/sample.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/device-mockups.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/Simple-Line-Icons.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/Simple-Line-Icons.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/Simple-Line-Icons.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/Simple-Line-Icons.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/Simple-Line-Icons.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/fonts/glyphicons-halflings-regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/images/iphone_6_plus_white_port.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/images/macbook.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/simple-line-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/favicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/GooglePlayFeatBanner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/app-store-badge.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/bg-cta.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/bg-pattern.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/books.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/demo-screen-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/device1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/devicehome.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/devicehome1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/devicemenu.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/favicon200.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/google-play-badge.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/pdf1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/pharmacognosy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/syllabus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/img/vjghvbhjbjh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/js/html5shiv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/js/jquery.easing.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/js/respond.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/old/_config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/old/_sass/cs.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/old/assets/google-play-badge.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/old/assets/header.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/old/index.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/sitemap.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/app/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.buildship.core.prefs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/.transforms/f5f5078befc7df4eb8543f0f3ee789e2.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/release/out/com/samsung/android/iap/IAPConnector.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/release/out/com/samsung/android/iap/IAPConnector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/release/out/com/samsung/android/iap/IAPServiceCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/aidl_source_output_dir/release/out/com/samsung/android/iap/IAPServiceCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/source/buildConfig/release/com/samsung/android/sdk/iap/lib/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/generated/source/buildConfig/release/com/samsung/android/sdk/iap/lib/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/aapt_friendly_merged_manifests/release/aapt/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/aapt_friendly_merged_manifests/release/aapt/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/compile_library_classes/release/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/compile_only_not_namespaced_r_class_jar/release/R.jar" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/compile_only_not_namespaced_r_class_jar/release/R.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPConnector$Stub$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPConnector$Stub$Proxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPConnector$Stub.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPConnector$Stub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPConnector.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPConnector.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPServiceCallback$Stub$Proxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPServiceCallback$Stub$Proxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPServiceCallback$Stub.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPServiceCallback$Stub.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPServiceCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/iap/IAPServiceCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/sdk/iap/lib/BuildConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/javac/release/classes/com/samsung/android/sdk/iap/lib/BuildConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/library_java_res/release/res.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/merged_manifests/release/output.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/merged_manifests/release/output.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/libs/IAP6Helper/build/intermediates/runtime_library_classes/release/classes.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/devesh/b/pharm/guide/mu/HomeActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/devesh/b/pharm/guide/mu/HomeActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/notes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/notes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +132,17 @@
     </option>
   </component>
   <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
     <option name="KEY_STORE_PATH" value="D:\Android_Development\key" />
     <option name="KEY_ALIAS" value="devandroidkey" />
     <option name="REMEMBER_PASSWORDS" value="true" />
-    <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="KotlinMultiplatform">
+    <allAvailableExecutables />
   </component>
   <component name="ProjectId" id="1arRmeC6hLqtTLPlz0DsGdEQA0c" />
   <component name="ProjectLevelVcsManager">
@@ -68,10 +156,9 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ApkExportedModule" value="app" />
+    <property name="BundleExportedModule" value="app" />
     <property name="ExportApk.ApkPath" value="D:\Android_Development\GitHub\Pharma-Hub\APK" />
-    <property name="ExportApk.BuildVariants" value="release" />
-    <property name="ExportApk.SignV1" value="true" />
-    <property name="ExportApk.SignV2" value="true" />
+    <property name="ExportApk.BuildVariants" value="masterRelease" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.project.structure.last.selected" value="pharmahub" />
@@ -106,7 +193,7 @@
       <recent name="D:\Android_Development\GitHub\B-PharmGuide-mu\Premium\src\main\res\drawable" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.pharmahub">
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -144,7 +231,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -301,6 +388,20 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="6" key="SettingsEditor" timestamp="1598521049017">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1598521049017" />
+    <state width="409" height="93" key="javadoc.popup.new" timestamp="1598163518435">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="409" height="93" key="javadoc.popup.new/0.0.1366.728@0.0.1366.728" timestamp="1598163518435" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1598161666010">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1598161666010" />
   </component>
   <component name="masterDetails">
     <states>

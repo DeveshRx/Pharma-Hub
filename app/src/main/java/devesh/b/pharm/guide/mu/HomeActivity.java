@@ -438,7 +438,7 @@ public class HomeActivity extends AppCompatActivity
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 String msg = getResources().getString(R.string.ebook_msg);
                 //String url=getResources().getString(R.string.ebook_plugin_url);
-                String url = "https://pharmahub.ephrine.in/?download=plugin";
+                String url = "https://pharmahub.ephrine.in/app?download=plugin";
                 builder.setMessage(msg)
                         .setIcon(R.mipmap.ic_launcher_round)
                         .setPositiveButton("Go to Website", new DialogInterface.OnClickListener() {
@@ -880,6 +880,57 @@ public class HomeActivity extends AppCompatActivity
             }
             if (Tag.equals("sem7CologyACTOPHOTOMETEREXPERIMENT")) {
                 NotesURL = getString(R.string.sem7CologyACTOPHOTOMETEREXPERIMENT);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+
+            /** User Uploaded**/
+
+            if(Tag.equals("vitaminsallRushikeshWakle")){
+                NotesURL = getString(R.string.userUpload_vitaminsallRushikeshWakle);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("TOXICITY_1_himanshu_sharma_pdf")){
+                NotesURL = getString(R.string.userUpload_TOXICITY_1_himanshu_sharma_pdf);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("the_opium_analgesics_akshaya_ghag_pdf")){
+                NotesURL = getString(R.string.userUpload_the_opium_analgesics_akshaya_ghag_pdf);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("sed_hyp_akshaya_ghag_pdf")){
+                NotesURL = getString(R.string.userUpload_sed_hyp_akshaya_ghag_pdf);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("SAR_SEM_8_Akshaya_Ghag_pdf")){
+                NotesURL = getString(R.string.userUpload_SAR_SEM_8_Akshaya_Ghag_pdf);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("anti_pyschotics_rishab")){
+                NotesURL = getString(R.string.userUpload_anti_pyschotics_rishab);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("PHARMACEUTICAL_DOSAGE_FORMS_DHRUVI_PATEL")){
+                NotesURL = getString(R.string.userUpload_PHARMACEUTICAL_DOSAGE_FORMS_DHRUVI_PATEL);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("Official_Compounds_Diwani_Vaibhavi")){
+                NotesURL = getString(R.string.userUpload_Official_Compounds_Diwani_Vaibhavi);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("NSAIDS_1_Akshaya_Ghag_pdf")){
+                NotesURL = getString(R.string.userUpload_NSAIDS_1_Akshaya_Ghag_pdf);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("medichem_2_hypnotic_and_sedative_ppt_amit_panaskar")){
+                NotesURL = getString(R.string.userUpload_medichem_2_hypnotic_and_sedative_ppt_amit_panaskar);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("hcl_production_MA_KA_SAPOOT")){
+                NotesURL = getString(R.string.userUpload_hcl_production_MA_KA_SAPOOT);  // Add URL for Notes
+                Log.v(TAG, "Notes URL: " + NotesURL);
+            }
+            if(Tag.equals("Epilepsy_1_ppt_Unstoppable_Unmesh")){
+                NotesURL = getString(R.string.userUpload_Epilepsy_1_ppt_Unstoppable_Unmesh);  // Add URL for Notes
                 Log.v(TAG, "Notes URL: " + NotesURL);
             }
 
@@ -1522,6 +1573,23 @@ public class HomeActivity extends AppCompatActivity
             }
             if (Tag.equals("sem8CPADRmonitoring")) {
                 NotesURL = getString(R.string.sem8CPADRmonitoring);
+            }
+
+            /**User Upload**/
+            if (Tag.equals("microscope_Ashish_Desi_pdf")) {
+                NotesURL = getString(R.string.userUpload_microscope_Ashish_Desi_pdf);
+            }
+            if (Tag.equals("isolation_and_preservation_Ashish_Desi_pdf")) {
+                NotesURL = getString(R.string.userUpload_isolation_and_preservation_Ashish_Desi_pdf);
+            }
+            if (Tag.equals("introduction_of_microbiology_Ashish_Desi_pdf")) {
+                NotesURL = getString(R.string.userUpload_introduction_of_microbiology_Ashish_Desi_pdf);
+            }
+            if (Tag.equals("growth_curve_Ashish_Desi_pdf")) {
+                NotesURL = getString(R.string.userUpload_growth_curve_Ashish_Desi_pdf);
+            }
+            if (Tag.equals("dosage_forms_Umesh_Misal")) {
+                NotesURL = getString(R.string.userUpload_dosage_forms_Umesh_Misal);
             }
 
 
